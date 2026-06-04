@@ -136,14 +136,26 @@ td{padding:6px 8px;border-bottom:1px solid #edf0f4;}
   </div>
 
   <div class="card g">
-    <div class="ct">🚗 Section 1 — Vehicle Entry/Exit & Non-Working ITMS</div>
-    <div class="row" style="margin-bottom:12px">
-      <div class="fg"><label>Vehicles Entered (24 Hrs)</label><input type="number" id="f-vin" value="0" min="0"></div>
-      <div class="fg"><label>Vehicles Exited (24 Hrs)</label><input type="number" id="f-vout" value="0" min="0"></div>
+    <div class="ct">🚗 Section 1 — Vehicle Entry/Exit (ITMS Points) & Non-Working ITMS</div>
+    <div class="nt" id="veh-note" style="display:none">⚠️ Vehicle entry/exit data is only for districts with ITMS border points.</div>
+
+    <div id="veh-section" style="display:none">
+      <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:8px;background:#e8f0fb;padding:8px 10px;border-radius:5px" id="itms-point-label">ITMS Point</div>
+      <div class="row3" style="margin-bottom:6px">
+        <div class="fg"><label>Vehicles Entered (24 Hrs)</label><input type="number" id="f-vin" value="0" min="0"></div>
+        <div class="fg"><label>Avg. Entered Per Day</label><input type="number" id="f-vin-avg" value="0" min="0"></div>
+        <div class="fg"></div>
+      </div>
+      <div class="row3" style="margin-bottom:12px">
+        <div class="fg"><label>Vehicles Exited (24 Hrs)</label><input type="number" id="f-vout" value="0" min="0"></div>
+        <div class="fg"><label>Avg. Exited Per Day</label><input type="number" id="f-vout-avg" value="0" min="0"></div>
+        <div class="fg"></div>
+      </div>
     </div>
-    <label style="font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;margin-bottom:6px;display:block">Non-Working ITMS</label>
+
+    <label style="font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;margin-bottom:6px;display:block">Non-Working ITMS (if any)</label>
     <div class="tw"><table><thead><tr><th>#</th><th>ITMS Location</th><th>Reason</th><th></th></tr></thead><tbody id="itms-tb"></tbody></table></div>
-    <button class="ar" onclick="addR('itms')">＋ Add ITMS</button>
+    <button class="ar" onclick="addR('itms')">＋ Add Non-Working ITMS</button>
   </div>
 
   <div class="card">
@@ -407,8 +419,34 @@ function hqLogout(){
 }
 
 // Load bikes
+// ITMS districts mapping
+const ITMS_DISTRICTS = {
+  'Dehra':       'ITMS DEHRA',
+  'Una':         'ITMS UNA',
+  'Bilaspur':    'ITMS BILASPUR',
+  'Solan':       'ITMS SOLAN',
+  'Sirmour':     'ITMS PAONTA SAHIB'
+};
+
 function loadBikes(){
   const dist=document.getElementById('f-dist').value;
+  // Show/hide vehicle section
+  const vehSec=document.getElementById('veh-section');
+  const vehNote=document.getElementById('veh-note');
+  const itmsLabel=document.getElementById('itms-point-label');
+  if(ITMS_DISTRICTS[dist]){
+    vehSec.style.display='block';
+    vehNote.style.display='none';
+    itmsLabel.textContent='📍 '+ITMS_DISTRICTS[dist]+' — Vehicle Data';
+  } else {
+    vehSec.style.display='none';
+    vehNote.style.display='block';
+    vehNote.textContent='ℹ️ '+( dist ? dist+' has no ITMS border point — vehicle entry/exit not applicable.' : 'Select district to check ITMS availability.');
+    document.getElementById('f-vin').value='0';
+    document.getElementById('f-vout').value='0';
+    document.getElementById('f-vin-avg').value='0';
+    document.getElementById('f-vout-avg').value='0';
+  }
   const tb=document.getElementById('bike-tb');
   const info=document.getElementById('bike-info');
   tb.innerHTML='';
