@@ -136,26 +136,43 @@ td{padding:6px 8px;border-bottom:1px solid #edf0f4;}
   </div>
 
   <div class="card g">
-    <div class="ct">🚗 Section 1 — Vehicle Entry/Exit (ITMS Points) & Non-Working ITMS</div>
-    <div class="nt" id="veh-note" style="display:none">⚠️ Vehicle entry/exit data is only for districts with ITMS border points.</div>
+    <div class="ct">🚗 Section 1 — Vehicle Entry/Exit Status (ITMS Border Points)</div>
 
+    <!-- Only shown for 5 ITMS districts -->
     <div id="veh-section" style="display:none">
-      <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:8px;background:#e8f0fb;padding:8px 10px;border-radius:5px" id="itms-point-label">ITMS Point</div>
-      <div class="row3" style="margin-bottom:6px">
-        <div class="fg"><label>Vehicles Entered (24 Hrs)</label><input type="number" id="f-vin" value="0" min="0"></div>
-        <div class="fg"><label>Avg. Entered Per Day</label><input type="number" id="f-vin-avg" value="0" min="0"></div>
-        <div class="fg"></div>
-      </div>
-      <div class="row3" style="margin-bottom:12px">
-        <div class="fg"><label>Vehicles Exited (24 Hrs)</label><input type="number" id="f-vout" value="0" min="0"></div>
-        <div class="fg"><label>Avg. Exited Per Day</label><input type="number" id="f-vout-avg" value="0" min="0"></div>
-        <div class="fg"></div>
+      <div style="background:#e8f0fb;padding:8px 12px;border-radius:6px;margin-bottom:12px;font-size:12px;font-weight:600;color:var(--blue)" id="itms-point-label">📍 ITMS Point</div>
+      <div class="tw">
+        <table>
+          <thead><tr>
+            <th>ITMS Point</th>
+            <th>Vehicles Entered (24 Hrs)</th>
+            <th>Avg. Entered Per Day</th>
+            <th>Vehicles Exited (24 Hrs)</th>
+            <th>Avg. Exited Per Day</th>
+          </tr></thead>
+          <tbody id="veh-tb"></tbody>
+          <tfoot>
+            <tr style="background:#f4f7fb;font-weight:700;font-family:'Rajdhani',sans-serif">
+              <td>TOTAL</td>
+              <td id="veh-total-in">0</td>
+              <td id="veh-total-in-avg">0</td>
+              <td id="veh-total-out">0</td>
+              <td id="veh-total-out-avg">0</td>
+            </tr>
+          </tfoot>
+        </table>
       </div>
     </div>
 
-    <label style="font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;margin-bottom:6px;display:block">Non-Working ITMS (if any)</label>
-    <div class="tw"><table><thead><tr><th>#</th><th>ITMS Location</th><th>Reason</th><th></th></tr></thead><tbody id="itms-tb"></tbody></table></div>
-    <button class="ar" onclick="addR('itms')">＋ Add Non-Working ITMS</button>
+    <div id="veh-na" style="display:none;padding:10px;background:#f4f7fb;border-radius:6px;font-size:12px;color:var(--muted);text-align:center">
+      ℹ️ Vehicle entry/exit data not applicable for this district.
+    </div>
+
+    <div style="margin-top:12px">
+      <label style="font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;margin-bottom:6px;display:block">Non-Working ITMS (if any)</label>
+      <div class="tw"><table><thead><tr><th>#</th><th>ITMS Location</th><th>Reason</th><th></th></tr></thead><tbody id="itms-tb"></tbody></table></div>
+      <button class="ar" onclick="addR('itms')">＋ Add Non-Working ITMS</button>
+    </div>
   </div>
 
   <div class="card">
@@ -174,12 +191,8 @@ td{padding:6px 8px;border-bottom:1px solid #edf0f4;}
   </div>
 
   <div class="card r">
-    <div class="ct">🚨 Section 4 — Accident Cases</div>
-    <div class="row3" style="margin-bottom:12px">
-      <div class="fg"><label>Accidents in CCTNS</label><input type="number" id="f-cctns" value="0" min="0"></div>
-      <div class="fg"><label>Accidents in e-DAR</label><input type="number" id="f-edar" value="0" min="0"></div>
-      <div class="fg"><label>NOT in e-DAR (details)</label><input type="text" id="f-miss" placeholder="e.g. Baddi=01"></div>
-    </div>
+    <div class="ct">🚨 Section 4 — Fatal Accident Cases</div>
+    <div class="nt">ℹ️ CCTNS & e-DAR accident data is filled by HQ only. District officers fill fatal case details below.</div>
     <label style="font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;margin-bottom:6px;display:block">Fatal Cases (Last 24 Hrs)</label>
     <div class="tw"><table><thead><tr><th>#</th><th>FIR No. & Date</th><th>PS Name</th><th>Brief Facts</th><th></th></tr></thead><tbody id="fat-tb"></tbody></table></div>
     <button class="ar" onclick="addR('fat')">＋ Add Fatal Case</button>
@@ -263,6 +276,30 @@ td{padding:6px 8px;border-bottom:1px solid #edf0f4;}
     </div>
   </div>
 
+  <!-- HQ fills CCTNS / e-DAR -->
+  <div class="card r">
+    <div class="ct">🚨 Section 4 — Accident Cases (Filled by HQ)</div>
+    <div class="nt">⚠️ This section is filled by HQ only. Enter total accidents across all districts.</div>
+    <div class="row3" style="margin-bottom:14px">
+      <div class="fg">
+        <label>Total Accidents in CCTNS</label>
+        <input type="number" id="hq-cctns" value="0" min="0" style="font-size:15px;font-weight:600;border:2px solid var(--red)">
+      </div>
+      <div class="fg">
+        <label>Total Accidents in e-DAR</label>
+        <input type="number" id="hq-edar" value="0" min="0" style="font-size:15px;font-weight:600;border:2px solid var(--red)">
+      </div>
+      <div class="fg">
+        <label>Districts NOT Entered in e-DAR</label>
+        <input type="text" id="hq-miss" placeholder="e.g. Baddi=01, Shimla=02">
+      </div>
+    </div>
+    <div class="btns">
+      <button class="btn br" onclick="saveHQAccidents()">💾 Save Accident Data</button>
+    </div>
+    <div id="hq-acc-msg" style="display:none;margin-top:10px"></div>
+  </div>
+
   <div class="card r">
     <div class="ct">🚨 Fatal Cases — All Districts</div>
     <div class="tw"><table><thead><tr><th>#</th><th>District</th><th>FIR No. & Date</th><th>PS Name</th><th>Brief Facts</th></tr></thead>
@@ -311,11 +348,18 @@ td{padding:6px 8px;border-bottom:1px solid #edf0f4;}
     </div>
 
     <div class="ps">
-      <h3>🚗 Section 1 — Vehicle Entry/Exit & Non-Working ITMS</h3>
-      <div style="display:flex;gap:22px;margin-bottom:8px">
-        <div><div style="font-size:9px;text-transform:uppercase;color:var(--muted);font-weight:600">Total Vehicles Entered</div><div style="font-size:18px;font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--navy)" id="p-vi">—</div></div>
-        <div><div style="font-size:9px;text-transform:uppercase;color:var(--muted);font-weight:600">Total Vehicles Exited</div><div style="font-size:18px;font-family:'Rajdhani',sans-serif;font-weight:700;color:var(--navy)" id="p-vo">—</div></div>
-      </div>
+      <h3>🚗 Section 1 — Vehicle Entry/Exit Status (ITMS Border Points)</h3>
+      <table class="pt" style="margin-bottom:8px">
+        <thead><tr>
+          <th>ITMS Point / District</th>
+          <th>Vehicles Entered (24 Hrs)</th>
+          <th>Avg. Entered Per Day</th>
+          <th>Vehicles Exited (24 Hrs)</th>
+          <th>Avg. Exited Per Day</th>
+        </tr></thead>
+        <tbody id="p-veh"><tr><td colspan="5" style="text-align:center;color:var(--muted)">NIL</td></tr></tbody>
+      </table>
+      <div style="font-size:10px;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:5px">Non-Working ITMS:</div>
       <table class="pt"><thead><tr><th>Sr.No.</th><th>District</th><th>Non-Working ITMS Location &amp; Reason</th></tr></thead>
       <tbody id="p-itms"><tr><td colspan="3" style="text-align:center;color:var(--muted)">NIL</td></tr></tbody></table>
     </div>
@@ -420,33 +464,58 @@ function hqLogout(){
 
 // Load bikes
 // ITMS districts mapping
+// 5 ITMS districts with their border point names
 const ITMS_DISTRICTS = {
-  'Dehra':       'ITMS DEHRA',
-  'Una':         'ITMS UNA',
-  'Bilaspur':    'ITMS BILASPUR',
-  'Solan':       'ITMS SOLAN',
-  'Sirmour':     'ITMS PAONTA SAHIB'
+  'Dehra':    'ITMS DEHRA',
+  'Una':      'ITMS UNA',
+  'Bilaspur': 'ITMS BILASPUR',
+  'Solan':    'ITMS SOLAN',
+  'Sirmour':  'ITMS PAONTA SAHIB'
 };
+
+function loadVehicleSection(dist){
+  const vehSec = document.getElementById('veh-section');
+  const vehNa  = document.getElementById('veh-na');
+  const tb     = document.getElementById('veh-tb');
+  const label  = document.getElementById('itms-point-label');
+  if(ITMS_DISTRICTS[dist]){
+    vehSec.style.display='block';
+    vehNa.style.display='none';
+    label.textContent='📍 '+ITMS_DISTRICTS[dist];
+    tb.innerHTML='';
+    // Single ITMS row for this district
+    const row = document.createElement('tr');
+    row.innerHTML=`
+      <td style="font-weight:600">${ITMS_DISTRICTS[dist]}</td>
+      <td><input type="number" id="f-vin" value="0" min="0" style="width:90px;font-size:13px;padding:5px 7px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>
+      <td><input type="number" id="f-vin-avg" value="0" min="0" style="width:90px;font-size:13px;padding:5px 7px;border:1.5px solid var(--blue);border-radius:4px;font-weight:600"></td>
+      <td><input type="number" id="f-vout" value="0" min="0" style="width:90px;font-size:13px;padding:5px 7px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>
+      <td><input type="number" id="f-vout-avg" value="0" min="0" style="width:90px;font-size:13px;padding:5px 7px;border:1.5px solid var(--blue);border-radius:4px;font-weight:600"></td>`;
+    tb.appendChild(row);
+    updateVehTotals();
+    ['f-vin','f-vin-avg','f-vout','f-vout-avg'].forEach(id=>{
+      document.getElementById(id).addEventListener('input', updateVehTotals);
+    });
+  } else {
+    vehSec.style.display='none';
+    vehNa.style.display= dist ? 'block' : 'none';
+  }
+}
+
+function updateVehTotals(){
+  const vi  = +document.getElementById('f-vin')?.value||0;
+  const via = +document.getElementById('f-vin-avg')?.value||0;
+  const vo  = +document.getElementById('f-vout')?.value||0;
+  const voa = +document.getElementById('f-vout-avg')?.value||0;
+  document.getElementById('veh-total-in').textContent=vi;
+  document.getElementById('veh-total-in-avg').textContent=via;
+  document.getElementById('veh-total-out').textContent=vo;
+  document.getElementById('veh-total-out-avg').textContent=voa;
+}
 
 function loadBikes(){
   const dist=document.getElementById('f-dist').value;
-  // Show/hide vehicle section
-  const vehSec=document.getElementById('veh-section');
-  const vehNote=document.getElementById('veh-note');
-  const itmsLabel=document.getElementById('itms-point-label');
-  if(ITMS_DISTRICTS[dist]){
-    vehSec.style.display='block';
-    vehNote.style.display='none';
-    itmsLabel.textContent='📍 '+ITMS_DISTRICTS[dist]+' — Vehicle Data';
-  } else {
-    vehSec.style.display='none';
-    vehNote.style.display='block';
-    vehNote.textContent='ℹ️ '+( dist ? dist+' has no ITMS border point — vehicle entry/exit not applicable.' : 'Select district to check ITMS availability.');
-    document.getElementById('f-vin').value='0';
-    document.getElementById('f-vout').value='0';
-    document.getElementById('f-vin-avg').value='0';
-    document.getElementById('f-vout-avg').value='0';
-  }
+  loadVehicleSection(dist);
   const tb=document.getElementById('bike-tb');
   const info=document.getElementById('bike-info');
   tb.innerHTML='';
@@ -513,11 +582,14 @@ async function submitData(){
 
   const payload={
     action:'submit',date,district:dist,officer:off,rank,
-    vin:+document.getElementById('f-vin').value||0,
-    vout:+document.getElementById('f-vout').value||0,
-    cctns:+document.getElementById('f-cctns').value||0,
-    edar:+document.getElementById('f-edar').value||0,
-    missing:document.getElementById('f-miss').value||'',
+    itms_point: ITMS_DISTRICTS[dist]||'',
+    vin:+document.getElementById('f-vin')?.value||0,
+    vin_avg:+document.getElementById('f-vin-avg')?.value||0,
+    vout:+document.getElementById('f-vout')?.value||0,
+    vout_avg:+document.getElementById('f-vout-avg')?.value||0,
+    cctns:0,
+    edar:0,
+    missing:'',
     moto:getBikes(),itms:getRows('itms'),vol:getRows('vol'),fatal:getRows('fat')
   };
 
@@ -598,6 +670,13 @@ function renderHQ(d){
   document.getElementById('ss-itms').textContent=ti;
   const fl=d.fatal||[];
   document.getElementById('hq-fat').innerHTML=fl.length?fl.map((f,i)=>`<tr><td>${i+1}</td><td><strong>${f.District}</strong></td><td>${f.FIR}</td><td>${f.PS}</td><td>${f.Facts}</td></tr>`).join(''):'<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px">No fatal cases.</td></tr>';
+  // Populate HQ accident fields if data exists
+  if(d.hqaccidents && d.hqaccidents.length>0){
+    const ha=d.hqaccidents[0];
+    document.getElementById('hq-cctns').value=ha.CCTNS||0;
+    document.getElementById('hq-edar').value=ha.eDAR||0;
+    document.getElementById('hq-miss').value=ha.Missing||'';
+  }
   const il=d.itms||[];
   document.getElementById('hq-itms').innerHTML=il.length?il.map((it,i)=>`<tr><td>${i+1}</td><td><strong>${it.District}</strong></td><td>${it.Location}</td><td>${it.Reason}</td></tr>`).join(''):'<tr><td colspan="4" style="text-align:center;color:var(--muted);padding:12px">No ITMS issues.</td></tr>';
 }
@@ -633,12 +712,36 @@ function buildPDF(d){
   document.getElementById('p-dt2').textContent=fmt;
   document.getElementById('p-gen').textContent=new Date().toLocaleString('en-IN');
   let tv=0,tv2=0,ta=0,te=0,ml=[];
-  rows.forEach(s=>{tv+=+s.Veh_In||0;tv2+=+s.Veh_Out||0;ta+=+s.CCTNS||0;te+=+s.eDAR||0;if(s.Missing_eDAR)ml.push(s.District+'='+s.Missing_eDAR);});
-  document.getElementById('p-vi').textContent=tv;
-  document.getElementById('p-vo').textContent=tv2;
-  document.getElementById('p-cc').textContent=ta;
-  document.getElementById('p-ed').textContent=te;
-  document.getElementById('p-ms').textContent=ml.join(', ')||'NIL';
+  // Vehicle table — only ITMS districts
+  const itmsRows = rows.filter(s=>s.ITMS_Point && s.ITMS_Point!='');
+  let totalVin=0,totalVinAvg=0,totalVout=0,totalVoutAvg=0;
+  const vehHtml = itmsRows.length ? itmsRows.map(s=>{
+    totalVin+=+s.Veh_In||0;
+    totalVinAvg+=+s.Veh_In_Avg||0;
+    totalVout+=+s.Veh_Out||0;
+    totalVoutAvg+=+s.Veh_Out_Avg||0;
+    return `<tr>
+      <td><strong>${s.ITMS_Point||s.District}</strong></td>
+      <td style="text-align:center">${s.Veh_In||0}</td>
+      <td style="text-align:center">${s.Veh_In_Avg||0}</td>
+      <td style="text-align:center">${s.Veh_Out||0}</td>
+      <td style="text-align:center">${s.Veh_Out_Avg||0}</td>
+    </tr>`;
+  }).join('')+`<tr style="font-weight:700;background:#f4f7fb">
+    <td>TOTAL</td>
+    <td style="text-align:center">${totalVin}</td>
+    <td style="text-align:center">${totalVinAvg}</td>
+    <td style="text-align:center">${totalVout}</td>
+    <td style="text-align:center">${totalVoutAvg}</td>
+  </tr>`
+  : '<tr><td colspan="5" style="text-align:center;color:var(--muted)">NIL</td></tr>';
+  document.getElementById('p-veh').innerHTML=vehHtml;
+
+  // Use HQ accident data
+  const hqAcc = d.hqaccidents && d.hqaccidents.length>0 ? d.hqaccidents[0] : null;
+  document.getElementById('p-cc').textContent = hqAcc ? (hqAcc.CCTNS||0) : '—';
+  document.getElementById('p-ed').textContent = hqAcc ? (hqAcc.eDAR||0)  : '—';
+  document.getElementById('p-ms').textContent = hqAcc ? (hqAcc.Missing||'NIL') : 'NIL';
   // ITMS
   const il=d.itms||[];
   document.getElementById('p-itms').innerHTML=il.length?il.map((it,i)=>`<tr><td>${i+1}</td><td>${it.District}</td><td>${it.Location} — ${it.Reason}</td></tr>`).join('')+`<tr style="font-weight:700;background:#f4f7fb"><td colspan="2">Total</td><td>${il.length}</td></tr>`:'<tr><td colspan="3" style="text-align:center;color:var(--muted)">NIL</td></tr>';
@@ -653,9 +756,40 @@ function buildPDF(d){
   document.getElementById('p-fat').innerHTML=fat.length?fat.map((f,i)=>`<tr><td>${i+1}</td><td contenteditable="true">${f.FIR}</td><td contenteditable="true">${f.PS}</td><td contenteditable="true">${f.Facts}</td></tr>`).join(''):'<tr><td colspan="4" style="text-align:center;color:var(--muted)">NIL — No fatal cases in last 24 hours</td></tr>';
 }
 
+// Save HQ accident data
+async function saveHQAccidents(){
+  const date = document.getElementById('hq-dt').value;
+  if(!date){alert('Please select a date first.');return;}
+  const cctns = +document.getElementById('hq-cctns').value||0;
+  const edar  = +document.getElementById('hq-edar').value||0;
+  const miss  = document.getElementById('hq-miss').value||'';
+  const msg   = document.getElementById('hq-acc-msg');
+  msg.style.display='none';
+  try{
+    const resp = await fetch(API,{
+      method:'POST',
+      headers:{'Content-Type':'text/plain'},
+      body: JSON.stringify({action:'saveHQAccidents', date, cctns, edar, missing:miss})
+    });
+    const d = await resp.json();
+    msg.style.display='block';
+    if(d.ok){
+      msg.className='ok';
+      msg.innerHTML='✅ Accident data saved for '+date+'!';
+    } else {
+      msg.className='er';
+      msg.textContent='Error: '+d.msg;
+    }
+  }catch(e){
+    msg.style.display='block';
+    msg.className='er';
+    msg.textContent='Failed: '+e.message;
+  }
+}
+
 function resetForm(){
-  ['f-off','f-miss'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
-  ['f-vin','f-vout','f-cctns','f-edar'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='0';});
+  ['f-off'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
+  ['f-vin','f-vin-avg','f-vout','f-vout-avg'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='0';});
   document.getElementById('f-dist').value='';
   document.getElementById('f-rank').value='';
   document.getElementById('f-date').value=T;
