@@ -87,6 +87,9 @@ tr:hover td{background:#f4f7fb;}
 .veh-num .l{font-size:9px;color:var(--muted);text-transform:uppercase;}
 .pf{border-top:2px solid var(--navy);margin-top:14px;padding-top:10px;display:flex;justify-content:space-between;font-size:10px;color:var(--muted);}
 .sig{border-top:1.5px solid var(--navy);width:140px;margin-left:auto;padding-top:3px;font-size:10px;color:var(--navy);font-weight:600;text-transform:uppercase;text-align:center;}
+/* Section 2 district group header */
+.dist-group-hdr td{background:#1a3a6b!important;color:#e2c46a!important;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;}
+.type-sub-hdr td{background:#e8edf5!important;color:#0a1628!important;font-weight:700;font-size:10px;text-transform:uppercase;}
 @media(max-width:540px){.row2,.row3{grid-template-columns:1fr;}header{flex-wrap:wrap;}.sts{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
@@ -142,7 +145,7 @@ tr:hover td{background:#f4f7fb;}
     </div>
   </div>
 
-  <!-- Section 1: Vehicle Entry/Exit — only 5 ITMS districts -->
+  <!-- Section 1 -->
   <div class="card g">
     <div class="ct">🚗 Section 1 — Vehicle Entry/Exit (ITMS Border Points)</div>
     <div id="veh-na" class="nt" style="display:none">ℹ️ Vehicle entry/exit data not applicable for this district.</div>
@@ -174,12 +177,10 @@ tr:hover td{background:#f4f7fb;}
     </div>
   </div>
 
-  <!-- Section 2: Patrolling Vehicles + Motorcycles -->
+  <!-- Section 2 -->
   <div class="card">
     <div class="ct">🏍️ Section 2 — Patrolling Vehicles &amp; Motorcycles (World Bank Project)</div>
     <div id="veh2-info" class="nt">Select district — vehicles will load automatically.</div>
-
-    <!-- Patrolling Vehicles -->
     <div id="patrol-sec" style="display:none">
       <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;background:#f4f7fb;padding:6px 10px;border-radius:4px;margin-bottom:8px">Patrolling Vehicles</div>
       <div class="tw">
@@ -190,8 +191,6 @@ tr:hover td{background:#f4f7fb;}
         <tbody id="patrol-tb"></tbody></table>
       </div>
     </div>
-
-    <!-- Motorcycles -->
     <div id="moto-sec" style="display:none;margin-top:12px">
       <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;background:#f4f7fb;padding:6px 10px;border-radius:4px;margin-bottom:8px">Motorcycles (World Bank Project)</div>
       <div class="tw">
@@ -204,14 +203,14 @@ tr:hover td{background:#f4f7fb;}
     </div>
   </div>
 
-  <!-- Section 3: Traffic Volunteers -->
+  <!-- Section 3 -->
   <div class="card">
     <div class="ct">🦺 Section 3 — Traffic Volunteers Deployed</div>
     <div class="tw"><table><thead><tr><th>#</th><th>No. of Volunteers</th><th>Place of Deployment</th><th>Nature of Duty</th><th></th></tr></thead><tbody id="vol-tb"></tbody></table></div>
     <button class="ar" onclick="addR('vol')">＋ Add Volunteer Entry</button>
   </div>
 
-  <!-- Section 4: Fatal Cases only (CCTNS/eDAR filled by HQ) -->
+  <!-- Section 4 -->
   <div class="card r">
     <div class="ct">🚨 Section 4 — Fatal Accident Cases</div>
     <div class="nt">ℹ️ CCTNS &amp; e-DAR accident totals are filled by HQ. Report fatal cases below.</div>
@@ -273,6 +272,31 @@ tr:hover td{background:#f4f7fb;}
     <div class="st r"><div class="sn" id="ss-itms">0</div><div class="sl">ITMS Issues</div></div>
   </div>
 
+  <!-- HQ Vehicle Entry/Exit Summary — FIX 1 -->
+  <div class="card g">
+    <div class="ct">🚗 Vehicle Entry/Exit Summary (ITMS Districts)</div>
+    <div class="tw">
+      <table>
+        <thead><tr>
+          <th>District</th>
+          <th>ITMS Point</th>
+          <th>Veh Entered (24h)</th>
+          <th>Incoming Avg/Day</th>
+          <th>Veh Exited (24h)</th>
+          <th>Outgoing Avg/Day</th>
+        </tr></thead>
+        <tbody id="hq-veh-tb"></tbody>
+        <tfoot><tr style="background:#e8f0fb;font-weight:700;font-family:'Rajdhani',sans-serif">
+          <td colspan="2">TOTAL</td>
+          <td id="hq-t-vi">0</td>
+          <td id="hq-t-via">0</td>
+          <td id="hq-t-vo">0</td>
+          <td id="hq-t-voa">0</td>
+        </tr></tfoot>
+      </table>
+    </div>
+  </div>
+
   <!-- HQ fills CCTNS / eDAR -->
   <div class="card r">
     <div class="ct">🚨 Section 4 — Accident Cases (HQ Entry Only)</div>
@@ -295,11 +319,12 @@ tr:hover td{background:#f4f7fb;}
     <div class="ct">📊 Consolidated Summary</div>
     <div class="tw">
       <table>
-        <thead><tr><th>District</th><th>Officer</th><th>Veh In</th><th>Veh Out</th><th>Patrol Vehs</th><th>Motos</th><th>Total KMs</th><th>Challans</th><th>Volunteers</th><th>ITMS❌</th><th>Fatal</th></tr></thead>
+        <thead><tr><th>District</th><th>Officer</th><th>Veh In</th><th>Veh In Avg</th><th>Veh Out</th><th>Veh Out Avg</th><th>Patrol Vehs</th><th>Motos</th><th>Total KMs</th><th>Challans</th><th>Volunteers</th><th>ITMS❌</th><th>Fatal</th></tr></thead>
         <tbody id="hq-tb"></tbody>
         <tfoot><tr style="background:#e8f0fb;font-weight:700;font-family:'Rajdhani',sans-serif">
           <td colspan="2">TOTAL</td>
-          <td id="t-tvi">0</td><td id="t-tvo">0</td>
+          <td id="t-tvi">0</td><td id="t-tvia">0</td>
+          <td id="t-tvo">0</td><td id="t-tvoa">0</td>
           <td id="t-tpv">0</td><td id="t-tmo">0</td>
           <td id="t-tkm">0</td><td id="t-tch">0</td>
           <td id="t-tvl">0</td><td id="t-tit">0</td><td id="t-tfa">0</td>
@@ -337,12 +362,10 @@ tr:hover td{background:#f4f7fb;}
   <div id="pdf-msg" style="display:none;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:var(--sh);margin-bottom:13px;font-size:13px"></div>
 
   <div class="pw" id="pdf-body" style="display:none">
-    <!-- PDF Header -->
     <h2>TRAFFIC DSI &nbsp;<span id="p-title-date">—</span></h2>
     <div class="subtitle">Himachal Pradesh Police &nbsp;|&nbsp; Traffic, Tourist &amp; Railways Wing</div>
     <div class="ref">Ref: <span id="p-ref">—</span> &nbsp;|&nbsp; Generated: <span id="p-gen">—</span></div>
 
-    <!-- Contents Table -->
     <table class="pt" style="margin-bottom:12px">
       <thead><tr><th></th><th>Title</th><th>Page No.</th></tr></thead>
       <tbody>
@@ -357,17 +380,15 @@ tr:hover td{background:#f4f7fb;}
     <!-- Section 1 -->
     <div class="ps">
       <h3>Section 1 — Vehicles Entry/Exit Status During Last 24 Hours</h3>
-      <!-- Summary box -->
       <div class="veh-summary">
         <h4>Vehicles entry/exit status during last 24 hours</h4>
         <div class="veh-nums">
           <div class="veh-num"><div class="n" id="p-total-vi">—</div><div class="l">Vehicle Entered</div></div>
           <div class="veh-num"><div class="n" id="p-total-vo">—</div><div class="l">Vehicle Exited</div></div>
-          <div class="veh-num"><div class="n" id="p-total-via">—</div><div class="l">Entered (Monthly Avg)</div></div>
-          <div class="veh-num"><div class="n" id="p-total-voa">—</div><div class="l">Exited (Monthly Avg)</div></div>
+          <div class="veh-num"><div class="n" id="p-total-via">—</div><div class="l">Entered (Avg/Day)</div></div>
+          <div class="veh-num"><div class="n" id="p-total-voa">—</div><div class="l">Exited (Avg/Day)</div></div>
         </div>
       </div>
-      <!-- ITMS-wise breakdown -->
       <table class="pt">
         <thead><tr>
           <th>ITMS Point</th>
@@ -378,7 +399,6 @@ tr:hover td{background:#f4f7fb;}
         </tr></thead>
         <tbody id="p-veh"></tbody>
       </table>
-      <!-- Non-working ITMS -->
       <div style="font-size:10.5px;font-weight:700;color:var(--navy);text-transform:uppercase;margin:8px 0 5px">Status of Non-Working ITMS:</div>
       <table class="pt">
         <thead><tr><th>Sr.No.</th><th>District</th><th>Name/Locations of Non-Working ITMS Along With Reasons</th></tr></thead>
@@ -386,16 +406,17 @@ tr:hover td{background:#f4f7fb;}
       </table>
     </div>
 
-    <!-- Section 2 -->
+    <!-- Section 2 — District-grouped with Patrol then Motorcycle sub-sections -->
     <div class="ps">
       <h3>Section 2 — Status of Vehicle &amp; Motorcycle Distributed Under World Bank Project</h3>
-      <table class="pt">
+      <table class="pt" id="p-veh2-table">
         <thead><tr>
           <th>District</th>
+          <th>Type</th>
           <th>Vehicle/Motorcycle Reg. No.</th>
           <th>Police Station &amp; Beat Deployed</th>
-          <th>Patrolling Done in Last 24 Hrs (KMs)</th>
-          <th>No. of Challans Done in Last 24 Hrs</th>
+          <th>Patrolling Done (KMs)</th>
+          <th>No. of Challans</th>
         </tr></thead>
         <tbody id="p-veh2"></tbody>
       </table>
@@ -450,7 +471,8 @@ tr:hover td{background:#f4f7fb;}
 </footer>
 
 <script>
-const API     = 'https://script.google.com/macros/s/AKfycbx4BGZ58DkgHY7_tBbgL9CHrhQmzHfSECGp647-W_p663mVid5OyZLEHoUtdhxVCjsYeQ/exec';
+// ══ CONFIG ══
+const API     = 'https://script.google.com/macros/s/AKfycbwAo1FlplyWeBQtVZ5m64z6Lt79nUtpLd-_HBdy--AB_lQNJ5tViMBG2CgWzMDPdueH/exec';
 const HQ_PASS = 'hppolice@2026';
 
 // ── ITMS BORDER DISTRICTS ──
@@ -615,7 +637,7 @@ function onDistrictChange(){
   loadPatrolMoto(dist);
 }
 
-// Vehicle entry/exit (5 ITMS districts only)
+// Vehicle entry/exit
 function loadVehicles(dist){
   const sec=document.getElementById('veh-sec');
   const na=document.getElementById('veh-na');
@@ -657,7 +679,6 @@ function loadPatrolMoto(dist){
   const mtb=document.getElementById('moto-tb');
   if(!dist){info.style.display='block';psec.style.display='none';msec.style.display='none';return;}
   info.style.display='none';
-  // Patrol
   const pvs=PATROL[dist]||[];
   if(pvs.length){
     psec.style.display='block';
@@ -669,7 +690,6 @@ function loadPatrolMoto(dist){
       <td><input type="number" id="pch${i}" value="0" min="0" style="width:75px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>
     </tr>`).join('');
   } else { psec.style.display='none'; }
-  // Motos
   const mos=MOTOS[dist]||[];
   if(mos.length){
     msec.style.display='block';
@@ -774,9 +794,11 @@ async function loadHQ(){
   }catch(e){alert('Load failed: '+e.message);}
 }
 
+// ══ FIX 1: renderHQ — Vehicle In/Out columns now use correct field names ══
 function renderHQ(d){
   const rows=d.summary||[];
   const subs=rows.map(r=>r.District);
+
   // District grid
   const dg=document.getElementById('dist-grid'); dg.innerHTML='';
   ALL_DIST.forEach(x=>{
@@ -785,30 +807,57 @@ function renderHQ(d){
     div.innerHTML=`<div class="dn">${x}</div><div style="margin-top:3px">${s?'<span class="bx bg2">✅ Done</span>':'<span class="bx by">⏳ Pending</span>'}</div>${s?`<div style="font-size:9.5px;color:var(--muted);margin-top:2px">${s.Officer||''}</div>`:''}`;
     dg.appendChild(div);
   });
-  // Table
+
+  // ── Vehicle Entry/Exit table (ITMS districts only) ──
+  const vehTb=document.getElementById('hq-veh-tb'); vehTb.innerHTML='';
+  let hvi=0,hvia=0,hvo=0,hvoa=0;
+  rows.forEach(s=>{
+    if(!s.ITMS_Point||s.ITMS_Point==='') return;
+    // FIX: use correct field names from sheet — Veh_In, Veh_In_Avg, Veh_Out, Veh_Out_Avg
+    const vi=+s.Veh_In||0, via=+s.Veh_In_Avg||0, vo=+s.Veh_Out||0, voa=+s.Veh_Out_Avg||0;
+    hvi+=vi; hvia+=via; hvo+=vo; hvoa+=voa;
+    const tr=document.createElement('tr');
+    tr.innerHTML=`<td><strong>${s.District}</strong></td><td>${s.ITMS_Point}</td>
+      <td style="text-align:center;font-weight:600">${vi}</td>
+      <td style="text-align:center">${via}</td>
+      <td style="text-align:center;font-weight:600">${vo}</td>
+      <td style="text-align:center">${voa}</td>`;
+    vehTb.appendChild(tr);
+  });
+  document.getElementById('hq-t-vi').textContent=hvi;
+  document.getElementById('hq-t-via').textContent=hvia;
+  document.getElementById('hq-t-vo').textContent=hvo;
+  document.getElementById('hq-t-voa').textContent=hvoa;
+
+  // Consolidated summary table
   const tb=document.getElementById('hq-tb'); tb.innerHTML='';
-  let tvi=0,tvo=0,tpv=0,tmo=0,tkm=0,tch=0,tvl=0,tit=0,tfa=0;
+  let tvi=0,tvia=0,tvo=0,tvoa=0,tpv=0,tmo=0,tkm=0,tch=0,tvl=0,tit=0,tfa=0;
   ALL_DIST.forEach(x=>{
     const s=rows.find(r=>r.District===x);
     const tr=document.createElement('tr');
     if(s){
-      const vi=+s.Veh_In||0,vo=+s.Veh_Out||0,pv=+s.Patrol_Vehs||0,mo=+s.Motos||0,km=+s.Total_KMs||0,ch=+s.Total_Challans||0,vl=+s.Volunteers||0,it=+s.ITMS||0,fa=+s.Fatal||0;
-      tvi+=vi;tvo+=vo;tpv+=pv;tmo+=mo;tkm+=km;tch+=ch;tvl+=vl;tit+=it;tfa+=fa;
+      const vi=+s.Veh_In||0, via=+s.Veh_In_Avg||0, vo=+s.Veh_Out||0, voa=+s.Veh_Out_Avg||0;
+      const pv=+s.Patrol_Vehs||0,mo=+s.Motos||0,km=+s.Total_KMs||0,ch=+s.Total_Challans||0,vl=+s.Volunteers||0,it=+s.ITMS||0,fa=+s.Fatal||0;
+      tvi+=vi;tvia+=via;tvo+=vo;tvoa+=voa;tpv+=pv;tmo+=mo;tkm+=km;tch+=ch;tvl+=vl;tit+=it;tfa+=fa;
       tr.innerHTML=`<td><strong>${x}</strong></td><td>${s.Officer||''}<br><span style="font-size:9.5px;color:var(--muted)">${s.Rank||''}</span></td>
-        <td style="text-align:center">${vi}</td><td style="text-align:center">${vo}</td>
+        <td style="text-align:center">${vi}</td>
+        <td style="text-align:center">${via}</td>
+        <td style="text-align:center">${vo}</td>
+        <td style="text-align:center">${voa}</td>
         <td style="text-align:center">${pv}</td><td style="text-align:center">${mo}</td>
         <td style="text-align:center">${km}</td><td style="text-align:center">${ch}</td>
         <td style="text-align:center">${vl}</td>
         <td style="text-align:center">${it?`<span class="bx brd">${it}</span>`:'<span class="bx bg2">NIL</span>'}</td>
         <td style="text-align:center">${fa?`<span class="bx brd">${fa}</span>`:'NIL'}`;
     } else {
-      tr.innerHTML=`<td><strong>${x}</strong></td><td colspan="9" style="color:var(--muted);font-style:italic">— Pending —</td><td><span class="bx by">⏳</span></td>`;
+      tr.innerHTML=`<td><strong>${x}</strong></td><td colspan="11" style="color:var(--muted);font-style:italic">— Pending —</td><td><span class="bx by">⏳</span></td>`;
     }
     tb.appendChild(tr);
   });
-  ['t-tvi','t-tvo','t-tpv','t-tmo','t-tkm','t-tch','t-tvl','t-tit','t-tfa'].forEach((id,i)=>{
-    document.getElementById(id).textContent=[tvi,tvo,tpv,tmo,tkm,tch,tvl,tit,tfa][i];
+  ['t-tvi','t-tvia','t-tvo','t-tvoa','t-tpv','t-tmo','t-tkm','t-tch','t-tvl','t-tit','t-tfa'].forEach((id,i)=>{
+    document.getElementById(id).textContent=[tvi,tvia,tvo,tvoa,tpv,tmo,tkm,tch,tvl,tit,tfa][i];
   });
+
   document.getElementById('ss-sub').textContent=subs.length;
   document.getElementById('ss-pen').textContent=15-subs.length;
   document.getElementById('ss-veh').textContent=tvi;
@@ -817,17 +866,17 @@ function renderHQ(d){
   document.getElementById('ss-ch').textContent=tch;
   document.getElementById('ss-vol').textContent=tvl;
   document.getElementById('ss-itms').textContent=tit;
-  // HQ accident fields
+
   if(d.hqaccidents&&d.hqaccidents.length){
     const ha=d.hqaccidents[0];
     document.getElementById('hq-cctns').value=ha.CCTNS||0;
     document.getElementById('hq-edar').value=ha.eDAR||0;
     document.getElementById('hq-miss').value=ha.Missing||'';
   }
-  // Fatal
+
   const fl=d.fatal||[];
   document.getElementById('hq-fat').innerHTML=fl.length?fl.map((f,i)=>`<tr><td>${i+1}</td><td><strong>${f.District}</strong></td><td>${f.FIR}</td><td>${f.PS}</td><td>${f.Facts}</td></tr>`).join(''):'<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px">No fatal cases.</td></tr>';
-  // ITMS
+
   const il=d.itms||[];
   document.getElementById('hq-itms').innerHTML=il.length?il.map((it,i)=>`<tr><td>${i+1}</td><td><strong>${it.District}</strong></td><td>${it.Location}</td></tr>`).join(''):'<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:12px">No ITMS issues.</td></tr>';
 }
@@ -859,63 +908,145 @@ async function loadPDF(){
   }catch(e){ msg.innerHTML='❌ Failed: '+e.message; }
 }
 
+// ══ FIX 1 + FIX 2: buildPDF — correct field names + district-grouped Section 2 ══
 function buildPDF(d){
   const date=document.getElementById('pdf-dt').value||T;
   const fmtDate=new Date(date).toLocaleDateString('en-IN',{day:'2-digit',month:'long',year:'numeric'});
   document.getElementById('p-title-date').textContent=fmtDate;
   document.getElementById('p-ref').textContent='DSI/'+date.replace(/-/g,'')+'/CONSOLIDATED';
   document.getElementById('p-gen').textContent=new Date().toLocaleString('en-IN');
+
   const rows=d.summary||[];
-  // Vehicle totals
+
+  // ── FIX 1: Use correct field names Veh_In, Veh_In_Avg, Veh_Out, Veh_Out_Avg ──
   let tvi=0,tvia=0,tvo=0,tvoa=0;
-  rows.forEach(s=>{tvi+=+s.Veh_In||0;tvia+=+s.Veh_In_Avg||0;tvo+=+s.Veh_Out||0;tvoa+=+s.Veh_Out_Avg||0;});
-  document.getElementById('p-total-vi').textContent=tvi.toLocaleString('en-IN');
-  document.getElementById('p-total-vo').textContent=tvo.toLocaleString('en-IN');
-  document.getElementById('p-total-via').textContent=tvia.toLocaleString('en-IN');
-  document.getElementById('p-total-voa').textContent=tvoa.toLocaleString('en-IN');
+  rows.forEach(s=>{
+    tvi  += +s.Veh_In     || 0;
+    tvia += +s.Veh_In_Avg || 0;
+    tvo  += +s.Veh_Out    || 0;
+    tvoa += +s.Veh_Out_Avg|| 0;
+  });
+  document.getElementById('p-total-vi').textContent  = tvi.toLocaleString('en-IN');
+  document.getElementById('p-total-vo').textContent  = tvo.toLocaleString('en-IN');
+  document.getElementById('p-total-via').textContent = tvia.toLocaleString('en-IN');
+  document.getElementById('p-total-voa').textContent = tvoa.toLocaleString('en-IN');
+
   // ITMS-wise vehicle table
   const itmsRows=rows.filter(s=>s.ITMS_Point&&s.ITMS_Point!='');
   document.getElementById('p-veh').innerHTML=itmsRows.length?
-    itmsRows.map(s=>`<tr><td><strong>${s.ITMS_Point}</strong></td><td style="text-align:center">${s.Veh_In||0}</td><td style="text-align:center">${s.Veh_In_Avg||0}</td><td style="text-align:center">${s.Veh_Out||0}</td><td style="text-align:center">${s.Veh_Out_Avg||0}</td></tr>`).join('')+
-    `<tr style="font-weight:700;background:#f4f7fb"><td>Total</td><td style="text-align:center">${tvi}</td><td style="text-align:center">${tvia}</td><td style="text-align:center">${tvo}</td><td style="text-align:center">${tvoa}</td></tr>`
+    itmsRows.map(s=>`<tr>
+      <td><strong>${s.ITMS_Point}</strong></td>
+      <td style="text-align:center">${s.Veh_In||0}</td>
+      <td style="text-align:center">${s.Veh_In_Avg||0}</td>
+      <td style="text-align:center">${s.Veh_Out||0}</td>
+      <td style="text-align:center">${s.Veh_Out_Avg||0}</td>
+    </tr>`).join('')+
+    `<tr style="font-weight:700;background:#f4f7fb">
+      <td>Total</td>
+      <td style="text-align:center">${tvi}</td>
+      <td style="text-align:center">${tvia}</td>
+      <td style="text-align:center">${tvo}</td>
+      <td style="text-align:center">${tvoa}</td>
+    </tr>`
     :'<tr><td colspan="5" style="text-align:center;color:var(--muted)">NIL</td></tr>';
+
   // Non-working ITMS
   const il=d.itms||[];
   document.getElementById('p-itms').innerHTML=il.length?
     il.map((it,i)=>`<tr><td>${i+1}</td><td>${it.District}</td><td>${it.Location}</td></tr>`).join('')+
     `<tr style="font-weight:700;background:#f4f7fb"><td colspan="2">Total</td><td>${il.length}</td></tr>`
     :'<tr><td colspan="3" style="text-align:center;color:var(--muted)">NIL</td></tr>';
-  // Section 2 — all patrol + motos combined
-  const pt=d.patrol||[]; const mt=d.moto||[];
-  let allVeh2=[...pt.map(v=>({...v,type:'patrol'})),...mt.map(m=>({...m,type:'moto'}))];
-  // Group by district
-  let s2html=''; let lastDist=''; let distKm=0,distCh=0; let grandKm=0,grandCh=0;
-  allVeh2.forEach((v,i)=>{
+
+  // ── FIX 2: Section 2 — District-grouped, Patrol then Motorcycles together ──
+  const pt=d.patrol||[];
+  const mt=d.moto||[];
+
+  // Group by district in ALL_DIST order
+  // Build a map: district -> {patrol:[], moto:[]}
+  const distMap = {};
+  ALL_DIST.forEach(x=>{ distMap[x]={patrol:[],moto:[]}; });
+  // Also handle TTPS/GRPS/OPGRP districts
+  pt.forEach(v=>{
     const dist=v.District||'';
-    if(dist!==lastDist){
-      if(lastDist) s2html+=`<tr style="background:#f4f7fb;font-weight:700"><td colspan="3">Sub-total ${lastDist}</td><td style="text-align:center">${distKm}</td><td style="text-align:center">${distCh}</td></tr>`;
-      lastDist=dist; distKm=0; distCh=0;
-    }
-    const km=+v.KMs||0; const ch=+v.Challans||0;
-    distKm+=km; distCh+=ch; grandKm+=km; grandCh+=ch;
-    const regOrVeh=v.Reg_No||v.Vehicle||'';
-    const beat=v.PS_Beat||v.Beat||'';
-    s2html+=`<tr><td>${dist}</td><td>${regOrVeh}</td><td>${beat}</td><td style="text-align:center">${km}</td><td style="text-align:center">${ch}</td></tr>`;
+    if(!distMap[dist]) distMap[dist]={patrol:[],moto:[]};
+    distMap[dist].patrol.push(v);
   });
-  if(lastDist) s2html+=`<tr style="background:#f4f7fb;font-weight:700"><td colspan="3">Sub-total ${lastDist}</td><td style="text-align:center">${distKm}</td><td style="text-align:center">${distCh}</td></tr>`;
-  if(allVeh2.length) s2html+=`<tr style="background:#e8f0fb;font-weight:700;font-family:'Rajdhani',sans-serif"><td colspan="3">GRAND TOTAL</td><td style="text-align:center">${grandKm}</td><td style="text-align:center">${grandCh}</td></tr>`;
-  document.getElementById('p-veh2').innerHTML=s2html||'<tr><td colspan="5" style="text-align:center;color:var(--muted)">NIL</td></tr>';
+  mt.forEach(m=>{
+    const dist=m.District||'';
+    if(!distMap[dist]) distMap[dist]={patrol:[],moto:[]};
+    distMap[dist].moto.push(m);
+  });
+
+  let s2html='';
+  let grandKm=0, grandCh=0;
+  // Ordered districts list (use ALL_DIST + any extra from data)
+  const orderedDists=[...ALL_DIST];
+  Object.keys(distMap).forEach(x=>{if(!orderedDists.includes(x))orderedDists.push(x);});
+
+  orderedDists.forEach(dist=>{
+    const grp=distMap[dist];
+    if(!grp||(!grp.patrol.length&&!grp.moto.length)) return;
+
+    let distKm=0, distCh=0;
+
+    // District header row (dark blue)
+    s2html+=`<tr class="dist-group-hdr"><td colspan="6">📍 ${dist}</td></tr>`;
+
+    // Patrol Vehicles sub-section
+    if(grp.patrol.length){
+      s2html+=`<tr class="type-sub-hdr"><td colspan="6">🚗 Patrolling Vehicles</td></tr>`;
+      grp.patrol.forEach(v=>{
+        const km=+v.KMs||0; const ch=+v.Challans||0;
+        distKm+=km; distCh+=ch; grandKm+=km; grandCh+=ch;
+        const veh=v.Vehicle||v.Reg_No||'';
+        const beat=v.Beat||v.PS_Beat||'';
+        s2html+=`<tr><td></td><td>Vehicle</td><td>${veh}</td><td>${beat}</td><td style="text-align:center">${km}</td><td style="text-align:center">${ch}</td></tr>`;
+      });
+    }
+
+    // Motorcycles sub-section
+    if(grp.moto.length){
+      s2html+=`<tr class="type-sub-hdr"><td colspan="6">🏍️ Motorcycles</td></tr>`;
+      grp.moto.forEach(m=>{
+        const km=+m.KMs||0; const ch=+m.Challans||0;
+        distKm+=km; distCh+=ch; grandKm+=km; grandCh+=ch;
+        const reg=m.Reg_No||m.Vehicle||'';
+        const beat=m.PS_Beat||m.Beat||'';
+        s2html+=`<tr><td></td><td>Motorcycle</td><td>${reg}</td><td>${beat}</td><td style="text-align:center">${km}</td><td style="text-align:center">${ch}</td></tr>`;
+      });
+    }
+
+    // District sub-total
+    s2html+=`<tr style="background:#f4f7fb;font-weight:700">
+      <td colspan="4" style="text-align:right;font-size:10px;color:var(--muted)">Sub-total — ${dist}</td>
+      <td style="text-align:center">${distKm}</td>
+      <td style="text-align:center">${distCh}</td>
+    </tr>`;
+  });
+
+  if(grandKm>0||grandCh>0){
+    s2html+=`<tr style="background:#e8f0fb;font-weight:700;font-family:'Rajdhani',sans-serif">
+      <td colspan="4">GRAND TOTAL</td>
+      <td style="text-align:center">${grandKm}</td>
+      <td style="text-align:center">${grandCh}</td>
+    </tr>`;
+  }
+
+  document.getElementById('p-veh2').innerHTML=s2html||'<tr><td colspan="6" style="text-align:center;color:var(--muted)">NIL</td></tr>';
+
   // Volunteers
   const vl=d.vol||[]; let tvol3=0;
   document.getElementById('p-vol').innerHTML=vl.length?
     vl.map(v=>{tvol3+=+v.Count||0;return`<tr><td>${v.District}</td><td style="text-align:center">${v.Count}</td><td>${v.Place}</td><td>${v.Duty}</td></tr>`;}).join('')+
     `<tr style="font-weight:700;background:#f4f7fb"><td>Total</td><td style="text-align:center">${tvol3}</td><td colspan="2"></td></tr>`
     :'<tr><td colspan="4" style="text-align:center;color:var(--muted)">NIL</td></tr>';
+
   // Accidents
   const ha=d.hqaccidents&&d.hqaccidents.length?d.hqaccidents[0]:null;
   document.getElementById('p-cc').textContent=ha?ha.CCTNS||0:'—';
   document.getElementById('p-ed').textContent=ha?ha.eDAR||0:'—';
   document.getElementById('p-ms').textContent=ha?ha.Missing||'NIL':'NIL';
+
   // Fatal
   const fat=d.fatal||[];
   document.getElementById('p-fat').innerHTML=fat.length?
