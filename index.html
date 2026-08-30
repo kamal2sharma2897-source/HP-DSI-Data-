@@ -495,7 +495,7 @@ tr:hover td{background:#f4f7fb;}
 </footer>
 
 <script>
-const API     = 'https://script.google.com/macros/s/AKfycbx4BGZ58DkgHY7_tBbgL9CHrhQmzHfSECGp647-W_p663mVid5OyZLEHoUtdhxVCjsYeQ/exec';
+const API     = 'https://script.google.com/macros/s/AKfycbzXO9UpDbgg45wkP9YK75cS7B99B_LnwBiwJKmroG_yRE6GOwbufxDXrup9WO0bO5f7/exec';
 const HQ_PASS = 'hppolice@2026';
 
 // ── ITMS BORDER DISTRICTS ──
@@ -742,14 +742,14 @@ function getMotos(){
 let rn={itms:0,vol:0,fat:0};
 function addR(t){
   const n=++rn[t]; const tb=document.getElementById(t+'-tb');
-  const tr=document.createElement('tr'); let h=<td style="color:var(--muted);font-size:11px">${n}</td>;
-  const inp=(id,w,ph)=><td><input type="text" id="${id}" placeholder="${ph}" style="width:${w};font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>;
-  const num=(id)=><td><input type="number" id="${id}" value="0" min="0" style="width:65px;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>;
-  const ta=(id)=><td><textarea id="${id}" rows="2" style="width:100%;min-width:150px;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></textarea></td>;
-  if(t==='itms') h+=inp(id${n},'100px','District')+inp(il${n},'100%','No. & Location/Reason');
-  else if(t==='vol') h+=num(vn${n})+inp(vp${n},'100%','Place')+<td><input type="text" id="vd${n}" value="Traffic Duty" style="width:100%;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>;
-  else if(t==='fat') h+=inp(ff${n},'100%','FIR No. & Date')+inp(fps${n},'100%','PS Name')+ta(fb${n});
-  h+=<td><button class="dr" onclick="this.closest('tr').remove()">✕</button></td>;
+  const tr=document.createElement('tr'); let h=`<td style="color:var(--muted);font-size:11px">${n}</td>`;
+  const inp=(id,w,ph)=>`<td><input type="text" id="${id}" placeholder="${ph}" style="width:${w};font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>`;
+  const num=(id)=>`<td><input type="number" id="${id}" value="0" min="0" style="width:65px;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>`;
+  const ta=(id)=>`<td><textarea id="${id}" rows="2" style="width:100%;min-width:150px;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></textarea></td>`;
+  if(t==='itms') h+=inp(`id${n}`,'100px','District')+inp(`il${n}`,'100%','No. & Location/Reason');
+  else if(t==='vol') h+=num(`vn${n}`)+inp(`vp${n}`,'100%','Place')+`<td><input type="text" id="vd${n}" value="Traffic Duty" style="width:100%;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>`;
+  else if(t==='fat') h+=inp(`ff${n}`,'100%','FIR No. & Date')+inp(`fps${n}`,'100%','PS Name')+ta(`fb${n}`);
+  h+=`<td><button class="dr" onclick="this.closest('tr').remove()">✕</button></td>`;
   tr.innerHTML=h; tb.appendChild(tr);
 }
 
@@ -834,7 +834,7 @@ function renderHQ(d){
   ALL_DIST.forEach(x=>{
     const s=rows.find(r=>r.District===x);
     const div=document.createElement('div'); div.className='dc '+(s?'s':'p');
-    div.innerHTML=<div class="dn">${x}</div><div style="margin-top:3px">${s?'<span class="bx bg2">✅ Done</span>':'<span class="bx by">⏳ Pending</span>'}</div>${s?<div style="font-size:9.5px;color:var(--muted);margin-top:2px">${s.Officer||''}</div>:''};
+    div.innerHTML=`<div class="dn">${x}</div><div style="margin-top:3px">${s?'<span class="bx bg2">✅ Done</span>':'<span class="bx by">⏳ Pending</span>'}</div>${s?`<div style="font-size:9.5px;color:var(--muted);margin-top:2px">${s.Officer||''}</div>`:''}`;
     dg.appendChild(div);
   });
   // Table
@@ -851,10 +851,10 @@ function renderHQ(d){
         <td style="text-align:center">${pv}</td><td style="text-align:center">${mo}</td>
         <td style="text-align:center">${km}</td><td style="text-align:center">${ch}</td>
         <td style="text-align:center">${vl}</td>
-        <td style="text-align:center">${it?<span class="bx brd">${it}</span>:'<span class="bx bg2">NIL</span>'}</td>
-        <td style="text-align:center">${fa?<span class="bx brd">${fa}</span>:'NIL'}`;
+        <td style="text-align:center">${it?`<span class="bx brd">${it}</span>`:'<span class="bx bg2">NIL</span>'}</td>
+        <td style="text-align:center">${fa?`<span class="bx brd">${fa}</span>`:'NIL'}`;
     } else {
-      tr.innerHTML=<td><strong>${x}</strong></td><td colspan="9" style="color:var(--muted);font-style:italic">— Pending —</td><td><span class="bx by">⏳</span></td>;
+      tr.innerHTML=`<td><strong>${x}</strong></td><td colspan="9" style="color:var(--muted);font-style:italic">— Pending —</td><td><span class="bx by">⏳</span></td>`;
     }
     tb.appendChild(tr);
   });
@@ -878,10 +878,10 @@ function renderHQ(d){
   }
   // Fatal
   const fl=d.fatal||[];
-  document.getElementById('hq-fat').innerHTML=fl.length?fl.map((f,i)=><tr><td>${i+1}</td><td><strong>${f.District}</strong></td><td>${f.FIR}</td><td>${f.PS}</td><td>${f.Facts}</td></tr>).join(''):'<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px">No fatal cases.</td></tr>';
+  document.getElementById('hq-fat').innerHTML=fl.length?fl.map((f,i)=>`<tr><td>${i+1}</td><td><strong>${f.District}</strong></td><td>${f.FIR}</td><td>${f.PS}</td><td>${f.Facts}</td></tr>`).join(''):'<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px">No fatal cases.</td></tr>';
   // ITMS
   const il=d.itms||[];
-  document.getElementById('hq-itms').innerHTML=il.length?il.map((it,i)=><tr><td>${i+1}</td><td><strong>${it.District}</strong></td><td>${it.Location}</td></tr>).join(''):'<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:12px">No ITMS issues.</td></tr>';
+  document.getElementById('hq-itms').innerHTML=il.length?il.map((it,i)=>`<tr><td>${i+1}</td><td><strong>${it.District}</strong></td><td>${it.Location}</td></tr>`).join(''):'<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:12px">No ITMS issues.</td></tr>';
 }
 
 // PDF
@@ -928,14 +928,14 @@ function buildPDF(d){
   // ITMS-wise vehicle table
   const itmsRows=rows.filter(s=>s.ITMS_Point&&s.ITMS_Point!='');
   document.getElementById('p-veh').innerHTML=itmsRows.length?
-    itmsRows.map(s=><tr><td><strong>${s.ITMS_Point}</strong></td><td style="text-align:center">${s.Veh_In||0}</td><td style="text-align:center">${s.Veh_In_Avg||0}</td><td style="text-align:center">${s.Veh_Out||0}</td><td style="text-align:center">${s.Veh_Out_Avg||0}</td></tr>).join('')+
-    <tr style="font-weight:700;background:#f4f7fb"><td>Total</td><td style="text-align:center">${tvi}</td><td style="text-align:center">${tvia}</td><td style="text-align:center">${tvo}</td><td style="text-align:center">${tvoa}</td></tr>
+    itmsRows.map(s=>`<tr><td><strong>${s.ITMS_Point}</strong></td><td style="text-align:center">${s.Veh_In||0}</td><td style="text-align:center">${s.Veh_In_Avg||0}</td><td style="text-align:center">${s.Veh_Out||0}</td><td style="text-align:center">${s.Veh_Out_Avg||0}</td></tr>`).join('')+
+    `<tr style="font-weight:700;background:#f4f7fb"><td>Total</td><td style="text-align:center">${tvi}</td><td style="text-align:center">${tvia}</td><td style="text-align:center">${tvo}</td><td style="text-align:center">${tvoa}</td></tr>`
     :'<tr><td colspan="5" style="text-align:center;color:var(--muted)">NIL</td></tr>';
   // Non-working ITMS
   const il=d.itms||[];
   document.getElementById('p-itms').innerHTML=il.length?
-    il.map((it,i)=><tr><td>${i+1}</td><td>${it.District}</td><td>${it.Location}</td></tr>).join('')+
-    <tr style="font-weight:700;background:#f4f7fb"><td colspan="2">Total</td><td>${il.length}</td></tr>
+    il.map((it,i)=>`<tr><td>${i+1}</td><td>${it.District}</td><td>${it.Location}</td></tr>`).join('')+
+    `<tr style="font-weight:700;background:#f4f7fb"><td colspan="2">Total</td><td>${il.length}</td></tr>`
     :'<tr><td colspan="3" style="text-align:center;color:var(--muted)">NIL</td></tr>';
   // Section 2 — all patrol + motos combined
   const pt=d.patrol||[]; const mt=d.moto||[];
@@ -945,23 +945,23 @@ function buildPDF(d){
   allVeh2.forEach((v,i)=>{
     const dist=v.District||'';
     if(dist!==lastDist){
-      if(lastDist) s2html+=<tr style="background:#f4f7fb;font-weight:700"><td colspan="3">Sub-total ${lastDist}</td><td style="text-align:center">${distKm}</td><td style="text-align:center">${distCh}</td></tr>;
+      if(lastDist) s2html+=`<tr style="background:#f4f7fb;font-weight:700"><td colspan="3">Sub-total ${lastDist}</td><td style="text-align:center">${distKm}</td><td style="text-align:center">${distCh}</td></tr>`;
       lastDist=dist; distKm=0; distCh=0;
     }
     const km=+v.KMs||0; const ch=+v.Challans||0;
     distKm+=km; distCh+=ch; grandKm+=km; grandCh+=ch;
     const regOrVeh=v.Reg_No||v.Vehicle||'';
     const beat=v.PS_Beat||v.Beat||'';
-    s2html+=<tr><td>${dist}</td><td>${regOrVeh}</td><td>${beat}</td><td style="text-align:center">${km}</td><td style="text-align:center">${ch}</td></tr>;
+    s2html+=`<tr><td>${dist}</td><td>${regOrVeh}</td><td>${beat}</td><td style="text-align:center">${km}</td><td style="text-align:center">${ch}</td></tr>`;
   });
-  if(lastDist) s2html+=<tr style="background:#f4f7fb;font-weight:700"><td colspan="3">Sub-total ${lastDist}</td><td style="text-align:center">${distKm}</td><td style="text-align:center">${distCh}</td></tr>;
-  if(allVeh2.length) s2html+=<tr style="background:#e8f0fb;font-weight:700;font-family:'Rajdhani',sans-serif"><td colspan="3">GRAND TOTAL</td><td style="text-align:center">${grandKm}</td><td style="text-align:center">${grandCh}</td></tr>;
+  if(lastDist) s2html+=`<tr style="background:#f4f7fb;font-weight:700"><td colspan="3">Sub-total ${lastDist}</td><td style="text-align:center">${distKm}</td><td style="text-align:center">${distCh}</td></tr>`;
+  if(allVeh2.length) s2html+=`<tr style="background:#e8f0fb;font-weight:700;font-family:'Rajdhani',sans-serif"><td colspan="3">GRAND TOTAL</td><td style="text-align:center">${grandKm}</td><td style="text-align:center">${grandCh}</td></tr>`;
   document.getElementById('p-veh2').innerHTML=s2html||'<tr><td colspan="5" style="text-align:center;color:var(--muted)">NIL</td></tr>';
   // Volunteers
   const vl=d.vol||[]; let tvol3=0;
   document.getElementById('p-vol').innerHTML=vl.length?
     vl.map(v=>{tvol3+=+v.Count||0;return`<tr><td>${v.District}</td><td style="text-align:center">${v.Count}</td><td>${v.Place}</td><td>${v.Duty}</td></tr>`;}).join('')+
-    <tr style="font-weight:700;background:#f4f7fb"><td>Total</td><td style="text-align:center">${tvol3}</td><td colspan="2"></td></tr>
+    `<tr style="font-weight:700;background:#f4f7fb"><td>Total</td><td style="text-align:center">${tvol3}</td><td colspan="2"></td></tr>`
     :'<tr><td colspan="4" style="text-align:center;color:var(--muted)">NIL</td></tr>';
   // Accidents
   const ha=d.hqaccidents&&d.hqaccidents.length?d.hqaccidents[0]:null;
@@ -971,7 +971,7 @@ function buildPDF(d){
   // Fatal
   const fat=d.fatal||[];
   document.getElementById('p-fat').innerHTML=fat.length?
-    fat.map((f,i)=><tr><td>${i+1}</td><td contenteditable="true">${f.FIR}</td><td contenteditable="true">${f.PS}</td><td contenteditable="true">${f.Facts}</td></tr>).join('')
+    fat.map((f,i)=>`<tr><td>${i+1}</td><td contenteditable="true">${f.FIR}</td><td contenteditable="true">${f.PS}</td><td contenteditable="true">${f.Facts}</td></tr>`).join('')
     :'<tr><td>01</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td>02</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td>03</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td>04</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>';
 }
 
