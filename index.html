@@ -638,7 +638,7 @@ function saveHQAcc(){
 
 function loadHQ(){
   var date=document.getElementById('hq-dt').value;
-  fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'fetch',date:fmtD(date)})})
+  fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'fetch',date:date})})
     .then(function(r){return r.json();})
     .then(function(d){if(d.ok){HD=d;renderHQ(d);}else alert('Error: '+d.msg);})
     .catch(function(e){alert('Load failed: '+e.message);});
@@ -698,7 +698,7 @@ function loadPDF(){
   msg.innerHTML='<span class="sp" style="border-top-color:var(--blue);border-color:rgba(26,58,107,.2)"></span> Loading data...';
   document.getElementById('pdf-print').style.display='none';
   document.getElementById('pdf-body').style.display='none';
-  fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'fetch',date:fmtD(date)})})
+  fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'fetch',date:date})})
     .then(function(r){return r.json();})
     .then(function(d){
       if(d.ok){HD=d;buildPDF(d);msg.innerHTML='PDF ready! Click Print to save.';document.getElementById('pdf-print').style.display='inline-flex';document.getElementById('pdf-body').style.display='block';}
