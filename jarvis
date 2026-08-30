@@ -1,0 +1,429 @@
+"""
+╔══════════════════════════════════════════════════════════╗
+║         J.A.R.V.I.S  —  Your Iron Man Assistant         ║
+║         PC Control + Email + Voice + AI Brain            ║
+╚══════════════════════════════════════════════════════════╝
+
+SETUP (run these once in terminal):
+    pip install speechrecognition pyttsx3 openai pyautogui psutil
+
+For email, update EMAIL_ADDRESS and EMAIL_PASSWORD below.
+For Gmail: use an App Password (not your real password).
+  → Google Account → Security → 2-Step Verification → App Passwords
+
+USAGE:
+    python jarvis_assistant.py
+    Then speak or type commands like:
+      "open notepad"
+      "what's my battery level"
+      "take a screenshot"
+      "send mail to friend@gmail.com saying Hello there"
+      "search python tutorials"
+      "shutdown pc"
+"""
+
+import os
+import sys
+import time
+import subprocess
+import webbrowser
+import smtplib
+import datetime
+import platform
+import re
+from email.mime.text import MIMEText
+from email.mime.multipart import MIMEMultipart
+
+# ─── CONFIGURATION — Edit these ──────────────────────────
+EMAIL_ADDRESS  = "your_email@gmail.com"      # Your Gmail
+EMAIL_PASSWORD = "your_app_password_here"    # Gmail App Password
+ASSISTANT_NAME = "Jarvis"
+WAKE_WORD      = "jarvis"                    # Say this to wake it up
+USE_OPENAI     = False                       # Set True + add key for AI replies
+OPENAI_API_KEY = ""                          # Optional: sk-...
+# ─────────────────────────────────────────────────────────
+
+# ─── Try importing optional libraries ────────────────────
+try:
+    import speech_recognition as sr
+    VOICE_AVAILABLE = True
+except ImportError:
+    VOICE_AVAILABLE = False
+    print("[!] SpeechRecognition not installed. Text mode only.")
+    print("    Run: pip install speechrecognition")
+
+try:
+    import pyttsx3
+    tts_engine = pyttsx3.init()
+    tts_engine.setProperty("rate", 180)   # Speed
+    tts_engine.setProperty("volume", 1.0)
+    TTS_AVAILABLE = True
+except ImportError:
+    TTS_AVAILABLE = False
+    print("[!] pyttsx3 not installed. No voice output.")
+    print("    Run: pip install pyttsx3")
+
+try:
+    import psutil
+    PSUTIL_AVAILABLE = True
+except ImportError:
+    PSUTIL_AVAILABLE = False
+
+try:
+    import pyautogui
+    PYAUTOGUI_AVAILABLE = True
+except ImportError:
+    PYAUTOGUI_AVAILABLE = False
+
+# ─── Text-to-Speech ──────────────────────────────────────
+def speak(text: str):
+    """JARVIS speaks and prints."""
+    print(f"\n🤖 {ASSISTANT_NAME}: {text}")
+    if TTS_AVAILABLE:
+        tts_engine.say(text)
+        tts_engine.runAndWait()
+
+# ─── Voice Input ─────────────────────────────────────────
+def listen() -> str:
+    """Listen to microphone and return recognized text."""
+    if not VOICE_AVAILABLE:
+        return input("\n🎤 You (type): ").strip().lower()
+
+    recognizer = sr.Recognizer()
+    with sr.Microphone() as source:
+        print("\n🎤 Listening...")
+        recognizer.adjust_for_ambient_noise(source, duration=0.5)
+        try:
+            audio = recognizer.listen(source, timeout=5, phrase_time_limit=8)
+            text = recognizer.recognize_google(audio).lower()
+            print(f"   You said: \"{text}\"")
+            return text
+        except sr.WaitTimeoutError:
+            return ""
+        except sr.UnknownValueError:
+            speak("I didn't catch that. Please repeat.")
+            return ""
+        except sr.RequestError:
+            speak("Speech service unavailable. Switching to text.")
+            return input("You (type): ").strip().lower()
+
+# ─── Email ───────────────────────────────────────────────
+def send_email(to: str, subject: str, body: str) -> bool:
+    """Send an email via Gmail SMTP."""
+    if EMAIL_ADDRESS == "your_email@gmail.com":
+        speak("Email is not configured. Please edit the EMAIL_ADDRESS and EMAIL_PASSWORD in the script.")
+        return False
+    try:
+        msg = MIMEMultipart()
+        msg["From"]    = EMAIL_ADDRESS
+        msg["To"]      = to
+        msg["Subject"] = subject
+        msg.attach(MIMEText(body, "plain"))
+
+        with smtplib.SMTP_SSL("smtp.gmail.com", 465) as server:
+            server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)
+            server.sendmail(EMAIL_ADDRESS, to, msg.as_string())
+        return True
+    except smtplib.SMTPAuthenticationError:
+        speak("Email authentication failed. Check your App Password.")
+        return False
+    except Exception as e:
+        speak(f"Email failed: {str(e)}")
+        return False
+
+def parse_email_command(command: str):
+    """
+    Parse commands like:
+      "send mail to bob@gmail.com saying hello there"
+      "send email to bob@gmail.com subject meeting body please join"
+    """
+    email_pattern = r"[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+"
+    to_match = re.search(email_pattern, command)
+
+    if not to_match:
+        speak("I couldn't find an email address. Say: send mail to someone@gmail.com saying your message")
+        return
+
+    to_addr = to_match.group()
+
+    # Extract body after "saying" or "body"
+    body = ""
+    subject = "Message from JARVIS"
+    for keyword in ["saying", "body", "message"]:
+        if keyword in command:
+            body = command.split(keyword, 1)[-1].strip()
+            break
+
+    if "subject" in command:
+        parts = command.split("subject", 1)[-1].strip()
+        if "body" in parts or "saying" in parts:
+            for kw in ["body", "saying"]:
+                if kw in parts:
+                    subject = parts.split(kw)[0].strip()
+                    body = parts.split(kw, 1)[-1].strip()
+                    break
+        else:
+            subject = parts.strip()
+
+    if not body:
+        speak("What should the message say?")
+        body = listen()
+        if not body:
+            return
+
+    speak(f"Sending email to {to_addr}. Subject: {subject}. Body: {body}")
+    if send_email(to_addr, subject, body):
+        speak("Email sent successfully, sir.")
+    else:
+        speak("Failed to send the email.")
+
+# ─── PC Control ──────────────────────────────────────────
+def open_application(app_name: str):
+    """Open common applications by name."""
+    apps = {
+        "notepad":      "notepad",
+        "calculator":   "calc",
+        "paint":        "mspaint",
+        "browser":      "start chrome",
+        "chrome":       "start chrome",
+        "firefox":      "start firefox",
+        "explorer":     "explorer",
+        "file manager": "explorer",
+        "task manager": "taskmgr",
+        "word":         "start winword",
+        "excel":        "start excel",
+        "powerpoint":   "start powerpnt",
+        "vs code":      "code",
+        "terminal":     "start cmd",
+        "cmd":          "start cmd",
+    }
+
+    system = platform.system()
+    key = app_name.lower().strip()
+    if key in apps:
+        try:
+            if system == "Windows":
+                os.system(apps[key])
+            elif system == "Darwin":  # macOS
+                subprocess.Popen(["open", "-a", app_name])
+            else:  # Linux
+                subprocess.Popen([app_name])
+            speak(f"Opening {app_name}.")
+        except Exception as e:
+            speak(f"Couldn't open {app_name}: {e}")
+    else:
+        speak(f"I don't know how to open {app_name} yet.")
+
+def take_screenshot():
+    if PYAUTOGUI_AVAILABLE:
+        filename = f"screenshot_{datetime.datetime.now().strftime('%Y%m%d_%H%M%S')}.png"
+        pyautogui.screenshot(filename)
+        speak(f"Screenshot saved as {filename}.")
+    else:
+        speak("PyAutoGUI is not installed. Run: pip install pyautogui")
+
+def get_battery():
+    if PSUTIL_AVAILABLE:
+        battery = psutil.sensors_battery()
+        if battery:
+            pct = int(battery.percent)
+            charging = "and charging" if battery.power_plugged else "and not charging"
+            speak(f"Battery is at {pct} percent {charging}.")
+        else:
+            speak("Could not read battery info.")
+    else:
+        speak("psutil is not installed. Run: pip install psutil")
+
+def get_system_info():
+    info = []
+    info.append(f"System: {platform.system()} {platform.release()}")
+    if PSUTIL_AVAILABLE:
+        cpu = psutil.cpu_percent(interval=1)
+        ram = psutil.virtual_memory()
+        info.append(f"CPU usage: {cpu}%")
+        info.append(f"RAM: {ram.percent}% used ({round(ram.used/1e9,1)} GB of {round(ram.total/1e9,1)} GB)")
+    speak(". ".join(info))
+
+def search_web(query: str):
+    url = f"https://www.google.com/search?q={query.replace(' ', '+')}"
+    webbrowser.open(url)
+    speak(f"Searching for {query}.")
+
+def shutdown_pc():
+    speak("Shutting down the system in 10 seconds. Say cancel to abort.")
+    time.sleep(3)
+    if platform.system() == "Windows":
+        os.system("shutdown /s /t 10")
+    elif platform.system() == "Darwin":
+        os.system("sudo shutdown -h +1")
+    else:
+        os.system("shutdown -h +1")
+
+def restart_pc():
+    speak("Restarting the system.")
+    if platform.system() == "Windows":
+        os.system("shutdown /r /t 5")
+    elif platform.system() == "Darwin":
+        os.system("sudo shutdown -r now")
+    else:
+        os.system("shutdown -r now")
+
+def get_time():
+    now = datetime.datetime.now()
+    speak(f"The time is {now.strftime('%I:%M %p')} on {now.strftime('%A, %B %d %Y')}.")
+
+def set_volume(level: str):
+    """Basic volume control on Windows."""
+    if platform.system() == "Windows" and PYAUTOGUI_AVAILABLE:
+        if "mute" in level:
+            pyautogui.press("volumemute")
+            speak("Volume muted.")
+        elif "up" in level or "increase" in level:
+            for _ in range(5):
+                pyautogui.press("volumeup")
+            speak("Volume increased.")
+        elif "down" in level or "decrease" in level:
+            for _ in range(5):
+                pyautogui.press("volumedown")
+            speak("Volume decreased.")
+    else:
+        speak("Volume control requires PyAutoGUI on Windows.")
+
+# ─── AI Fallback (Optional) ──────────────────────────────
+def ask_ai(question: str) -> str:
+    """Send unknown questions to OpenAI (optional)."""
+    if not USE_OPENAI or not OPENAI_API_KEY:
+        return "I'm not sure about that. You can enable OpenAI in my settings for smarter replies."
+    try:
+        import openai
+        openai.api_key = OPENAI_API_KEY
+        response = openai.ChatCompletion.create(
+            model="gpt-3.5-turbo",
+            messages=[
+                {"role": "system", "content": f"You are {ASSISTANT_NAME}, an Iron Man-style AI assistant. Be concise and helpful."},
+                {"role": "user",   "content": question}
+            ],
+            max_tokens=200
+        )
+        return response.choices[0].message.content.strip()
+    except Exception as e:
+        return f"AI error: {str(e)}"
+
+# ─── Command Router ──────────────────────────────────────
+def process_command(command: str):
+    """Route voice/text commands to the right function."""
+    cmd = command.lower().strip()
+
+    # ── Time & Date ──────────────────────────────────────
+    if any(w in cmd for w in ["time", "date", "day", "today"]):
+        get_time()
+
+    # ── Email ────────────────────────────────────────────
+    elif any(w in cmd for w in ["send mail", "send email", "email to"]):
+        parse_email_command(cmd)
+
+    # ── Screenshot ───────────────────────────────────────
+    elif any(w in cmd for w in ["screenshot", "screen capture", "capture screen"]):
+        take_screenshot()
+
+    # ── Battery ──────────────────────────────────────────
+    elif any(w in cmd for w in ["battery", "charge", "power level"]):
+        get_battery()
+
+    # ── System Info ──────────────────────────────────────
+    elif any(w in cmd for w in ["system info", "cpu", "ram", "memory", "system status"]):
+        get_system_info()
+
+    # ── Volume ───────────────────────────────────────────
+    elif "volume" in cmd or "mute" in cmd:
+        set_volume(cmd)
+
+    # ── Open Apps ────────────────────────────────────────
+    elif cmd.startswith("open "):
+        app = cmd.replace("open ", "").strip()
+        open_application(app)
+
+    # ── Web Search ───────────────────────────────────────
+    elif any(w in cmd for w in ["search", "google", "look up", "find"]):
+        for kw in ["search for", "search", "google", "look up", "find"]:
+            if kw in cmd:
+                query = cmd.split(kw, 1)[-1].strip()
+                search_web(query)
+                break
+
+    # ── YouTube ──────────────────────────────────────────
+    elif "youtube" in cmd:
+        query = cmd.replace("play", "").replace("youtube", "").strip()
+        url = f"https://www.youtube.com/results?search_query={query.replace(' ', '+')}"
+        webbrowser.open(url)
+        speak(f"Opening YouTube for {query}.")
+
+    # ── Shutdown / Restart ───────────────────────────────
+    elif any(w in cmd for w in ["shutdown", "shut down", "power off", "turn off pc"]):
+        shutdown_pc()
+    elif any(w in cmd for w in ["restart", "reboot"]):
+        restart_pc()
+
+    # ── Greetings ────────────────────────────────────────
+    elif any(w in cmd for w in ["hello", "hi", "hey", "good morning", "good evening"]):
+        hour = datetime.datetime.now().hour
+        if hour < 12:
+            speak("Good morning! All systems are online and ready.")
+        elif hour < 18:
+            speak("Good afternoon! How can I assist you today?")
+        else:
+            speak("Good evening! What do you need?")
+
+    # ── Exit ─────────────────────────────────────────────
+    elif any(w in cmd for w in ["exit", "quit", "goodbye", "bye", "stop"]):
+        speak("Goodbye. Powering down assistant.")
+        sys.exit(0)
+
+    # ── Help ─────────────────────────────────────────────
+    elif any(w in cmd for w in ["help", "what can you do", "commands"]):
+        speak(
+            "I can: tell you the time, open apps like Notepad or Chrome, "
+            "take screenshots, check battery and system stats, "
+            "search the web, open YouTube, control volume, "
+            "send emails, and shutdown or restart your PC."
+        )
+
+    # ── AI Fallback ──────────────────────────────────────
+    else:
+        reply = ask_ai(cmd)
+        speak(reply)
+
+# ─── Main Loop ───────────────────────────────────────────
+def main():
+    print("=" * 60)
+    print(f"  {ASSISTANT_NAME} — Iron Man AI Assistant")
+    print("=" * 60)
+    print(f"  Wake word : '{WAKE_WORD}'")
+    print(f"  Voice     : {'✅ Active' if VOICE_AVAILABLE else '❌ Text mode only'}")
+    print(f"  TTS       : {'✅ Active' if TTS_AVAILABLE else '❌ Disabled'}")
+    print(f"  Email     : {'✅ Configured' if EMAIL_ADDRESS != 'your_email@gmail.com' else '⚠️  Not configured'}")
+    print(f"  AI brain  : {'✅ OpenAI' if USE_OPENAI else '⚠️  Disabled (set USE_OPENAI=True)'}")
+    print("=" * 60)
+    print("  Say 'help' to see what I can do. Say 'exit' to quit.")
+    print("=" * 60)
+
+    speak(f"Hello! I am {ASSISTANT_NAME}. All systems are online. How can I assist you?")
+
+    while True:
+        try:
+            command = listen()
+            if not command:
+                continue
+
+            # Wake word check (optional — remove if you want always-on)
+            # if WAKE_WORD not in command:
+            #     continue
+
+            process_command(command)
+
+        except KeyboardInterrupt:
+            speak("Shutting down. Goodbye!")
+            break
+
+if __name__ == "__main__":
+    main()
