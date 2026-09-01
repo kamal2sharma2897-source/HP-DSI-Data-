@@ -126,7 +126,7 @@ tr:hover td{background:#f4f7fb;}
         <select id="f-rank">
           <option value="">— Select —</option>
           <option>Constable</option><option>Head Constable</option><option>ASI</option>
-          <option>Sub-Inspector</option><option>Inspector</option><option>DSP</option><option>SP</option>
+          <option>Sub-Inspector</option><option>Inspector</option>
         </select>
       </div>
     </div>
@@ -278,30 +278,41 @@ tr:hover td{background:#f4f7fb;}
     <div style="text-align:center;margin-bottom:12px">
       <h2>TRAFFIC DSI &nbsp;<span id="p-title-date">—</span></h2>
       <div class="subtitle">Himachal Pradesh Police &nbsp;|&nbsp; Traffic, Tourist &amp; Railways Wing</div>
-      <div style="margin:10px auto;max-width:320px">
-        <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #ddd;border-radius:6px;background:#f0f7ff">
-          <path d="M80,40 L130,15 L190,10 L250,20 L310,15 L360,45 L375,90 L365,130 L345,160 L320,190 L295,230 L260,268 L215,285 L170,278 L125,260 L90,230 L68,195 L55,155 L50,110 L58,75 Z" fill="#d4edda" stroke="#1a6b3a" stroke-width="2.5"/>
-          <text x="105" y="50" font-size="10" fill="#0a1628" font-weight="700">Chamba</text>
-          <text x="215" y="38" font-size="10" fill="#0a1628" font-weight="700">Lahaul &amp; Spiti</text>
-          <text x="78" y="95" font-size="10" fill="#0a1628" font-weight="700">Nurpur</text>
-          <text x="130" y="90" font-size="10" fill="#0a1628" font-weight="700">Kangra</text>
-          <text x="205" y="95" font-size="10" fill="#0a1628" font-weight="700">Kullu</text>
-          <text x="295" y="95" font-size="10" fill="#0a1628" font-weight="700">Kinnaur</text>
-          <text x="72" y="140" font-size="10" fill="#0a1628" font-weight="700">Una</text>
-          <text x="122" y="135" font-size="10" fill="#0a1628" font-weight="700">Hamirpur</text>
-          <text x="178" y="135" font-size="10" fill="#0a1628" font-weight="700">Mandi</text>
-          <text x="100" y="178" font-size="10" fill="#0a1628" font-weight="700">Bilaspur</text>
-          <text x="160" y="185" font-size="10" fill="#0a1628" font-weight="700">Shimla</text>
-          <text x="92" y="215" font-size="10" fill="#0a1628" font-weight="700">Baddi</text>
-          <text x="138" y="222" font-size="10" fill="#0a1628" font-weight="700">Solan</text>
-          <text x="188" y="245" font-size="10" fill="#0a1628" font-weight="700">Sirmour</text>
-          <circle cx="87" cy="148" r="6" fill="#e2c46a" stroke="#c8a84b" stroke-width="2"/>
-          <circle cx="112" cy="183" r="6" fill="#e2c46a" stroke="#c8a84b" stroke-width="2"/>
-          <circle cx="148" cy="228" r="6" fill="#e2c46a" stroke="#c8a84b" stroke-width="2"/>
-          <circle cx="162" cy="195" r="6" fill="#e2c46a" stroke="#c8a84b" stroke-width="2"/>
-          <circle cx="205" cy="255" r="6" fill="#e2c46a" stroke="#c8a84b" stroke-width="2"/>
-          <circle cx="45" cy="280" r="5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
-          <text x="55" y="284" font-size="8" fill="#555">ITMS Border Points</text>
+      <div style="margin:10px auto;max-width:380px">
+        <svg viewBox="0 0 500 430" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #ddd;border-radius:6px;background:#f0f7ff">
+          <path id="map-Chamba" d="M40,30 L140,15 L178,58 L152,112 L92,132 L45,98 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-LahaulSpiti" d="M178,58 L262,20 L342,42 L360,112 L302,152 L232,132 L178,110 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-Kangra" d="M45,98 L92,132 L152,112 L178,110 L192,152 L152,192 L92,197 L57,152 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-Una" d="M57,152 L92,197 L82,242 L42,237 L27,192 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-Hamirpur" d="M92,197 L152,192 L167,227 L132,247 L82,242 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-Kullu" d="M232,132 L302,152 L312,232 L262,262 L212,232 L192,152 L178,110 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-Kinnaur" d="M302,152 L360,112 L422,152 L432,232 L382,262 L312,232 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-Mandi" d="M167,227 L212,232 L262,262 L242,302 L192,292 L152,272 L132,247 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-Bilaspur" d="M132,247 L152,272 L142,302 L97,292 L82,267 L82,242 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-Solan" d="M152,272 L192,292 L202,332 L162,352 L122,337 L112,302 L142,302 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-Shimla" d="M242,302 L262,262 L312,232 L302,302 L272,342 L222,347 L202,332 L192,292 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+          <path id="map-Sirmaur" d="M162,352 L202,332 L222,347 L212,382 L162,392 L132,372 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.5"/>
+
+          <text x="78" y="70" font-size="9.5" fill="#0a1628" font-weight="700">Chamba</text>
+          <text x="240" y="65" font-size="9.5" fill="#0a1628" font-weight="700">Lahaul &amp; Spiti</text>
+          <text x="90" y="150" font-size="9.5" fill="#0a1628" font-weight="700">Kangra</text>
+          <text x="42" y="212" font-size="9.5" fill="#0a1628" font-weight="700">Una</text>
+          <text x="105" y="220" font-size="9" fill="#0a1628" font-weight="700">Hamirpur</text>
+          <text x="235" y="190" font-size="9.5" fill="#0a1628" font-weight="700">Kullu</text>
+          <text x="350" y="195" font-size="9.5" fill="#0a1628" font-weight="700">Kinnaur</text>
+          <text x="175" y="262" font-size="9.5" fill="#0a1628" font-weight="700">Mandi</text>
+          <text x="93" y="270" font-size="9" fill="#0a1628" font-weight="700">Bilaspur</text>
+          <text x="140" y="315" font-size="9.5" fill="#0a1628" font-weight="700">Solan</text>
+          <text x="240" y="290" font-size="9.5" fill="#0a1628" font-weight="700">Shimla</text>
+          <text x="155" y="367" font-size="9" fill="#0a1628" font-weight="700">Sirmaur</text>
+
+          <circle cx="130" cy="163" r="5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
+          <circle cx="58" cy="207" r="5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
+          <circle cx="108" cy="258" r="5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
+          <circle cx="150" cy="298" r="5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
+          <circle cx="195" cy="368" r="5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
+          <text x="10" y="418" font-size="8" fill="#555">● ITMS Border Points</text>
+          <text x="330" y="418" font-size="8" fill="#555">Shade = Challan Intensity</text>
         </svg>
       </div>
       <div style="font-size:10px;color:var(--muted);margin-top:4px">Ref: <span id="p-ref">—</span> &nbsp;|&nbsp; Generated: <span id="p-gen">—</span></div>
@@ -375,7 +386,7 @@ tr:hover td{background:#f4f7fb;}
 
     <div class="pf">
       <div><strong>HP Police — Traffic, Tourist &amp; Railways Wing</strong><br>DSI Report &nbsp;|&nbsp; For Official Use Only</div>
-      <div><div class="sig" contenteditable="true">DSP/SP Traffic (PHQ)</div></div>
+      <div><div class="sig" contenteditable="true">&nbsp;</div></div>
     </div>
   </div>
 </main>
@@ -436,6 +447,30 @@ var MOTOS = {
 };
 
 var ALL_DIST=['Baddi (BBN)','Bilaspur','Chamba','PD Dehra','Hamirpur','Kangra','Kinnaur','Kullu','Lahaul & Spiti','Mandi','PD Nurpur','Shimla','Sirmour','Solan','Una'];
+
+var GEO_DIST_MAP = {
+  'Chamba':['Chamba'],
+  'LahaulSpiti':['Lahaul & Spiti'],
+  'Kangra':['Kangra','PD Dehra','PD Nurpur','GRPS Kangra'],
+  'Una':['Una','OPGRP Una'],
+  'Hamirpur':['Hamirpur'],
+  'Kullu':['Kullu','TTPS Bhunter'],
+  'Kinnaur':['Kinnaur'],
+  'Mandi':['Mandi','TTPS Nerchowk'],
+  'Bilaspur':['Bilaspur'],
+  'Solan':['Solan','Baddi (BBN)','TTPS Baghed'],
+  'Shimla':['Shimla','GRPS Shimla'],
+  'Sirmaur':['Sirmour']
+};
+
+function challanColor(val,max){
+  if(!max||max<=0) return '#eef2f7';
+  var t=Math.min(val/max,1);
+  var r=Math.round(255+t*(139-255));
+  var g=Math.round(243+t*(0-243));
+  var b=Math.round(205+t*(0-205));
+  return 'rgb('+r+','+g+','+b+')';
+}
 var HD={summary:[],moto:[],patrol:[],vol:[],itms:[],fatal:[],hqaccidents:[]};
 var hqUnlocked=false;
 
@@ -651,7 +686,10 @@ function renderHQ(d){
   ALL_DIST.forEach(function(x){
     var s=rows.find(function(r){return r.District===x;});
     var div=document.createElement('div');div.className='dc '+(s?'s':'p');
-    div.innerHTML='<div class="dn">'+x+'</div><div style="margin-top:3px">'+(s?'<span class="bx bg2">Done</span>':'<span class="bx by">Pending</span>')+'</div>'+(s?'<div style="font-size:9.5px;color:var(--muted);margin-top:2px">'+(s.Officer||'')+'</div>':'');
+    div.style.cursor='pointer';
+    div.title='Click to edit/correct this district\'s entry';
+    div.innerHTML='<div class="dn">'+x+'</div><div style="margin-top:3px">'+(s?'<span class="bx bg2">Done</span>':'<span class="bx by">Pending</span>')+'</div>'+(s?'<div style="font-size:9.5px;color:var(--muted);margin-top:2px">'+(s.Officer||'')+'</div><div style="font-size:9px;color:var(--blue);margin-top:3px;font-weight:600">✏️ Click to edit</div>':'<div style="font-size:9px;color:var(--blue);margin-top:3px;font-weight:600">✏️ Click to fill</div>');
+    div.onclick=function(){editDistrict(x);};
     dg.appendChild(div);
   });
   var tb=document.getElementById('hq-tb');tb.innerHTML='';
@@ -682,6 +720,73 @@ function renderHQ(d){
   document.getElementById('hq-fat').innerHTML=fl.length?fl.map(function(f,i){return '<tr><td>'+(i+1)+'</td><td><strong>'+f.District+'</strong></td><td>'+f.FIR+'</td><td>'+f.PS+'</td><td>'+f.Facts+'</td></tr>';}).join(''):'<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px">No fatal cases.</td></tr>';
   var il=d.itms||[];
   document.getElementById('hq-itms').innerHTML=il.length?il.map(function(it,i){return '<tr><td>'+(i+1)+'</td><td><strong>'+it.District+'</strong></td><td>'+it.Location+'</td></tr>';}).join(''):'<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:12px">No ITMS issues.</td></tr>';
+}
+
+function editDistrict(dist){
+  var dateVal=document.getElementById('hq-dt').value;
+  document.getElementById('itms-tb').innerHTML='';
+  document.getElementById('vol-tb').innerHTML='';
+  document.getElementById('fat-tb').innerHTML='';
+  rn={itms:0,vol:0,fat:0};
+  go('dist');
+  document.getElementById('f-date').value=dateVal;
+  document.getElementById('f-dist').value=dist;
+  onDistrictChange();
+
+  var srow=(HD.summary||[]).find(function(r){return r.District===dist;});
+  if(srow){
+    document.getElementById('f-off').value=srow.Officer||'';
+    document.getElementById('f-rank').value=srow.Rank||'';
+    if(document.getElementById('f-vin')) document.getElementById('f-vin').value=srow.Veh_In||0;
+    if(document.getElementById('f-via')) document.getElementById('f-via').value=srow.Veh_In_Avg||0;
+    if(document.getElementById('f-vout')) document.getElementById('f-vout').value=srow.Veh_Out||0;
+    if(document.getElementById('f-voa')) document.getElementById('f-voa').value=srow.Veh_Out_Avg||0;
+    updVehTotals();
+  }
+
+  var prows=(HD.patrol||[]).filter(function(r){return r.District===dist;});
+  (PATROL[dist]||[]).forEach(function(v,i){
+    var match=prows.find(function(r){return r.Vehicle===v.n;});
+    if(match){
+      if(document.getElementById('pkm'+i)) document.getElementById('pkm'+i).value=match.KMs||0;
+      if(document.getElementById('pch'+i)) document.getElementById('pch'+i).value=match.Challans||0;
+    }
+  });
+
+  var mrows=(HD.moto||[]).filter(function(r){return r.District===dist;});
+  (MOTOS[dist]||[]).forEach(function(m,i){
+    var match=mrows.find(function(r){return r.Reg_No===m.r;});
+    if(match){
+      if(document.getElementById('mkm'+i)) document.getElementById('mkm'+i).value=match.KMs||0;
+      if(document.getElementById('mch'+i)) document.getElementById('mch'+i).value=match.Challans||0;
+    }
+  });
+
+  (HD.vol||[]).filter(function(r){return r.District===dist;}).forEach(function(v){
+    addRow('vol');
+    var n=rn.vol;
+    document.getElementById('vn'+n).value=v.Count||0;
+    document.getElementById('vp'+n).value=v.Place||'';
+    document.getElementById('vd'+n).value=v.Duty||'Traffic Duty';
+  });
+
+  (HD.itms||[]).filter(function(r){return r.District===dist;}).forEach(function(it){
+    addRow('itms');
+    var n=rn.itms;
+    document.getElementById('id'+n).value=it.District||dist;
+    document.getElementById('il'+n).value=it.Location||'';
+  });
+
+  (HD.fatal||[]).filter(function(r){return r.District===dist;}).forEach(function(f){
+    addRow('fat');
+    var n=rn.fat;
+    document.getElementById('ff'+n).value=f.FIR||'';
+    document.getElementById('fps'+n).value=f.PS||'';
+    document.getElementById('fb'+n).value=f.Facts||'';
+  });
+
+  document.getElementById('sub-msg').style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
 }
 
 function goPDF(){
@@ -716,6 +821,22 @@ function buildPDF(d){
   document.getElementById('p-ref').textContent='DSI/'+date.replace(/-/g,'')+'/CONSOLIDATED';
   document.getElementById('p-gen').textContent=new Date().toLocaleString('en-IN');
   var rows=d.summary||[];
+
+  var geoTotals={};
+  Object.keys(GEO_DIST_MAP).forEach(function(gd){
+    var t=0;
+    GEO_DIST_MAP[gd].forEach(function(rd){
+      rows.forEach(function(s){ if(s.District===rd) t+=(+s.Total_Challans||0); });
+    });
+    geoTotals[gd]=t;
+  });
+  var maxCh=0;
+  Object.keys(geoTotals).forEach(function(gd){ if(geoTotals[gd]>maxCh) maxCh=geoTotals[gd]; });
+  Object.keys(geoTotals).forEach(function(gd){
+    var el=document.getElementById('map-'+gd);
+    if(el) el.setAttribute('fill',challanColor(geoTotals[gd],maxCh));
+  });
+
   var tvi=0,tvia=0,tvo=0,tvoa=0;
   rows.forEach(function(s){tvi+=+s.Veh_In||0;tvia+=+s.Veh_In_Avg||0;tvo+=+s.Veh_Out||0;tvoa+=+s.Veh_Out_Avg||0;});
   document.getElementById('p-total-vi').textContent=tvi.toLocaleString('en-IN');
@@ -733,22 +854,28 @@ function buildPDF(d){
     '<tr style="font-weight:700;background:#f4f7fb"><td colspan="2">Total</td><td>'+il.length+'</td></tr>'
     :'<tr><td colspan="3" style="text-align:center;color:var(--muted)">NIL</td></tr>';
   var pt=d.patrol||[];var mt=d.moto||[];
-  var allV2=pt.concat(mt);
-  var s2html='';var lastDist='';var dkm=0,dch=0,gkm=0,gch=0;
-  allV2.forEach(function(v){
-    var dist=v.District||'';
-    if(dist!==lastDist){
-      if(lastDist) s2html+='<tr style="background:#f4f7fb;font-weight:700"><td colspan="3">Sub-total '+lastDist+'</td><td style="text-align:center">'+dkm+'</td><td style="text-align:center">'+dch+'</td></tr>';
-      lastDist=dist;dkm=0;dch=0;
-    }
-    var km=+v.KMs||0;var ch=+v.Challans||0;
-    dkm+=km;dch+=ch;gkm+=km;gch+=ch;
-    var reg=v.Reg_No||v.Vehicle||'';
-    var beat=v.PS_Beat||v.Beat||'';
-    s2html+='<tr><td>'+dist+'</td><td>'+reg+'</td><td>'+beat+'</td><td style="text-align:center">'+km+'</td><td style="text-align:center">'+ch+'</td></tr>';
+  var districtsWithVeh=ALL_DIST.filter(function(x){
+    return pt.some(function(r){return r.District===x;})||mt.some(function(r){return r.District===x;});
   });
-  if(lastDist) s2html+='<tr style="background:#f4f7fb;font-weight:700"><td colspan="3">Sub-total '+lastDist+'</td><td style="text-align:center">'+dkm+'</td><td style="text-align:center">'+dch+'</td></tr>';
-  if(allV2.length) s2html+='<tr style="background:#e8f0fb;font-weight:700"><td colspan="3">GRAND TOTAL</td><td style="text-align:center">'+gkm+'</td><td style="text-align:center">'+gch+'</td></tr>';
+  var s2html='';var gkm=0,gch=0;
+  districtsWithVeh.forEach(function(dist){
+    var dp=pt.filter(function(r){return r.District===dist;});
+    var dm=mt.filter(function(r){return r.District===dist;});
+    var dkm=0,dch=0;
+    dp.forEach(function(v){
+      var km=+v.KMs||0,ch=+v.Challans||0;
+      dkm+=km;dch+=ch;
+      s2html+='<tr><td>'+dist+'</td><td>'+(v.Vehicle||'')+' <span style="color:var(--muted);font-size:9px">(Patrol)</span></td><td>'+(v.Beat||'')+'</td><td style="text-align:center">'+km+'</td><td style="text-align:center">'+ch+'</td></tr>';
+    });
+    dm.forEach(function(m){
+      var km=+m.KMs||0,ch=+m.Challans||0;
+      dkm+=km;dch+=ch;
+      s2html+='<tr><td>'+dist+'</td><td>'+(m.Reg_No||'')+' <span style="color:var(--muted);font-size:9px">(Motorcycle)</span></td><td>'+(m.PS_Beat||'')+'</td><td style="text-align:center">'+km+'</td><td style="text-align:center">'+ch+'</td></tr>';
+    });
+    gkm+=dkm;gch+=dch;
+    s2html+='<tr style="background:#f4f7fb;font-weight:700"><td colspan="3">Sub-total '+dist+'</td><td style="text-align:center">'+dkm+'</td><td style="text-align:center">'+dch+'</td></tr>';
+  });
+  if(districtsWithVeh.length) s2html+='<tr style="background:#e8f0fb;font-weight:700"><td colspan="3">GRAND TOTAL</td><td style="text-align:center">'+gkm+'</td><td style="text-align:center">'+gch+'</td></tr>';
   document.getElementById('p-veh2').innerHTML=s2html||'<tr><td colspan="5" style="text-align:center;color:var(--muted)">NIL</td></tr>';
   var vl=d.vol||[];var tvol3=0;
   document.getElementById('p-vol').innerHTML=vl.length?
