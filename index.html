@@ -61,53 +61,32 @@ tr:hover td{background:#f4f7fb;}
 .phd{background:linear-gradient(135deg,#0d1f3c,var(--blue));padding:20px;text-align:center;color:#fff;}
 .phd .ico{font-size:36px;margin-bottom:8px;}
 .phd h2{font-family:'Rajdhani',sans-serif;font-size:17px;font-weight:700;letter-spacing:1px;text-transform:uppercase;}
-/* PDF */
 @media print{
-  header,.tabs,.btns,.ar,.dr,#pg-dist,#pg-hq,#pg-admin{display:none!important;}
+  header,.tabs,.btns,.ar,.dr,#pg-dist,#pg-hq{display:none!important;}
   #pg-pdf{display:block!important;}
   body{background:#fff;}
   .pw{box-shadow:none!important;max-width:100%!important;}
-  .pt td[contenteditable]{background:none!important;}
 }
 .pw{background:#fff;max-width:760px;margin:0 auto;box-shadow:var(--sh);padding:22px 26px;font-size:11.5px;}
 .pw h2{font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;text-align:center;text-transform:uppercase;color:var(--navy);margin-bottom:4px;}
-.pw .subtitle{text-align:center;font-size:11px;color:var(--muted);margin-bottom:14px;}
-.pw .ref{text-align:right;font-size:10px;color:var(--muted);margin-bottom:10px;}
+.subtitle{text-align:center;font-size:11px;color:var(--muted);margin-bottom:6px;}
 .ps h3{font-family:'Rajdhani',sans-serif;font-size:11.5px;font-weight:700;text-transform:uppercase;color:#fff;background:var(--navy);padding:4px 9px;margin-bottom:6px;margin-top:10px;}
 .pt{width:100%;border-collapse:collapse;font-size:11px;margin-bottom:8px;}
 .pt th{background:#e8edf5;color:var(--navy);font-weight:700;padding:4px 7px;border:1px solid #bbb;font-size:10px;text-transform:uppercase;}
 .pt td{padding:4px 7px;border:1px solid #ccc;vertical-align:top;}
 .pt td[contenteditable="true"]{background:#fffde7;outline:none;}
-.pt td[contenteditable="true"]:focus{background:#fff9c4;}
-.veh-summary{background:#f0f7ff;border:2px solid var(--blue);border-radius:6px;padding:12px 16px;margin-bottom:10px;text-align:center;}
-.veh-summary h4{font-family:'Rajdhani',sans-serif;font-size:13px;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:6px;}
+.veh-summary{background:#f0f7ff;border:2px solid var(--blue);border-radius:6px;padding:10px 14px;margin-bottom:8px;text-align:center;}
+.veh-summary h4{font-family:'Rajdhani',sans-serif;font-size:12px;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:6px;}
 .veh-nums{display:grid;grid-template-columns:1fr 1fr;gap:6px;}
 .veh-num{background:#fff;border-radius:5px;padding:7px;border:1px solid var(--border);}
-.veh-num .n{font-family:'Rajdhani',sans-serif;font-size:20px;font-weight:700;color:var(--navy);}
+.veh-num .n{font-family:'Rajdhani',sans-serif;font-size:18px;font-weight:700;color:var(--navy);}
 .veh-num .l{font-size:9px;color:var(--muted);text-transform:uppercase;}
 .pf{border-top:2px solid var(--navy);margin-top:14px;padding-top:10px;display:flex;justify-content:space-between;font-size:10px;color:var(--muted);}
 .sig{border-top:1.5px solid var(--navy);width:140px;margin-left:auto;padding-top:3px;font-size:10px;color:var(--navy);font-weight:600;text-transform:uppercase;text-align:center;}
-/* Section 2 district group header */
-.dist-group-hdr td{background:#1a3a6b!important;color:#e2c46a!important;font-family:'Rajdhani',sans-serif;font-weight:700;font-size:11px;text-transform:uppercase;letter-spacing:.5px;}
-.type-sub-hdr td{background:#e8edf5!important;color:#0a1628!important;font-weight:700;font-size:10px;text-transform:uppercase;}
-/* FREEZE BANNER */
-.freeze-banner{background:#f8d7da;border:2px solid var(--red);border-radius:7px;padding:12px 16px;display:flex;align-items:center;gap:10px;margin-bottom:14px;}
-.freeze-banner .fi{font-size:22px;}.freeze-banner .ft{font-family:'Rajdhani',sans-serif;font-size:14px;font-weight:700;color:var(--red);text-transform:uppercase;}
-.freeze-banner .fs{font-size:11px;color:#721c24;margin-top:2px;}
-/* PDF ARCHIVE */
-.arc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:10px;margin-top:12px;}
-.arc-card{background:#fff;border-radius:7px;padding:12px 14px;box-shadow:var(--sh);border-left:4px solid var(--blue);display:flex;flex-direction:column;gap:6px;}
-.arc-card .ad{font-family:'Rajdhani',sans-serif;font-size:15px;font-weight:700;color:var(--navy);}
-.arc-card .at{font-size:10px;color:var(--muted);}
-.arc-card .ab{display:flex;gap:6px;margin-top:4px;}
-.arc-card .av{background:var(--blue);color:#fff;border:none;border-radius:4px;padding:4px 10px;font-size:11px;font-family:'Rajdhani',sans-serif;font-weight:700;cursor:pointer;}
-.arc-card .ad2{background:var(--green);color:#fff;border:none;border-radius:4px;padding:4px 10px;font-size:11px;font-family:'Rajdhani',sans-serif;font-weight:700;cursor:pointer;}
-.dc.lk{border-left-color:var(--red);}
 @media(max-width:540px){.row2,.row3{grid-template-columns:1fr;}header{flex-wrap:wrap;}.sts{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
-
 <header>
   <div class="logo">🚦</div>
   <div class="ht">
@@ -116,34 +95,20 @@ tr:hover td{background:#f4f7fb;}
   </div>
   <span id="clk" style="margin-left:auto;font-size:11px;opacity:.7"></span>
 </header>
-
 <div class="tabs">
   <button class="tab on" onclick="go('dist')">📋 District Entry</button>
   <button class="tab" onclick="go('hq')">📊 HQ Dashboard</button>
   <button class="tab" onclick="go('pdf')">📄 PDF Report</button>
-  <button class="tab" onclick="go('archive')">🗂️ PDF Archive</button>
 </div>
 
-<!-- ══════════════════════════════════ -->
-<!-- DISTRICT ENTRY                   -->
-<!-- ══════════════════════════════════ -->
+<!-- DISTRICT ENTRY -->
 <div id="pg-dist" class="pg on">
 <main>
-  <!-- Freeze Banner -->
-  <div id="freeze-banner" class="freeze-banner" style="display:none">
-    <div class="fi">🔒</div>
-    <div>
-      <div class="ft">Data Locked by HQ</div>
-      <div class="fs" id="freeze-msg">This date has been frozen. No further edits allowed.</div>
-    </div>
-  </div>
   <div class="nt">Select your district and fill all sections. Click Submit when done.</div>
-
-  <!-- Header -->
   <div class="card">
     <div class="ct">📌 Report Header</div>
     <div class="row3">
-      <div class="fg"><label>Date *</label><input type="date" id="f-date" onchange="checkFreeze()"></div>
+      <div class="fg"><label>Date *</label><input type="date" id="f-date"></div>
       <div class="fg"><label>District *</label>
         <select id="f-dist" onchange="onDistrictChange()">
           <option value="">— Select District —</option>
@@ -161,88 +126,62 @@ tr:hover td{background:#f4f7fb;}
         <select id="f-rank">
           <option value="">— Select —</option>
           <option>Constable</option><option>Head Constable</option><option>ASI</option>
-          <option>Sub-Inspector</option><option>Inspector</option><option>DSP</option><option>SP</option>
+          <option>Sub-Inspector</option><option>Inspector</option>
         </select>
       </div>
     </div>
   </div>
 
-  <!-- Section 1 -->
   <div class="card g">
     <div class="ct">🚗 Section 1 — Vehicle Entry/Exit (ITMS Border Points)</div>
-    <div id="veh-na" class="nt" style="display:none">ℹ️ Vehicle entry/exit data not applicable for this district.</div>
+    <div id="veh-na" class="nt" style="display:none">Vehicle entry/exit not applicable for this district.</div>
     <div id="veh-sec" style="display:none">
-      <div style="background:#e8f0fb;padding:8px 12px;border-radius:5px;margin-bottom:10px;font-size:12px;font-weight:600;color:var(--blue)" id="itms-lbl">📍 ITMS Point</div>
+      <div style="background:#e8f0fb;padding:8px 12px;border-radius:5px;margin-bottom:10px;font-size:12px;font-weight:600;color:var(--blue)" id="itms-lbl">ITMS Point</div>
       <div class="tw">
         <table>
-          <thead><tr>
-            <th>ITMS Point</th>
-            <th>Vehicles Entered (24 Hrs)</th>
-            <th>Incoming Avg/Day (2026)</th>
-            <th>Vehicles Exited (24 Hrs)</th>
-            <th>Outgoing Avg/Day (2026)</th>
-          </tr></thead>
+          <thead><tr><th>ITMS Point</th><th>Vehicles Entered (24 Hrs)</th><th>Incoming Avg/Day (2026)</th><th>Vehicles Exited (24 Hrs)</th><th>Outgoing Avg/Day (2026)</th></tr></thead>
           <tbody id="veh-tb"></tbody>
           <tfoot><tr style="background:#f4f7fb;font-weight:700;font-family:'Rajdhani',sans-serif">
-            <td>TOTAL</td>
-            <td id="t-vi">0</td><td id="t-via">0</td>
-            <td id="t-vo">0</td><td id="t-voa">0</td>
+            <td>TOTAL</td><td id="t-vi">0</td><td id="t-via">0</td><td id="t-vo">0</td><td id="t-voa">0</td>
           </tr></tfoot>
         </table>
       </div>
     </div>
-    <!-- Non-working ITMS -->
     <div style="margin-top:12px">
       <label style="font-size:11px;font-weight:600;color:var(--navy);text-transform:uppercase;display:block;margin-bottom:6px">Non-Working ITMS (if any)</label>
       <div class="tw"><table><thead><tr><th>#</th><th>District</th><th>No. of Non-Working ITMS &amp; Location/Reason</th><th></th></tr></thead><tbody id="itms-tb"></tbody></table></div>
-      <button class="ar" onclick="addR('itms')">＋ Add Non-Working ITMS</button>
+      <button class="ar" onclick="addRow('itms')">+ Add Non-Working ITMS</button>
     </div>
   </div>
 
-  <!-- Section 2 -->
   <div class="card">
-    <div class="ct">🏍️ Section 2 — Patrolling Vehicles &amp; Motorcycles (World Bank Project)</div>
+    <div class="ct">🏍️ Section 2 — Patrolling Vehicles &amp; Motorcycles (World Bank)</div>
     <div id="veh2-info" class="nt">Select district — vehicles will load automatically.</div>
     <div id="patrol-sec" style="display:none">
       <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;background:#f4f7fb;padding:6px 10px;border-radius:4px;margin-bottom:8px">Patrolling Vehicles</div>
-      <div class="tw">
-        <table><thead><tr>
-          <th>#</th><th>Vehicle No.</th><th>Beat / Route</th>
-          <th>Patrolling Done (KMs) ★</th><th>Challans ★</th>
-        </tr></thead>
-        <tbody id="patrol-tb"></tbody></table>
-      </div>
+      <div class="tw"><table><thead><tr><th>#</th><th>Vehicle No.</th><th>Beat / Route</th><th>Patrolling KMs *</th><th>Challans *</th></tr></thead><tbody id="patrol-tb"></tbody></table></div>
     </div>
     <div id="moto-sec" style="display:none;margin-top:12px">
       <div style="font-size:11px;font-weight:700;color:var(--navy);text-transform:uppercase;background:#f4f7fb;padding:6px 10px;border-radius:4px;margin-bottom:8px">Motorcycles (World Bank Project)</div>
-      <div class="tw">
-        <table><thead><tr>
-          <th>#</th><th>Reg. No.</th><th>PS / Beat</th>
-          <th>Patrolling Done (KMs) ★</th><th>Challans ★</th>
-        </tr></thead>
-        <tbody id="moto-tb"></tbody></table>
-      </div>
+      <div class="tw"><table><thead><tr><th>#</th><th>Reg. No.</th><th>PS / Beat</th><th>Patrolling KMs *</th><th>Challans *</th></tr></thead><tbody id="moto-tb"></tbody></table></div>
     </div>
   </div>
 
-  <!-- Section 3 -->
   <div class="card">
     <div class="ct">🦺 Section 3 — Traffic Volunteers Deployed</div>
     <div class="tw"><table><thead><tr><th>#</th><th>No. of Volunteers</th><th>Place of Deployment</th><th>Nature of Duty</th><th></th></tr></thead><tbody id="vol-tb"></tbody></table></div>
-    <button class="ar" onclick="addR('vol')">＋ Add Volunteer Entry</button>
+    <button class="ar" onclick="addRow('vol')">+ Add Volunteer Entry</button>
   </div>
 
-  <!-- Section 4 -->
   <div class="card r">
     <div class="ct">🚨 Section 4 — Fatal Accident Cases</div>
-    <div class="nt">ℹ️ CCTNS &amp; e-DAR accident totals are filled by HQ. Report fatal cases below.</div>
+    <div class="nt">CCTNS &amp; e-DAR totals are filled by HQ. Report fatal cases below.</div>
     <div class="tw"><table><thead><tr><th>#</th><th>FIR No. &amp; Date</th><th>PS Name</th><th>Brief Facts</th><th></th></tr></thead><tbody id="fat-tb"></tbody></table></div>
-    <button class="ar" onclick="addR('fat')">＋ Add Fatal Case</button>
+    <button class="ar" onclick="addRow('fat')">+ Add Fatal Case</button>
   </div>
 
-  <!-- Submit -->
   <div class="card gn">
-    <div class="ct">✅ Submit</div>
+    <div class="ct">Submit</div>
     <label style="display:flex;align-items:center;gap:7px;font-size:12px;cursor:pointer;margin-bottom:12px">
       <input type="checkbox" id="f-decl"> I confirm the above information is true and correct.
     </label>
@@ -255,19 +194,14 @@ tr:hover td{background:#f4f7fb;}
 </main>
 </div>
 
-<!-- ══════════════════════════════════ -->
-<!-- HQ DASHBOARD                     -->
-<!-- ══════════════════════════════════ -->
+<!-- HQ DASHBOARD -->
 <div id="pg-hq" class="pg">
 <div id="hq-lock">
   <div class="pwin">
     <div class="pbox">
       <div class="phd"><div class="ico">🛡️</div><h2>HQ Access</h2></div>
       <div style="padding:20px">
-        <div class="fg" style="margin-bottom:14px">
-          <label>Password</label>
-          <input type="password" id="hq-pass" placeholder="Enter HQ password" onkeydown="if(event.key==='Enter')checkHQ()">
-        </div>
+        <div class="fg" style="margin-bottom:14px"><label>Password</label><input type="password" id="hq-pass" placeholder="Enter HQ password" onkeydown="if(event.key==='Enter')checkHQ()"></div>
         <button class="btn bp" style="width:100%;justify-content:center" onclick="checkHQ()">Enter</button>
         <div id="hq-err" style="display:none;margin-top:10px" class="er"></div>
       </div>
@@ -282,7 +216,6 @@ tr:hover td{background:#f4f7fb;}
     <button class="btn bg" onclick="goPDF()">📄 Generate PDF</button>
     <button class="btn bo" style="font-size:12px;padding:7px 12px" onclick="hqLogout()">🚪 Lock</button>
   </div>
-
   <div class="sts">
     <div class="st"><div class="sn" id="ss-sub">0</div><div class="sl">Submitted</div></div>
     <div class="st or"><div class="sn" id="ss-pen">15</div><div class="sl">Pending</div></div>
@@ -293,45 +226,6 @@ tr:hover td{background:#f4f7fb;}
     <div class="st gn"><div class="sn" id="ss-vol">0</div><div class="sl">Volunteers</div></div>
     <div class="st r"><div class="sn" id="ss-itms">0</div><div class="sl">ITMS Issues</div></div>
   </div>
-
-  <!-- ══ FREEZE CONTROL CARD ══ -->
-  <div class="card r">
-    <div class="ct">🔒 Data Freeze Control</div>
-    <div style="display:flex;align-items:center;gap:14px;flex-wrap:wrap">
-      <div id="freeze-status-hq" style="flex:1;min-width:200px;font-size:13px;padding:10px 14px;border-radius:6px;background:#f0f4f8;color:var(--navy);font-weight:600">
-        ⏳ Load data to check freeze status
-      </div>
-      <button class="btn br" id="freeze-btn" onclick="toggleFreeze()" style="display:none">🔒 Freeze This Date</button>
-    </div>
-    <div id="freeze-hq-msg" style="display:none;margin-top:10px"></div>
-  </div>
-
-  <!-- HQ Vehicle Entry/Exit Summary -->
-  <div class="card g">
-    <div class="ct">🚗 Vehicle Entry/Exit Summary (ITMS Districts)</div>
-    <div class="tw">
-      <table>
-        <thead><tr>
-          <th>District</th>
-          <th>ITMS Point</th>
-          <th>Veh Entered (24h)</th>
-          <th>Incoming Avg/Day</th>
-          <th>Veh Exited (24h)</th>
-          <th>Outgoing Avg/Day</th>
-        </tr></thead>
-        <tbody id="hq-veh-tb"></tbody>
-        <tfoot><tr style="background:#e8f0fb;font-weight:700;font-family:'Rajdhani',sans-serif">
-          <td colspan="2">TOTAL</td>
-          <td id="hq-t-vi">0</td>
-          <td id="hq-t-via">0</td>
-          <td id="hq-t-vo">0</td>
-          <td id="hq-t-voa">0</td>
-        </tr></tfoot>
-      </table>
-    </div>
-  </div>
-
-  <!-- HQ fills CCTNS / eDAR -->
   <div class="card r">
     <div class="ct">🚨 Section 4 — Accident Cases (HQ Entry Only)</div>
     <div class="nt">Fill total accident figures for the selected date.</div>
@@ -343,63 +237,86 @@ tr:hover td{background:#f4f7fb;}
     <button class="btn br" onclick="saveHQAcc()">💾 Save Accident Data</button>
     <div id="hq-acc-msg" style="display:none;margin-top:10px"></div>
   </div>
-
-  <div class="card">
-    <div class="ct">🗺️ District Submission Status</div>
-    <div class="dg" id="dist-grid"></div>
-  </div>
-
+  <div class="card"><div class="ct">🗺️ District Status</div><div class="dg" id="dist-grid"></div></div>
   <div class="card">
     <div class="ct">📊 Consolidated Summary</div>
     <div class="tw">
       <table>
-        <thead><tr><th>District</th><th>Officer</th><th>Veh In</th><th>Veh In Avg</th><th>Veh Out</th><th>Veh Out Avg</th><th>Patrol Vehs</th><th>Motos</th><th>Total KMs</th><th>Challans</th><th>Volunteers</th><th>ITMS❌</th><th>Fatal</th></tr></thead>
+        <thead><tr><th>District</th><th>Officer</th><th>Veh In</th><th>Veh Out</th><th>Patrol Vehs</th><th>Motos</th><th>Total KMs</th><th>Challans</th><th>Volunteers</th><th>ITMS</th><th>Fatal</th></tr></thead>
         <tbody id="hq-tb"></tbody>
         <tfoot><tr style="background:#e8f0fb;font-weight:700;font-family:'Rajdhani',sans-serif">
           <td colspan="2">TOTAL</td>
-          <td id="t-tvi">0</td><td id="t-tvia">0</td>
-          <td id="t-tvo">0</td><td id="t-tvoa">0</td>
-          <td id="t-tpv">0</td><td id="t-tmo">0</td>
-          <td id="t-tkm">0</td><td id="t-tch">0</td>
-          <td id="t-tvl">0</td><td id="t-tit">0</td><td id="t-tfa">0</td>
+          <td id="t-tvi">0</td><td id="t-tvo">0</td><td id="t-tpv">0</td><td id="t-tmo">0</td>
+          <td id="t-tkm">0</td><td id="t-tch">0</td><td id="t-tvl">0</td><td id="t-tit">0</td><td id="t-tfa">0</td>
         </tr></tfoot>
       </table>
     </div>
   </div>
-
   <div class="card r">
     <div class="ct">🚨 Fatal Cases — All Districts</div>
-    <div class="tw"><table><thead><tr><th>#</th><th>District</th><th>FIR No. &amp; Date</th><th>PS Name</th><th>Brief Facts</th></tr></thead>
-    <tbody id="hq-fat"></tbody></table></div>
+    <div class="tw"><table><thead><tr><th>#</th><th>District</th><th>FIR No. &amp; Date</th><th>PS Name</th><th>Brief Facts</th></tr></thead><tbody id="hq-fat"></tbody></table></div>
   </div>
-
   <div class="card g">
     <div class="ct">⚠️ Non-Working ITMS — All Districts</div>
-    <div class="tw"><table><thead><tr><th>#</th><th>District</th><th>Non-Working ITMS &amp; Reason</th></tr></thead>
-    <tbody id="hq-itms"></tbody></table></div>
+    <div class="tw"><table><thead><tr><th>#</th><th>District</th><th>Non-Working ITMS &amp; Reason</th></tr></thead><tbody id="hq-itms"></tbody></table></div>
   </div>
 </main>
 </div>
 </div>
 
-<!-- ══════════════════════════════════ -->
-<!-- PDF REPORT                       -->
-<!-- ══════════════════════════════════ -->
+<!-- PDF REPORT -->
 <div id="pg-pdf" class="pg">
 <main>
   <div style="display:flex;gap:9px;margin-bottom:14px;align-items:flex-end;flex-wrap:wrap;background:#fff;padding:12px 16px;border-radius:8px;box-shadow:var(--sh)">
     <div class="fg" style="flex:1;min-width:130px"><label>Report Date</label><input type="date" id="pdf-dt"></div>
     <button class="btn bgn" onclick="loadPDF()">📥 Load &amp; Build PDF</button>
     <button class="btn bp" id="pdf-print" onclick="window.print()" style="display:none">🖨️ Print / Save PDF</button>
-    <button class="btn bg" id="pdf-save-arc" onclick="savePDFToArchive()" style="display:none">💾 Save to Archive</button>
     <button class="btn bo" onclick="go('hq')">← Back</button>
   </div>
   <div id="pdf-msg" style="display:none;padding:12px 16px;background:#fff;border-radius:8px;box-shadow:var(--sh);margin-bottom:13px;font-size:13px"></div>
-
   <div class="pw" id="pdf-body" style="display:none">
-    <h2>TRAFFIC DSI &nbsp;<span id="p-title-date">—</span></h2>
-    <div class="subtitle">Himachal Pradesh Police &nbsp;|&nbsp; Traffic, Tourist &amp; Railways Wing</div>
-    <div class="ref">Ref: <span id="p-ref">—</span> &nbsp;|&nbsp; Generated: <span id="p-gen">—</span></div>
+    <div style="text-align:center;margin-bottom:12px">
+      <h2>TRAFFIC DSI &nbsp;<span id="p-title-date">—</span></h2>
+      <div class="subtitle">Himachal Pradesh Police &nbsp;|&nbsp; Traffic, Tourist &amp; Railways Wing</div>
+      <div style="margin:10px auto;max-width:400px">
+        <svg viewBox="0 0 480 420" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;border:1px solid #ddd;border-radius:6px;background:#f0f7ff">
+          <path id="map-LahaulSpiti" d="M420.7,174.6 L391.2,177.1 L391.9,193.6 L358.5,194.4 L355.8,203.4 L343.8,204.6 L342.6,214.1 L319.9,218.9 L311.9,212.0 L314.7,200.6 L301.3,192.9 L305.4,187.0 L298.1,172.9 L272.3,155.5 L255.7,159.5 L225.9,131.3 L211.0,131.8 L207.5,126.5 L193.3,130.6 L182.5,122.4 L182.7,112.9 L162.6,112.3 L141.1,96.3 L126.9,96.1 L118.4,74.2 L126.8,69.3 L133.2,76.6 L157.9,70.6 L168.6,59.9 L166.9,24.8 L172.9,15.0 L179.6,16.4 L176.1,28.1 L191.4,45.9 L220.0,52.7 L220.9,61.7 L225.0,59.4 L244.9,74.6 L253.7,65.6 L262.0,68.9 L294.2,52.1 L307.1,62.4 L303.2,68.0 L322.2,80.7 L321.3,91.7 L334.1,101.3 L350.8,92.9 L364.4,94.2 L383.1,82.7 L385.4,101.3 L373.2,107.5 L370.8,116.9 L375.0,121.3 L386.1,114.2 L402.5,129.1 L391.9,152.4 L412.3,156.2 L409.8,164.4 L420.7,174.6 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Chamba" d="M167.0,25.4 L168.6,59.9 L157.9,70.6 L133.2,76.6 L126.8,69.3 L118.2,77.2 L126.9,96.1 L141.1,96.3 L162.6,112.3 L182.7,112.9 L182.6,122.6 L167.5,136.7 L171.9,142.7 L169.1,157.0 L156.2,161.5 L134.3,153.8 L101.2,131.8 L90.5,137.2 L92.2,155.1 L72.6,148.8 L71.4,140.0 L46.4,115.7 L60.1,97.5 L53.8,96.8 L58.4,84.0 L42.2,65.2 L48.6,59.3 L62.3,66.9 L83.2,48.9 L105.1,44.6 L106.9,35.8 L122.5,24.5 L167.0,25.4 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Kangra" d="M182.5,122.4 L193.3,130.6 L210.5,128.5 L206.6,155.7 L199.9,159.0 L198.2,170.3 L179.4,180.0 L174.1,175.7 L156.7,179.8 L158.1,202.7 L141.8,200.6 L122.8,214.6 L107.9,215.0 L106.5,227.8 L74.0,204.0 L63.1,204.6 L56.6,192.0 L23.8,175.0 L15.0,175.7 L25.3,163.7 L18.0,153.2 L38.2,146.1 L51.8,131.6 L64.6,132.0 L72.6,148.8 L92.2,155.1 L90.5,137.2 L101.2,131.8 L124.8,149.9 L156.2,161.5 L169.1,157.0 L171.9,142.7 L167.5,136.7 L182.5,122.4 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Kullu" d="M210.0,131.3 L232.2,134.4 L255.7,159.5 L272.3,155.5 L298.1,172.9 L305.4,187.0 L301.3,192.9 L314.7,200.6 L312.8,218.5 L300.9,217.5 L285.4,230.9 L293.4,252.7 L283.0,259.6 L283.1,267.9 L268.4,273.5 L250.7,271.9 L239.6,245.9 L240.1,230.2 L228.4,222.4 L223.7,206.7 L207.8,207.2 L192.1,179.4 L192.6,169.8 L198.2,170.3 L199.9,159.0 L206.6,155.7 L210.0,131.3 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Mandi" d="M152.6,202.6 L158.1,202.7 L160.2,194.2 L156.7,179.8 L191.7,176.8 L207.8,207.2 L223.7,206.7 L228.4,222.4 L240.1,230.2 L243.6,258.9 L251.1,265.4 L244.2,280.8 L217.2,289.5 L189.8,271.2 L183.8,273.2 L183.8,264.7 L174.1,263.7 L171.7,252.8 L164.7,250.7 L163.8,230.6 L150.2,212.5 L152.6,202.6 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Kinnaur" d="M314.0,214.8 L335.6,217.9 L342.6,214.1 L343.8,204.6 L356.9,202.5 L358.5,194.4 L391.9,193.6 L391.2,177.1 L412.8,178.6 L421.2,173.4 L435.0,186.2 L425.0,215.9 L443.7,238.3 L427.2,251.2 L437.2,260.6 L430.8,271.1 L436.3,279.4 L447.5,279.6 L465.0,305.8 L448.7,307.3 L438.8,293.8 L418.8,295.6 L412.4,289.6 L395.8,293.8 L384.2,283.4 L370.8,281.4 L370.5,276.5 L353.4,274.1 L345.4,263.9 L322.4,263.4 L310.9,252.2 L307.4,230.9 L298.8,224.0 L300.9,217.5 L314.0,214.8 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Una" d="M63.1,204.6 L74.0,204.0 L106.5,227.8 L109.6,222.9 L130.7,263.8 L117.8,261.7 L110.9,277.1 L92.2,279.2 L90.6,265.2 L60.1,210.2 L66.7,209.9 L63.1,204.6 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Shimla" d="M250.7,271.9 L268.4,273.5 L283.1,267.9 L283.0,259.6 L293.4,252.7 L285.4,230.9 L298.8,224.0 L307.4,230.9 L310.9,252.2 L318.5,260.5 L327.5,266.2 L345.4,263.9 L353.4,274.1 L370.5,276.5 L373.0,282.4 L336.0,300.3 L318.6,300.3 L307.2,312.7 L310.6,327.0 L299.0,327.1 L307.4,331.3 L306.4,340.6 L300.1,337.4 L293.0,352.7 L282.5,346.5 L272.3,351.3 L257.6,337.6 L258.1,323.5 L250.2,317.9 L232.8,331.9 L226.2,320.3 L209.0,314.2 L210.9,309.6 L204.9,311.6 L206.6,305.2 L198.8,305.6 L204.9,300.1 L200.4,294.1 L204.2,283.7 L217.2,289.5 L232.6,286.7 L250.7,271.9 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Solan" d="M183.9,273.2 L189.8,271.2 L204.2,283.7 L200.4,294.1 L204.9,300.1 L198.8,305.6 L206.6,305.2 L204.9,311.6 L210.9,309.6 L209.0,314.2 L233.1,327.8 L224.9,340.9 L215.3,340.9 L203.4,354.9 L189.3,334.1 L183.0,337.9 L176.8,330.4 L170.8,333.7 L149.0,314.5 L152.6,306.1 L147.5,296.5 L165.0,288.1 L183.8,290.9 L190.7,279.5 L183.9,273.2 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Sirmaur" d="M232.8,331.7 L250.2,317.9 L258.1,323.5 L255.3,330.3 L265.1,348.4 L287.1,346.8 L298.1,358.2 L305.1,372.9 L298.1,375.8 L308.0,380.2 L307.8,387.6 L278.8,398.3 L276.8,405.0 L269.2,396.1 L258.6,402.6 L260.4,394.5 L253.6,400.8 L246.9,394.1 L228.0,393.2 L216.4,379.9 L222.9,374.7 L222.3,363.5 L203.3,354.4 L232.8,331.7 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Hamirpur" d="M109.6,222.9 L107.9,215.0 L122.8,214.6 L147.0,199.8 L152.6,202.4 L150.5,213.6 L163.8,230.6 L164.7,241.9 L150.1,242.9 L150.9,260.7 L142.5,262.6 L129.3,254.7 L109.6,222.9 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+          <path id="map-Bilaspur" d="M164.7,241.9 L164.7,250.7 L171.7,252.8 L174.1,263.7 L183.8,264.7 L184.0,276.3 L190.7,279.5 L183.8,290.9 L146.6,292.0 L145.9,283.6 L137.5,285.7 L131.6,278.9 L126.4,282.9 L129.6,279.9 L120.1,264.8 L130.7,263.8 L127.8,255.4 L149.0,264.2 L150.1,242.9 L164.7,241.9 Z" fill="#eef2f7" stroke="#0a1628" stroke-width="1.2" stroke-dasharray="4,2.5"/>
+
+          <text x="280.4" y="116.1" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Lahaul &amp; Spiti</text>
+          <text x="116.7" y="95.4" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Chamba</text>
+          <text x="120.5" y="164.2" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Kangra</text>
+          <text x="252.1" y="200.2" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Kullu</text>
+          <text x="191.4" y="233.6" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Mandi</text>
+          <text x="383.1" y="243.5" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Kinnaur</text>
+          <text x="90.4" y="235.9" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Una</text>
+          <text x="275.4" y="295.7" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Shimla</text>
+          <text x="191.3" y="308.7" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Solan</text>
+          <text x="259.8" y="369.3" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Sirmaur</text>
+          <text x="138.6" y="229.6" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Hamirpur</text>
+          <text x="153.9" y="267.8" font-size="8.5" fill="#0a1628" font-weight="700" text-anchor="middle">Bilaspur</text>
+
+          <circle cx="97.4" cy="201.5" r="4.5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
+          <circle cx="104.0" cy="257.0" r="4.5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
+          <circle cx="167.3" cy="274.6" r="4.5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
+          <circle cx="213.4" cy="334.2" r="4.5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
+          <circle cx="283.3" cy="397.9" r="4.5" fill="#e2c46a" stroke="#c8a84b" stroke-width="1.5"/>
+          <text x="10" y="414" font-size="8" fill="#555">● ITMS Border Points</text>
+          <text x="330" y="414" font-size="8" fill="#555">Shade = Challan Intensity</text>
+        </svg>
+      </div>
+      <div style="font-size:10px;color:var(--muted);margin-top:4px">Ref: <span id="p-ref">—</span> &nbsp;|&nbsp; Generated: <span id="p-gen">—</span></div>
+    </div>
 
     <table class="pt" style="margin-bottom:12px">
       <thead><tr><th></th><th>Title</th><th>Page No.</th></tr></thead>
@@ -412,7 +329,6 @@ tr:hover td{background:#f4f7fb;}
       </tbody>
     </table>
 
-    <!-- Section 1 -->
     <div class="ps">
       <h3>Section 1 — Vehicles Entry/Exit Status During Last 24 Hours</h3>
       <div class="veh-summary">
@@ -420,73 +336,48 @@ tr:hover td{background:#f4f7fb;}
         <div class="veh-nums">
           <div class="veh-num"><div class="n" id="p-total-vi">—</div><div class="l">Vehicle Entered</div></div>
           <div class="veh-num"><div class="n" id="p-total-vo">—</div><div class="l">Vehicle Exited</div></div>
-          <div class="veh-num"><div class="n" id="p-total-via">—</div><div class="l">Entered (Avg/Day)</div></div>
-          <div class="veh-num"><div class="n" id="p-total-voa">—</div><div class="l">Exited (Avg/Day)</div></div>
+          <div class="veh-num"><div class="n" id="p-total-via">—</div><div class="l">Entered Monthly Avg</div></div>
+          <div class="veh-num"><div class="n" id="p-total-voa">—</div><div class="l">Exited Monthly Avg</div></div>
         </div>
       </div>
       <table class="pt">
-        <thead><tr>
-          <th>ITMS Point</th>
-          <th>Vehicles Entered (24 Hrs)</th>
-          <th>Incoming Avg/Day (2026)</th>
-          <th>Vehicles Exited (24 Hrs)</th>
-          <th>Outgoing Avg/Day (2026)</th>
-        </tr></thead>
+        <thead><tr><th>ITMS Point</th><th>Vehicles Entered (24 Hrs)</th><th>Incoming Avg/Day (2026)</th><th>Vehicles Exited (24 Hrs)</th><th>Outgoing Avg/Day (2026)</th></tr></thead>
         <tbody id="p-veh"></tbody>
       </table>
-      <div style="font-size:10.5px;font-weight:700;color:var(--navy);text-transform:uppercase;margin:8px 0 5px">Status of Non-Working ITMS:</div>
+      <div style="font-size:10px;font-weight:700;color:var(--navy);text-transform:uppercase;margin:8px 0 5px">Status of Non-Working ITMS:</div>
       <table class="pt">
         <thead><tr><th>Sr.No.</th><th>District</th><th>Name/Locations of Non-Working ITMS Along With Reasons</th></tr></thead>
         <tbody id="p-itms"></tbody>
       </table>
     </div>
 
-    <!-- Section 2 — District-grouped with Patrol then Motorcycle sub-sections -->
     <div class="ps">
       <h3>Section 2 — Status of Vehicle &amp; Motorcycle Distributed Under World Bank Project</h3>
-      <table class="pt" id="p-veh2-table">
-        <thead><tr>
-          <th>District</th>
-          <th>Type</th>
-          <th>Vehicle/Motorcycle Reg. No.</th>
-          <th>Police Station &amp; Beat Deployed</th>
-          <th>Patrolling Done (KMs)</th>
-          <th>No. of Challans</th>
-        </tr></thead>
+      <table class="pt">
+        <thead><tr><th>District</th><th>Vehicle/Motorcycle Reg. No.</th><th>Police Station &amp; Beat Deployed</th><th>Patrolling Done in Last 24 Hrs (KMs)</th><th>No. of Challans Done in Last 24 Hrs</th></tr></thead>
         <tbody id="p-veh2"></tbody>
       </table>
     </div>
 
-    <!-- Section 3 -->
     <div class="ps">
       <h3>Section 3 — Traffic Volunteers Employed</h3>
       <table class="pt">
-        <thead><tr>
-          <th>District</th>
-          <th>No. of Traffic Volunteers Employed</th>
-          <th>Place of Deployment</th>
-          <th>Nature of Duty Assigned</th>
-        </tr></thead>
+        <thead><tr><th>District</th><th>No. of Traffic Volunteers Employed</th><th>Place of Deployment</th><th>Nature of Duty Assigned</th></tr></thead>
         <tbody id="p-vol"></tbody>
       </table>
     </div>
 
-    <!-- Section 4 -->
     <div class="ps">
       <h3>Section 4 — Status of Accident Cases</h3>
       <table class="pt" style="margin-bottom:8px">
-        <thead><tr>
-          <th>No. of Accident Cases Entered in CCTNS</th>
-          <th>No. of Accident Cases Entered in e-DAR</th>
-          <th>Name of District Who Have Not Entered Accident Cases in e-DAR</th>
-        </tr></thead>
+        <thead><tr><th>No. of Accident Cases Entered in CCTNS</th><th>No. of Accident Cases Entered in e-DAR</th><th>Name of District Who Have Not Entered Accident Cases in e-DAR</th></tr></thead>
         <tbody><tr>
-          <td style="font-weight:700;text-align:center;font-size:15px" id="p-cc">—</td>
-          <td style="font-weight:700;text-align:center;font-size:15px" id="p-ed">—</td>
+          <td style="font-weight:700;text-align:center;font-size:14px" id="p-cc">—</td>
+          <td style="font-weight:700;text-align:center;font-size:14px" id="p-ed">—</td>
           <td contenteditable="true" id="p-ms">—</td>
         </tr></tbody>
       </table>
-      <div style="font-size:10.5px;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:5px">Details of Fatal Accident Cases Reported in Last 24 Hours:</div>
+      <div style="font-size:10px;font-weight:700;color:var(--navy);text-transform:uppercase;margin-bottom:5px">Details of Fatal Accident Cases Reported in Last 24 Hours:</div>
       <table class="pt">
         <thead><tr><th>Sr. No.</th><th>FIR &amp; Date</th><th>PS Name</th><th>Brief Facts of Fatal Accident Cases</th></tr></thead>
         <tbody id="p-fat"></tbody>
@@ -495,29 +386,8 @@ tr:hover td{background:#f4f7fb;}
 
     <div class="pf">
       <div><strong>HP Police — Traffic, Tourist &amp; Railways Wing</strong><br>DSI Report &nbsp;|&nbsp; For Official Use Only</div>
-      <div><div class="sig" contenteditable="true">DSP/SP Traffic (PHQ)</div></div>
+      <div><div class="sig" contenteditable="true">&nbsp;</div></div>
     </div>
-  </div>
-</main>
-</div>
-
-<!-- ══════════════════════════════════ -->
-<!-- PDF ARCHIVE                      -->
-<!-- ══════════════════════════════════ -->
-<div id="pg-archive" class="pg">
-<main>
-  <div class="card">
-    <div class="ct">🗂️ PDF Archive — Daily Reports</div>
-    <div class="nt">Saved PDF snapshots of daily DSI reports. Click View to open in browser or Download to save as file.</div>
-    <div style="display:flex;gap:8px;margin-bottom:12px;flex-wrap:wrap">
-      <button class="btn bp" onclick="loadArchive()">🔄 Refresh</button>
-      <button class="btn bo" onclick="go('pdf')">← PDF Report</button>
-    </div>
-    <div id="arc-loading" style="display:none;font-size:13px;color:var(--muted);padding:12px">⏳ Loading archive...</div>
-    <div id="arc-empty" style="display:none;font-size:13px;color:var(--muted);padding:20px;text-align:center">
-      📭 No archived PDFs yet.<br>Generate a PDF from the <strong>PDF Report</strong> tab and click <strong>"Save to Archive"</strong>.
-    </div>
-    <div class="arc-grid" id="arc-grid"></div>
   </div>
 </main>
 </div>
@@ -527,113 +397,40 @@ tr:hover td{background:#f4f7fb;}
 </footer>
 
 <script>
-// ══ CONFIG ══
-const API     = 'https://script.google.com/macros/s/AKfycbwfh9nWRS8xNnFF82qpfwuP8HM1hPtIisbgSIifQGZgZkQH2MVfi2H4x7i7unkuVud7/exec';
-const HQ_PASS = 'hppolice@2026';
+var API = 'https://script.google.com/macros/s/AKfycbwotzgOJX5JAR9wzmx4U2KaCdnXIJfOvWPALiVirixazscOcxVlAfx-qv1kmIxNfNs/exec';
+var HQ_PASS = 'hppolice@2026';
 
-// ── ITMS BORDER DISTRICTS ──
-const ITMS_PTS = {
-  'PD Dehra':  'ITMS Dehra',
-  'Una':       'ITMS Una',
-  'Bilaspur':  'ITMS Bilaspur',
-  'Solan':     'ITMS Solan',
-  'Sirmour':   'ITMS Paonta Sahib'
+var ITMS_PTS = {
+  'PD Dehra':'ITMS Dehra',
+  'Una':'ITMS Una',
+  'Bilaspur':'ITMS Bilaspur',
+  'Solan':'ITMS Solan',
+  'Sirmour':'ITMS Paonta Sahib'
 };
 
-// ── PATROL VEHICLES ──
-const PATROL = {
-  'Baddi (BBN)':[
-    {n:'HP-63C-8751 (Interceptor)',b:'Baddi to Manpura'},
-    {n:'HP07D-2398 (EV)',b:'Nalagarh to Joghon'},
-    {n:'HP07D-2404 (EV)',b:'Manpura to Nalagarh'}
-  ],
-  'Bilaspur':[
-    {n:'HP07D-2428 (EV)',b:'Namhol, Brahmpukhar, AIIMS, Nauni, Bilaspur to Gagus'},
-    {n:'HP63C-8774',b:'Kandraur to Targhel'}
-  ],
-  'Chamba':[
-    {n:'HP07D-2395 (EV)',b:'Banikhet to Chamba'},
-    {n:'HP07D-2411 (EV)',b:'Draman to Dhamoti'}
-  ],
-  'PD Dehra':[
-    {n:'HP63C-8750 (Interceptor)',b:'Mangarh to Bagli'},
-    {n:'HP07D-2432 (EV)',b:'Balugloa to Nadaun Bridge'},
-    {n:'HP63C-8778 (Scorpio)',b:'Bathu Bridge to Balugloa and Ranital Chowk to Mangarh'},
-    {n:'HP07D-2435 (EV)',b:'Sansarpur Terrace to Dadasiba to Dhaliyara (MDR)'}
-  ],
-  'Hamirpur':[
-    {n:'HP63C-8747 (Interceptor)',b:'Anu to Awahdevi'},
-    {n:'HP07D-2429 (EV)',b:'Anu to Awahdevi / PS Sadar'},
-    {n:'HP63C-8772 (Scorpio)',b:'Nadaun to Kaloha and Nadaun to Hamirpur'},
-    {n:'HP07D-2385 (EV)',b:'Nadaun to Hamirpur / PS Sadar'}
-  ],
-  'Kangra':[
-    {n:'Interceptor (PS D/SHALA)',b:'Yol to Chamunda to McLeodganj via Dari Dharamshala'},
-    {n:'EV (PS M/GANJ)',b:'McLeodganj to Dharamshala'},
-    {n:'EV (PS KANGRA)',b:'Ranital to Mataur Bridge'},
-    {n:'EV (PS BAGWAN)',b:'Tanda to Paraur'},
-    {n:'EV',b:'61 Miles to Bhawana via Thakurdwara Chowk'},
-    {n:'HP07D-2392 (EV)',b:'Thakurdwara to Paprola via Banuri'}
-  ],
-  'Kullu':[
-    {n:'HP07D-2416 (EV)',b:'Mohal to Gannon Bridge'},
-    {n:'HP07D-2419 (EV)',b:'Jhiri to Jia (left bank)'},
-    {n:'HP07D-2403 (EV)',b:'Manali to Atal Tunnel'},
-    {n:'HP07D-2409 (EV)',b:'Palchan to Rohtang'},
-    {n:'HP7D-2412 (EV)',b:'Nehru Kund to 18 Mile'}
-  ],
-  'Mandi':[
-    {n:'HP07D-2420 (EV)',b:'Dehar, Sunder Nagar, Naulkha, Dadour Nerchowk to Kalkhar'},
-    {n:'HP07D-2408 (EV)',b:'Dadour to Malori Tunnel'},
-    {n:'HP63C-8779',b:'Malori Tunnel to Hanogi Tunnel to Jhiri'},
-    {n:'HP07D-2402 (EV)',b:'Banoha to Baldwara to Sarkaghat'}
-  ],
-  'Sirmour':[
-    {n:'HP63C-8757 (Interceptor)',b:'Kollar to Paonta Sahib'},
-    {n:'HP07D-2417 (EV)',b:'Nahan to Prem Nagar (K/Hatti)'},
-    {n:'HP63C-8742 (Interceptor)',b:'Kala Amb to Nahan'}
-  ],
-  'Solan':[
-    {n:'HP07D-2396 (EV)',b:'Solan to Waknaghat'},
-    {n:'HP63C-8749 (Interceptor)',b:'Solan to Waknaghat'},
-    {n:'HP07D-2283 (EV)',b:'Solan to Dharampur'}
-  ],
-  'Una':[
-    {n:'HP63C-8744 (Interceptor)',b:'Mehatpur to Ghanwal'},
-    {n:'HP07D-2397 (EV)',b:'Dhussara to Mubarakpur'},
-    {n:'HP07D-2399 (EV)',b:'Jhalera to Bankhandi'}
-  ],
-  'PD Nurpur':[
-    {n:'HP63C-8748 (Interceptor)',b:'Kandwa Chakki Bridge to Behar Khad'},
-    {n:'HP63C-8776 (Scorpio)',b:'Excise Barrier Bhadroya to Toki via Kandrori'},
-    {n:'HP07D-2439 (EV)',b:'Kathgarh to Attara Road'}
-  ],
-  'Shimla':[
-    {n:'HP63C-8746 (Interceptor)',b:'Dhalli Chowk, Lambidhar to Shilaru Gali'},
-    {n:'HP07D-2437 (EV)',b:'Baira Khadd to Jeori'},
-    {n:'HP63A-8771 (Scorpio)',b:'Dhalli Chowk to Soghi via Chakkar, Boileauganj'},
-    {n:'HP07D-2390 (EV)',b:'Rohru to Patsari to Khara Pathar'},
-    {n:'HP07D-2434 (EV)',b:'Hulli to Khara Pathar'}
-  ],
-  'TTPS Baghed':[
-    {n:'HP63C-8745 (Interceptor)',b:'Garha Mora to Baloh Toll Plaza'},
-    {n:'HP07D-2438 (EV)',b:'Garha Mora to Baloh Toll Plaza'}
-  ],
-  'TTPS Nerchowk':[
-    {n:'HP63C-8759 (Interceptor)',b:'Samlhau to Jhiri'},
-    {n:'HP07D-2436 (EV)',b:'Samlhau to Jhiri'}
-  ],
-  'TTPS Bhunter':[
-    {n:'HP63C-8743 (Interceptor)',b:'Jia to Raison'},
-    {n:'HP63C-8780 (Scorpio)',b:'Jia to Raison'}
-  ],
+var PATROL = {
+  'Baddi (BBN)':[{n:'HP-63C-8751 (Interceptor)',b:'Baddi to Manpura'},{n:'HP07D-2398 (EV)',b:'Nalagarh to Joghon'},{n:'HP07D-2404 (EV)',b:'Manpura to Nalagarh'}],
+  'Bilaspur':[{n:'HP07D-2428 (EV)',b:'Namhol to Bilaspur to Gagus'},{n:'HP63C-8774',b:'Kandraur to Targhel'}],
+  'Chamba':[{n:'HP07D-2395 (EV)',b:'Banikhet to Chamba'},{n:'HP07D-2411 (EV)',b:'Draman to Dhamoti'}],
+  'PD Dehra':[{n:'HP63C-8750 (Interceptor)',b:'Mangarh to Bagli'},{n:'HP07D-2432 (EV)',b:'Balugloa to Nadaun Bridge'},{n:'HP63C-8778 (Scorpio)',b:'Bathu Bridge to Balugloa'},{n:'HP07D-2435 (EV)',b:'Sansarpur Terrace to Dhaliyara'}],
+  'Hamirpur':[{n:'HP63C-8747 (Interceptor)',b:'Anu to Awahdevi'},{n:'HP07D-2429 (EV)',b:'Anu to Awahdevi'},{n:'HP63C-8772 (Scorpio)',b:'Nadaun to Hamirpur'},{n:'HP07D-2385 (EV)',b:'Nadaun to Hamirpur'}],
+  'Kangra':[{n:'Interceptor (PS D/SHALA)',b:'Yol to Chamunda to McLeodganj'},{n:'EV (PS M/GANJ)',b:'McLeodganj to Dharamshala'},{n:'EV (PS KANGRA)',b:'Ranital to Mataur Bridge'},{n:'EV (PS BAGWAN)',b:'Tanda to Paraur'},{n:'EV',b:'61 Miles to Bhawana'},{n:'HP07D-2392 (EV)',b:'Thakurdwara to Paprola'}],
+  'Kullu':[{n:'HP07D-2416 (EV)',b:'Mohal to Gannon Bridge'},{n:'HP07D-2419 (EV)',b:'Jhiri to Jia'},{n:'HP07D-2403 (EV)',b:'Manali to Atal Tunnel'},{n:'HP07D-2409 (EV)',b:'Palchan to Rohtang'},{n:'HP7D-2412 (EV)',b:'Nehru Kund to 18 Mile'}],
+  'Mandi':[{n:'HP07D-2420 (EV)',b:'Sundernagar to Nerchowk'},{n:'HP07D-2408 (EV)',b:'Dadour to Malori Tunnel'},{n:'HP63C-8779',b:'Malori to Hanogi Tunnel'},{n:'HP07D-2402 (EV)',b:'Banoha to Sarkaghat'}],
+  'Sirmour':[{n:'HP63C-8757 (Interceptor)',b:'Kollar to Paonta Sahib'},{n:'HP07D-2417 (EV)',b:'Nahan to Prem Nagar'},{n:'HP63C-8742 (Interceptor)',b:'Kala Amb to Nahan'}],
+  'Solan':[{n:'HP07D-2396 (EV)',b:'Solan to Waknaghat'},{n:'HP63C-8749 (Interceptor)',b:'Solan to Waknaghat'},{n:'HP07D-2283 (EV)',b:'Solan to Dharampur'}],
+  'Una':[{n:'HP63C-8744 (Interceptor)',b:'Mehatpur to Ghanwal'},{n:'HP07D-2397 (EV)',b:'Dhussara to Mubarakpur'},{n:'HP07D-2399 (EV)',b:'Jhalera to Bankhandi'}],
+  'PD Nurpur':[{n:'HP63C-8748 (Interceptor)',b:'Kandwa to Behar Khad'},{n:'HP63C-8776 (Scorpio)',b:'Bhadroya to Toki'},{n:'HP07D-2439 (EV)',b:'Kathgarh to Attara Road'}],
+  'Shimla':[{n:'HP63C-8746 (Interceptor)',b:'Dhalli to Shilaru'},{n:'HP07D-2437 (EV)',b:'Baira Khadd to Jeori'},{n:'HP63A-8771 (Scorpio)',b:'Dhalli to Soghi'},{n:'HP07D-2390 (EV)',b:'Rohru to Khara Pathar'},{n:'HP07D-2434 (EV)',b:'Hulli to Khara Pathar'}],
+  'TTPS Baghed':[{n:'HP63C-8745 (Interceptor)',b:'Garha Mora to Baloh Toll'},{n:'HP07D-2438 (EV)',b:'Garha Mora to Baloh Toll'}],
+  'TTPS Nerchowk':[{n:'HP63C-8759 (Interceptor)',b:'Samlhau to Jhiri'},{n:'HP07D-2436 (EV)',b:'Samlhau to Jhiri'}],
+  'TTPS Bhunter':[{n:'HP63C-8743 (Interceptor)',b:'Jia to Raison'},{n:'HP63C-8780 (Scorpio)',b:'Jia to Raison'}],
   'GRPS Kangra':[{n:'HP07D-2394 (EV)',b:'National Highway'}],
   'GRPS Shimla':[{n:'HP07D-2423',b:'National Highway'}],
   'OPGRP Una':[{n:'HP63C-8753 (Interceptor)',b:'National Highway'}]
 };
 
-// ── MOTORCYCLES ──
-const MOTOS = {
+var MOTOS = {
   'Baddi (BBN)':[{r:'HP63C-7692',p:'Traffic Wing Baddi'},{r:'HP63C-7723',p:'Traffic Wing Nalagarh'}],
   'Bilaspur':[{r:'HP63C-7693',p:'PS Sadar'}],
   'Chamba':[{r:'HP63C-7705',p:'Traffic Wing Chamba'}],
@@ -649,24 +446,51 @@ const MOTOS = {
   'Solan':[],'Una':[{r:'HP63C-7702',p:'Traffic Wing Una'},{r:'HP63C-7713',p:'PS Haroli'},{r:'HP63C-7714',p:'Highway Patrol'},{r:'HP63C-7726',p:'PS Chintpurni'}]
 };
 
-const ALL_DIST=['Baddi (BBN)','Bilaspur','Chamba','PD Dehra','Hamirpur','Kangra','Kinnaur','Kullu','Lahaul & Spiti','Mandi','PD Nurpur','Shimla','Sirmour','Solan','Una'];
-let HD={summary:[],moto:[],patrol:[],vol:[],itms:[],fatal:[],hqaccidents:[]};
-let hqUnlocked=false;
+var ALL_DIST=['Baddi (BBN)','Bilaspur','Chamba','PD Dehra','Hamirpur','Kangra','Kinnaur','Kullu','Lahaul & Spiti','Mandi','PD Nurpur','Shimla','Sirmour','Solan','Una'];
 
-// Clock
-setInterval(()=>{document.getElementById('clk').textContent=new Date().toLocaleString('en-IN',{weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'});},1000);
-const T=new Date().toISOString().split('T')[0];
-['f-date','hq-dt','pdf-dt'].forEach(id=>document.getElementById(id).value=T);
+var GEO_DIST_MAP = {
+  'Chamba':['Chamba'],
+  'LahaulSpiti':['Lahaul & Spiti'],
+  'Kangra':['Kangra','PD Dehra','PD Nurpur','GRPS Kangra'],
+  'Una':['Una','OPGRP Una'],
+  'Hamirpur':['Hamirpur'],
+  'Kullu':['Kullu','TTPS Bhunter'],
+  'Kinnaur':['Kinnaur'],
+  'Mandi':['Mandi','TTPS Nerchowk'],
+  'Bilaspur':['Bilaspur'],
+  'Solan':['Solan','Baddi (BBN)','TTPS Baghed'],
+  'Shimla':['Shimla','GRPS Shimla'],
+  'Sirmaur':['Sirmour']
+};
 
-// Nav
+function challanColor(val,max){
+  if(!max||max<=0) return '#eef2f7';
+  var t=Math.min(val/max,1);
+  var r=Math.round(222+t*(8-222));
+  var g=Math.round(238+t*(48-238));
+  var b=Math.round(250+t*(107-250));
+  return 'rgb('+r+','+g+','+b+')';
+}
+var HD={summary:[],moto:[],patrol:[],vol:[],itms:[],fatal:[],hqaccidents:[]};
+var hqUnlocked=false;
+
+setInterval(function(){document.getElementById('clk').textContent=new Date().toLocaleString('en-IN',{weekday:'short',day:'2-digit',month:'short',year:'numeric',hour:'2-digit',minute:'2-digit',second:'2-digit'});},1000);
+var T=new Date().toISOString().split('T')[0];
+['f-date','hq-dt','pdf-dt'].forEach(function(id){document.getElementById(id).value=T;});
+
 function go(p){
-  document.querySelectorAll('.pg').forEach(x=>x.classList.remove('on'));
+  document.querySelectorAll('.pg').forEach(function(x){x.classList.remove('on');});
   document.getElementById('pg-'+p).classList.add('on');
-  document.querySelectorAll('.tab').forEach((b,i)=>{b.classList.remove('on');if({dist:0,hq:1,pdf:2}[p]===i)b.classList.add('on');});
+  document.querySelectorAll('.tab').forEach(function(b,i){b.classList.remove('on');if({'dist':0,'hq':1,'pdf':2}[p]===i)b.classList.add('on');});
   window.scrollTo({top:0,behavior:'smooth'});
 }
 
-// HQ Password
+function fmtD(d){
+  if(!d) return d;
+  var p=d.split('-');
+  return p.length===3?p[2]+'-'+p[1]+'-'+p[0]:d;
+}
+
 function checkHQ(){
   if(document.getElementById('hq-pass').value===HQ_PASS){
     hqUnlocked=true;
@@ -678,6 +502,7 @@ function checkHQ(){
     document.getElementById('hq-err').textContent='Incorrect password.';
   }
 }
+
 function hqLogout(){
   hqUnlocked=false;
   document.getElementById('hq-lock').style.display='block';
@@ -686,234 +511,202 @@ function hqLogout(){
   document.getElementById('hq-err').style.display='none';
 }
 
-// District change
 function onDistrictChange(){
-  const dist=document.getElementById('f-dist').value;
+  var dist=document.getElementById('f-dist').value;
   loadVehicles(dist);
   loadPatrolMoto(dist);
 }
 
-// Vehicle entry/exit
 function loadVehicles(dist){
-  const sec=document.getElementById('veh-sec');
-  const na=document.getElementById('veh-na');
-  const tb=document.getElementById('veh-tb');
-  const lbl=document.getElementById('itms-lbl');
+  var sec=document.getElementById('veh-sec');
+  var na=document.getElementById('veh-na');
+  var tb=document.getElementById('veh-tb');
+  var lbl=document.getElementById('itms-lbl');
   if(!dist){sec.style.display='none';na.style.display='none';return;}
   if(ITMS_PTS[dist]){
-    sec.style.display='block'; na.style.display='none';
-    lbl.textContent='📍 '+ITMS_PTS[dist];
-    tb.innerHTML=`<tr>
-      <td style="font-weight:600">${ITMS_PTS[dist]}</td>
-      <td><input type="number" id="f-vin" value="0" min="0" style="width:85px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>
-      <td><input type="number" id="f-via" value="0" min="0" style="width:85px;font-size:13px;padding:5px;border:1.5px solid var(--blue);border-radius:4px;font-weight:600"></td>
-      <td><input type="number" id="f-vout" value="0" min="0" style="width:85px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>
-      <td><input type="number" id="f-voa" value="0" min="0" style="width:85px;font-size:13px;padding:5px;border:1.5px solid var(--blue);border-radius:4px;font-weight:600"></td>
-    </tr>`;
-    ['f-vin','f-via','f-vout','f-voa'].forEach(id=>{
-      document.getElementById(id)?.addEventListener('input',updVehTotals);
+    sec.style.display='block';na.style.display='none';
+    lbl.textContent='ITMS Point: '+ITMS_PTS[dist];
+    tb.innerHTML='<tr><td style="font-weight:600">'+ITMS_PTS[dist]+'</td>'+
+      '<td><input type="number" id="f-vin" value="0" min="0" style="width:85px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>'+
+      '<td><input type="number" id="f-via" value="0" min="0" style="width:85px;font-size:13px;padding:5px;border:1.5px solid var(--blue);border-radius:4px;font-weight:600"></td>'+
+      '<td><input type="number" id="f-vout" value="0" min="0" style="width:85px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>'+
+      '<td><input type="number" id="f-voa" value="0" min="0" style="width:85px;font-size:13px;padding:5px;border:1.5px solid var(--blue);border-radius:4px;font-weight:600"></td></tr>';
+    ['f-vin','f-via','f-vout','f-voa'].forEach(function(id){
+      var el=document.getElementById(id);
+      if(el) el.addEventListener('input',updVehTotals);
     });
     updVehTotals();
   } else {
-    sec.style.display='none'; na.style.display='block';
+    sec.style.display='none';na.style.display='block';
   }
 }
 
 function updVehTotals(){
-  document.getElementById('t-vi').textContent=document.getElementById('f-vin')?.value||0;
-  document.getElementById('t-via').textContent=document.getElementById('f-via')?.value||0;
-  document.getElementById('t-vo').textContent=document.getElementById('f-vout')?.value||0;
-  document.getElementById('t-voa').textContent=document.getElementById('f-voa')?.value||0;
+  document.getElementById('t-vi').textContent=document.getElementById('f-vin')?document.getElementById('f-vin').value:0;
+  document.getElementById('t-via').textContent=document.getElementById('f-via')?document.getElementById('f-via').value:0;
+  document.getElementById('t-vo').textContent=document.getElementById('f-vout')?document.getElementById('f-vout').value:0;
+  document.getElementById('t-voa').textContent=document.getElementById('f-voa')?document.getElementById('f-voa').value:0;
 }
 
-// Patrol vehicles + motorcycles
 function loadPatrolMoto(dist){
-  const info=document.getElementById('veh2-info');
-  const psec=document.getElementById('patrol-sec');
-  const msec=document.getElementById('moto-sec');
-  const ptb=document.getElementById('patrol-tb');
-  const mtb=document.getElementById('moto-tb');
+  var info=document.getElementById('veh2-info');
+  var psec=document.getElementById('patrol-sec');
+  var msec=document.getElementById('moto-sec');
+  var ptb=document.getElementById('patrol-tb');
+  var mtb=document.getElementById('moto-tb');
   if(!dist){info.style.display='block';psec.style.display='none';msec.style.display='none';return;}
   info.style.display='none';
-  const pvs=PATROL[dist]||[];
+  var pvs=PATROL[dist]||[];
   if(pvs.length){
     psec.style.display='block';
-    ptb.innerHTML=pvs.map((v,i)=>`<tr>
-      <td style="color:var(--muted)">${i+1}</td>
-      <td><input type="text" value="${v.n}" readonly style="width:160px;font-size:11.5px;padding:4px 6px;border:1px solid var(--border);border-radius:4px;background:#f0f4f8;font-weight:600"></td>
-      <td><input type="text" value="${v.b}" readonly style="width:100%;font-size:11.5px;padding:4px 6px;border:1px solid var(--border);border-radius:4px;background:#f0f4f8;font-weight:600"></td>
-      <td><input type="number" id="pkm${i}" value="0" min="0" style="width:75px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>
-      <td><input type="number" id="pch${i}" value="0" min="0" style="width:75px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>
-    </tr>`).join('');
+    ptb.innerHTML=pvs.map(function(v,i){
+      return '<tr><td style="color:var(--muted)">'+(i+1)+'</td>'+
+        '<td><input type="text" value="'+v.n+'" readonly style="width:160px;font-size:11.5px;padding:4px 6px;border:1px solid var(--border);border-radius:4px;background:#f0f4f8;font-weight:600"></td>'+
+        '<td><input type="text" value="'+v.b+'" readonly style="width:100%;font-size:11.5px;padding:4px 6px;border:1px solid var(--border);border-radius:4px;background:#f0f4f8;font-weight:600"></td>'+
+        '<td><input type="number" id="pkm'+i+'" value="0" min="0" style="width:75px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>'+
+        '<td><input type="number" id="pch'+i+'" value="0" min="0" style="width:75px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td></tr>';
+    }).join('');
   } else { psec.style.display='none'; }
-  const mos=MOTOS[dist]||[];
+  var mos=MOTOS[dist]||[];
   if(mos.length){
     msec.style.display='block';
-    mtb.innerHTML=mos.map((m,i)=>`<tr>
-      <td style="color:var(--muted)">${i+1}</td>
-      <td><input type="text" value="${m.r}" readonly style="width:130px;font-size:11.5px;padding:4px 6px;border:1px solid var(--border);border-radius:4px;background:#f0f4f8;font-weight:600"></td>
-      <td><input type="text" value="${m.p}" readonly style="width:100%;font-size:11.5px;padding:4px 6px;border:1px solid var(--border);border-radius:4px;background:#f0f4f8;font-weight:600"></td>
-      <td><input type="number" id="mkm${i}" value="0" min="0" style="width:75px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>
-      <td><input type="number" id="mch${i}" value="0" min="0" style="width:75px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>
-    </tr>`).join('');
+    mtb.innerHTML=mos.map(function(m,i){
+      return '<tr><td style="color:var(--muted)">'+(i+1)+'</td>'+
+        '<td><input type="text" value="'+m.r+'" readonly style="width:130px;font-size:11.5px;padding:4px 6px;border:1px solid var(--border);border-radius:4px;background:#f0f4f8;font-weight:600"></td>'+
+        '<td><input type="text" value="'+m.p+'" readonly style="width:100%;font-size:11.5px;padding:4px 6px;border:1px solid var(--border);border-radius:4px;background:#f0f4f8;font-weight:600"></td>'+
+        '<td><input type="number" id="mkm'+i+'" value="0" min="0" style="width:75px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td>'+
+        '<td><input type="number" id="mch'+i+'" value="0" min="0" style="width:75px;font-size:13px;padding:5px;border:1.5px solid var(--accent);border-radius:4px;font-weight:600"></td></tr>';
+    }).join('');
   } else { msec.style.display='none'; }
-  if(!pvs.length&&!mos.length){ info.style.display='block'; info.textContent=dist+' — No vehicles/motorcycles assigned.'; }
+  if(!pvs.length&&!mos.length){info.style.display='block';info.textContent=dist+' — No vehicles/motorcycles assigned.';}
 }
 
 function getPatrol(){
-  const dist=document.getElementById('f-dist').value;
-  return (PATROL[dist]||[]).map((v,i)=>({veh:v.n,beat:v.b,km:document.getElementById('pkm'+i)?.value||'0',ch:document.getElementById('pch'+i)?.value||'0'}));
-}
-function getMotos(){
-  const dist=document.getElementById('f-dist').value;
-  return (MOTOS[dist]||[]).map((m,i)=>({reg:m.r,ps:m.p,km:document.getElementById('mkm'+i)?.value||'0',ch:document.getElementById('mch'+i)?.value||'0'}));
+  var dist=document.getElementById('f-dist').value;
+  return (PATROL[dist]||[]).map(function(v,i){
+    return {veh:v.n,beat:v.b,km:document.getElementById('pkm'+i)?document.getElementById('pkm'+i).value:'0',ch:document.getElementById('pch'+i)?document.getElementById('pch'+i).value:'0'};
+  });
 }
 
-// Dynamic rows
-let rn={itms:0,vol:0,fat:0};
-function addR(t){
-  const n=++rn[t]; const tb=document.getElementById(t+'-tb');
-  const tr=document.createElement('tr'); let h=`<td style="color:var(--muted);font-size:11px">${n}</td>`;
-  const inp=(id,w,ph)=>`<td><input type="text" id="${id}" placeholder="${ph}" style="width:${w};font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>`;
-  const num=(id)=>`<td><input type="number" id="${id}" value="0" min="0" style="width:65px;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>`;
-  const ta=(id)=>`<td><textarea id="${id}" rows="2" style="width:100%;min-width:150px;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></textarea></td>`;
-  if(t==='itms') h+=inp(`id${n}`,'100px','District')+inp(`il${n}`,'100%','No. & Location/Reason');
-  else if(t==='vol') h+=num(`vn${n}`)+inp(`vp${n}`,'100%','Place')+`<td><input type="text" id="vd${n}" value="Traffic Duty" style="width:100%;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>`;
-  else if(t==='fat') h+=inp(`ff${n}`,'100%','FIR No. & Date')+inp(`fps${n}`,'100%','PS Name')+ta(`fb${n}`);
-  h+=`<td><button class="dr" onclick="this.closest('tr').remove()">✕</button></td>`;
-  tr.innerHTML=h; tb.appendChild(tr);
+function getMotos(){
+  var dist=document.getElementById('f-dist').value;
+  return (MOTOS[dist]||[]).map(function(m,i){
+    return {reg:m.r,ps:m.p,km:document.getElementById('mkm'+i)?document.getElementById('mkm'+i).value:'0',ch:document.getElementById('mch'+i)?document.getElementById('mch'+i).value:'0'};
+  });
+}
+
+var rn={itms:0,vol:0,fat:0};
+function addRow(t){
+  rn[t]++;
+  var n=rn[t];
+  var tb=document.getElementById(t+'-tb');
+  var tr=document.createElement('tr');
+  var h='<td style="color:var(--muted);font-size:11px">'+n+'</td>';
+  if(t==='itms'){
+    h+='<td><input type="text" id="id'+n+'" placeholder="District" style="width:100px;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>';
+    h+='<td><input type="text" id="il'+n+'" placeholder="No. & Location/Reason" style="width:100%;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>';
+  } else if(t==='vol'){
+    h+='<td><input type="number" id="vn'+n+'" value="0" min="0" style="width:65px;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>';
+    h+='<td><input type="text" id="vp'+n+'" placeholder="Place" style="width:100%;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>';
+    h+='<td><input type="text" id="vd'+n+'" value="Traffic Duty" style="width:100%;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>';
+  } else if(t==='fat'){
+    h+='<td><input type="text" id="ff'+n+'" placeholder="FIR No. & Date" style="width:100%;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>';
+    h+='<td><input type="text" id="fps'+n+'" placeholder="PS Name" style="width:100%;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></td>';
+    h+='<td><textarea id="fb'+n+'" rows="2" style="width:100%;min-width:150px;font-size:12px;padding:4px 7px;border:1px solid var(--border);border-radius:4px"></textarea></td>';
+  }
+  h+='<td><button class="dr" onclick="this.closest(\'tr\').remove()">✕</button></td>';
+  tr.innerHTML=h;
+  tb.appendChild(tr);
 }
 
 function getRows(t){
-  const rows=[];
-  document.getElementById(t+'-tb').querySelectorAll('tr').forEach(tr=>{
-    if(t==='itms'){const d=tr.querySelector('[id^="id"]'),l=tr.querySelector('[id^="il"]');if(l&&l.value)rows.push({dist:d?d.value:'',loc:l.value});}
-    else if(t==='vol'){const n=tr.querySelector('[id^="vn"]'),p=tr.querySelector('[id^="vp"]'),d=tr.querySelector('[id^="vd"]');if(p&&p.value)rows.push({n:n?n.value:'0',p:p.value,d:d?d.value:'Traffic Duty'});}
-    else if(t==='fat'){const f=tr.querySelector('[id^="ff"]'),ps=tr.querySelector('[id^="fps"]'),b=tr.querySelector('[id^="fb"]');if(f&&f.value)rows.push({fir:f.value,ps:ps?ps.value:'',facts:b?b.value:''});}
-  }); return rows;
+  var rows=[];
+  document.getElementById(t+'-tb').querySelectorAll('tr').forEach(function(tr){
+    if(t==='itms'){var d=tr.querySelector('[id^="id"]'),l=tr.querySelector('[id^="il"]');if(l&&l.value)rows.push({dist:d?d.value:'',loc:l.value});}
+    else if(t==='vol'){var n=tr.querySelector('[id^="vn"]'),p=tr.querySelector('[id^="vp"]'),d=tr.querySelector('[id^="vd"]');if(p&&p.value)rows.push({n:n?n.value:'0',p:p.value,d:d?d.value:'Traffic Duty'});}
+    else if(t==='fat'){var f=tr.querySelector('[id^="ff"]'),ps=tr.querySelector('[id^="fps"]'),b=tr.querySelector('[id^="fb"]');if(f&&f.value)rows.push({fir:f.value,ps:ps?ps.value:'',facts:b?b.value:''});}
+  });
+  return rows;
 }
 
-// Submit
-async function submitData(){
-  const date=document.getElementById('f-date').value;
-  const dist=document.getElementById('f-dist').value;
-  const off=document.getElementById('f-off').value.trim();
-  const rank=document.getElementById('f-rank').value;
-  const decl=document.getElementById('f-decl').checked;
+function submitData(){
+  var date=document.getElementById('f-date').value;
+  var dist=document.getElementById('f-dist').value;
+  var off=document.getElementById('f-off').value.trim();
+  var rank=document.getElementById('f-rank').value;
+  var decl=document.getElementById('f-decl').checked;
   if(!date||!dist||!off||!rank){alert('Date, District, Officer Name and Rank are required.');return;}
   if(!decl){alert('Please accept the declaration.');return;}
-  const btn=document.getElementById('sub-btn');
-  const msg=document.getElementById('sub-msg');
-  btn.innerHTML='<span class="sp"></span>Submitting...'; btn.disabled=true; msg.style.display='none';
-  const payload={
-    action:'submit', date, district:dist, officer:off, rank,
-    itms_point: ITMS_PTS[dist]||'',
-    vin:+document.getElementById('f-vin')?.value||0,
-    vin_avg:+document.getElementById('f-via')?.value||0,
-    vout:+document.getElementById('f-vout')?.value||0,
-    vout_avg:+document.getElementById('f-voa')?.value||0,
-    patrol: getPatrol(), moto: getMotos(),
-    itms: getRows('itms'), vol: getRows('vol'), fatal: getRows('fat')
+  var btn=document.getElementById('sub-btn');
+  var msg=document.getElementById('sub-msg');
+  btn.innerHTML='<span class="sp"></span>Submitting...';btn.disabled=true;msg.style.display='none';
+  var payload={
+    action:'submit',date:date,district:dist,officer:off,rank:rank,
+    itms_point:ITMS_PTS[dist]||'',
+    vin:+(document.getElementById('f-vin')?document.getElementById('f-vin').value:0)||0,
+    vin_avg:+(document.getElementById('f-via')?document.getElementById('f-via').value:0)||0,
+    vout:+(document.getElementById('f-vout')?document.getElementById('f-vout').value:0)||0,
+    vout_avg:+(document.getElementById('f-voa')?document.getElementById('f-voa').value:0)||0,
+    patrol:getPatrol(),moto:getMotos(),
+    itms:getRows('itms'),vol:getRows('vol'),fatal:getRows('fat')
   };
-  try{
-    const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)});
-    const d=await r.json();
-    msg.style.display='block';
-    if(d.ok){msg.className='ok';msg.innerHTML='✅ <strong>'+dist+'</strong> data submitted successfully!';}
-    else{msg.className='er';msg.textContent='Error: '+(d.msg||'Unknown');}
-  }catch(e){msg.style.display='block';msg.className='er';msg.textContent='Network error: '+e.message;}
-  btn.innerHTML='Submit'; btn.disabled=false;
+  fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify(payload)})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      msg.style.display='block';
+      if(d.ok){msg.className='ok';msg.innerHTML='Data submitted successfully for <strong>'+dist+'</strong>!';}
+      else{msg.className='er';msg.textContent='Error: '+(d.msg||'Unknown');}
+    })
+    .catch(function(e){msg.style.display='block';msg.className='er';msg.textContent='Network error: '+e.message;})
+    .finally(function(){btn.innerHTML='Submit';btn.disabled=false;});
 }
 
-// HQ save accidents
-async function saveHQAcc(){
-  const date=document.getElementById('hq-dt').value;
+function saveHQAcc(){
+  var date=document.getElementById('hq-dt').value;
   if(!date){alert('Select date first.');return;}
-  const msg=document.getElementById('hq-acc-msg');
-  try{
-    const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'saveHQAccidents',date,cctns:+document.getElementById('hq-cctns').value||0,edar:+document.getElementById('hq-edar').value||0,missing:document.getElementById('hq-miss').value||''})});
-    const d=await r.json();
-    msg.style.display='block';
-    msg.className=d.ok?'ok':'er';
-    msg.textContent=d.ok?'✅ Saved!':'Error: '+d.msg;
-  }catch(e){msg.style.display='block';msg.className='er';msg.textContent='Failed: '+e.message;}
+  var msg=document.getElementById('hq-acc-msg');
+  fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'saveHQAccidents',date:date,cctns:+document.getElementById('hq-cctns').value||0,edar:+document.getElementById('hq-edar').value||0,missing:document.getElementById('hq-miss').value||''})})
+    .then(function(r){return r.json();})
+    .then(function(d){msg.style.display='block';msg.className=d.ok?'ok':'er';msg.textContent=d.ok?'Accident data saved!':'Error: '+d.msg;})
+    .catch(function(e){msg.style.display='block';msg.className='er';msg.textContent='Failed: '+e.message;});
 }
 
-// Load HQ dashboard
-async function loadHQ(){
-  const date=document.getElementById('hq-dt').value;
-  try{
-    const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'fetch',date})});
-    const d=await r.json();
-    if(d.ok){HD=d;renderHQ(d);}
-    else alert('Error: '+d.msg);
-  }catch(e){alert('Load failed: '+e.message);}
+function loadHQ(){
+  var date=document.getElementById('hq-dt').value;
+  fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'fetch',date:date})})
+    .then(function(r){return r.json();})
+    .then(function(d){if(d.ok){HD=d;renderHQ(d);}else alert('Error: '+d.msg);})
+    .catch(function(e){alert('Load failed: '+e.message);});
 }
 
-// ══ FIX 1: renderHQ — Vehicle In/Out columns now use correct field names ══
 function renderHQ(d){
-  const rows=d.summary||[];
-  const subs=rows.map(r=>r.District);
-
-  // District grid
-  const dg=document.getElementById('dist-grid'); dg.innerHTML='';
-  ALL_DIST.forEach(x=>{
-    const s=rows.find(r=>r.District===x);
-    const div=document.createElement('div'); div.className='dc '+(s?'s':'p');
-    div.innerHTML=`<div class="dn">${x}</div><div style="margin-top:3px">${s?'<span class="bx bg2">✅ Done</span>':'<span class="bx by">⏳ Pending</span>'}</div>${s?`<div style="font-size:9.5px;color:var(--muted);margin-top:2px">${s.Officer||''}</div>`:''}`;
+  var rows=d.summary||[];
+  var subs=rows.map(function(r){return r.District;});
+  var dg=document.getElementById('dist-grid');dg.innerHTML='';
+  ALL_DIST.forEach(function(x){
+    var s=rows.find(function(r){return r.District===x;});
+    var div=document.createElement('div');div.className='dc '+(s?'s':'p');
+    div.style.cursor='pointer';
+    div.title='Click to edit/correct this district\'s entry';
+    div.innerHTML='<div class="dn">'+x+'</div><div style="margin-top:3px">'+(s?'<span class="bx bg2">Done</span>':'<span class="bx by">Pending</span>')+'</div>'+(s?'<div style="font-size:9.5px;color:var(--muted);margin-top:2px">'+(s.Officer||'')+'</div><div style="font-size:9px;color:var(--blue);margin-top:3px;font-weight:600">✏️ Click to edit</div>':'<div style="font-size:9px;color:var(--blue);margin-top:3px;font-weight:600">✏️ Click to fill</div>');
+    div.onclick=function(){editDistrict(x);};
     dg.appendChild(div);
   });
-
-  // ── Vehicle Entry/Exit table (ITMS districts only) ──
-  const vehTb=document.getElementById('hq-veh-tb'); vehTb.innerHTML='';
-  let hvi=0,hvia=0,hvo=0,hvoa=0;
-  rows.forEach(s=>{
-    if(!s.ITMS_Point||s.ITMS_Point==='') return;
-    // FIX: use correct field names from sheet — Veh_In, Veh_In_Avg, Veh_Out, Veh_Out_Avg
-    const vi=+s.Veh_In||0, via=+s.Veh_In_Avg||0, vo=+s.Veh_Out||0, voa=+s.Veh_Out_Avg||0;
-    hvi+=vi; hvia+=via; hvo+=vo; hvoa+=voa;
-    const tr=document.createElement('tr');
-    tr.innerHTML=`<td><strong>${s.District}</strong></td><td>${s.ITMS_Point}</td>
-      <td style="text-align:center;font-weight:600">${vi}</td>
-      <td style="text-align:center">${via}</td>
-      <td style="text-align:center;font-weight:600">${vo}</td>
-      <td style="text-align:center">${voa}</td>`;
-    vehTb.appendChild(tr);
-  });
-  document.getElementById('hq-t-vi').textContent=hvi;
-  document.getElementById('hq-t-via').textContent=hvia;
-  document.getElementById('hq-t-vo').textContent=hvo;
-  document.getElementById('hq-t-voa').textContent=hvoa;
-
-  // Consolidated summary table
-  const tb=document.getElementById('hq-tb'); tb.innerHTML='';
-  let tvi=0,tvia=0,tvo=0,tvoa=0,tpv=0,tmo=0,tkm=0,tch=0,tvl=0,tit=0,tfa=0;
-  ALL_DIST.forEach(x=>{
-    const s=rows.find(r=>r.District===x);
-    const tr=document.createElement('tr');
+  var tb=document.getElementById('hq-tb');tb.innerHTML='';
+  var tvi=0,tvo=0,tpv=0,tmo=0,tkm=0,tch=0,tvl=0,tit=0,tfa=0;
+  ALL_DIST.forEach(function(x){
+    var s=rows.find(function(r){return r.District===x;});
+    var tr=document.createElement('tr');
     if(s){
-      const vi=+s.Veh_In||0, via=+s.Veh_In_Avg||0, vo=+s.Veh_Out||0, voa=+s.Veh_Out_Avg||0;
-      const pv=+s.Patrol_Vehs||0,mo=+s.Motos||0,km=+s.Total_KMs||0,ch=+s.Total_Challans||0,vl=+s.Volunteers||0,it=+s.ITMS||0,fa=+s.Fatal||0;
-      tvi+=vi;tvia+=via;tvo+=vo;tvoa+=voa;tpv+=pv;tmo+=mo;tkm+=km;tch+=ch;tvl+=vl;tit+=it;tfa+=fa;
-      tr.innerHTML=`<td><strong>${x}</strong></td><td>${s.Officer||''}<br><span style="font-size:9.5px;color:var(--muted)">${s.Rank||''}</span></td>
-        <td style="text-align:center">${vi}</td>
-        <td style="text-align:center">${via}</td>
-        <td style="text-align:center">${vo}</td>
-        <td style="text-align:center">${voa}</td>
-        <td style="text-align:center">${pv}</td><td style="text-align:center">${mo}</td>
-        <td style="text-align:center">${km}</td><td style="text-align:center">${ch}</td>
-        <td style="text-align:center">${vl}</td>
-        <td style="text-align:center">${it?`<span class="bx brd">${it}</span>`:'<span class="bx bg2">NIL</span>'}</td>
-        <td style="text-align:center">${fa?`<span class="bx brd">${fa}</span>`:'NIL'}`;
+      var vi=+s.Veh_In||0,vo=+s.Veh_Out||0,pv=+s.Patrol_Vehs||0,mo=+s.Motos||0,km=+s.Total_KMs||0,ch=+s.Total_Challans||0,vl=+s.Volunteers||0,it=+s.ITMS||0,fa=+s.Fatal||0;
+      tvi+=vi;tvo+=vo;tpv+=pv;tmo+=mo;tkm+=km;tch+=ch;tvl+=vl;tit+=it;tfa+=fa;
+      tr.innerHTML='<td><strong>'+x+'</strong></td><td>'+(s.Officer||'')+'<br><span style="font-size:9.5px;color:var(--muted)">'+(s.Rank||'')+'</span></td><td style="text-align:center">'+vi+'</td><td style="text-align:center">'+vo+'</td><td style="text-align:center">'+pv+'</td><td style="text-align:center">'+mo+'</td><td style="text-align:center">'+km+'</td><td style="text-align:center">'+ch+'</td><td style="text-align:center">'+vl+'</td><td style="text-align:center">'+(it?'<span class="bx brd">'+it+'</span>':'<span class="bx bg2">NIL</span>')+'</td><td style="text-align:center">'+(fa?'<span class="bx brd">'+fa+'</span>':'NIL')+'</td>';
     } else {
-      tr.innerHTML=`<td><strong>${x}</strong></td><td colspan="11" style="color:var(--muted);font-style:italic">— Pending —</td><td><span class="bx by">⏳</span></td>`;
+      tr.innerHTML='<td><strong>'+x+'</strong></td><td colspan="9" style="color:var(--muted);font-style:italic">Pending</td><td><span class="bx by">⏳</span></td>';
     }
     tb.appendChild(tr);
   });
-  ['t-tvi','t-tvia','t-tvo','t-tvoa','t-tpv','t-tmo','t-tkm','t-tch','t-tvl','t-tit','t-tfa'].forEach((id,i)=>{
-    document.getElementById(id).textContent=[tvi,tvia,tvo,tvoa,tpv,tmo,tkm,tch,tvl,tit,tfa][i];
-  });
-
+  ['t-tvi','t-tvo','t-tpv','t-tmo','t-tkm','t-tch','t-tvl','t-tit','t-tfa'].forEach(function(id,i){document.getElementById(id).textContent=[tvi,tvo,tpv,tmo,tkm,tch,tvl,tit,tfa][i];});
   document.getElementById('ss-sub').textContent=subs.length;
   document.getElementById('ss-pen').textContent=15-subs.length;
   document.getElementById('ss-veh').textContent=tvi;
@@ -922,199 +715,190 @@ function renderHQ(d){
   document.getElementById('ss-ch').textContent=tch;
   document.getElementById('ss-vol').textContent=tvl;
   document.getElementById('ss-itms').textContent=tit;
-
-  if(d.hqaccidents&&d.hqaccidents.length){
-    const ha=d.hqaccidents[0];
-    document.getElementById('hq-cctns').value=ha.CCTNS||0;
-    document.getElementById('hq-edar').value=ha.eDAR||0;
-    document.getElementById('hq-miss').value=ha.Missing||'';
-  }
-
-  const fl=d.fatal||[];
-  document.getElementById('hq-fat').innerHTML=fl.length?fl.map((f,i)=>`<tr><td>${i+1}</td><td><strong>${f.District}</strong></td><td>${f.FIR}</td><td>${f.PS}</td><td>${f.Facts}</td></tr>`).join(''):'<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px">No fatal cases.</td></tr>';
-
-  const il=d.itms||[];
-  document.getElementById('hq-itms').innerHTML=il.length?il.map((it,i)=>`<tr><td>${i+1}</td><td><strong>${it.District}</strong></td><td>${it.Location}</td></tr>`).join(''):'<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:12px">No ITMS issues.</td></tr>';
+  if(d.hqaccidents&&d.hqaccidents.length){var ha=d.hqaccidents[0];document.getElementById('hq-cctns').value=ha.CCTNS||0;document.getElementById('hq-edar').value=ha.eDAR||0;document.getElementById('hq-miss').value=ha.Missing||'';}
+  var fl=d.fatal||[];
+  document.getElementById('hq-fat').innerHTML=fl.length?fl.map(function(f,i){return '<tr><td>'+(i+1)+'</td><td><strong>'+f.District+'</strong></td><td>'+f.FIR+'</td><td>'+f.PS+'</td><td>'+f.Facts+'</td></tr>';}).join(''):'<tr><td colspan="5" style="text-align:center;color:var(--muted);padding:12px">No fatal cases.</td></tr>';
+  var il=d.itms||[];
+  document.getElementById('hq-itms').innerHTML=il.length?il.map(function(it,i){return '<tr><td>'+(i+1)+'</td><td><strong>'+it.District+'</strong></td><td>'+it.Location+'</td></tr>';}).join(''):'<tr><td colspan="3" style="text-align:center;color:var(--muted);padding:12px">No ITMS issues.</td></tr>';
 }
 
-// PDF
+function editDistrict(dist){
+  var dateVal=document.getElementById('hq-dt').value;
+  document.getElementById('itms-tb').innerHTML='';
+  document.getElementById('vol-tb').innerHTML='';
+  document.getElementById('fat-tb').innerHTML='';
+  rn={itms:0,vol:0,fat:0};
+  go('dist');
+  document.getElementById('f-date').value=dateVal;
+  document.getElementById('f-dist').value=dist;
+  onDistrictChange();
+
+  var srow=(HD.summary||[]).find(function(r){return r.District===dist;});
+  if(srow){
+    document.getElementById('f-off').value=srow.Officer||'';
+    document.getElementById('f-rank').value=srow.Rank||'';
+    if(document.getElementById('f-vin')) document.getElementById('f-vin').value=srow.Veh_In||0;
+    if(document.getElementById('f-via')) document.getElementById('f-via').value=srow.Veh_In_Avg||0;
+    if(document.getElementById('f-vout')) document.getElementById('f-vout').value=srow.Veh_Out||0;
+    if(document.getElementById('f-voa')) document.getElementById('f-voa').value=srow.Veh_Out_Avg||0;
+    updVehTotals();
+  }
+
+  var prows=(HD.patrol||[]).filter(function(r){return r.District===dist;});
+  (PATROL[dist]||[]).forEach(function(v,i){
+    var match=prows.find(function(r){return r.Vehicle===v.n;});
+    if(match){
+      if(document.getElementById('pkm'+i)) document.getElementById('pkm'+i).value=match.KMs||0;
+      if(document.getElementById('pch'+i)) document.getElementById('pch'+i).value=match.Challans||0;
+    }
+  });
+
+  var mrows=(HD.moto||[]).filter(function(r){return r.District===dist;});
+  (MOTOS[dist]||[]).forEach(function(m,i){
+    var match=mrows.find(function(r){return r.Reg_No===m.r;});
+    if(match){
+      if(document.getElementById('mkm'+i)) document.getElementById('mkm'+i).value=match.KMs||0;
+      if(document.getElementById('mch'+i)) document.getElementById('mch'+i).value=match.Challans||0;
+    }
+  });
+
+  (HD.vol||[]).filter(function(r){return r.District===dist;}).forEach(function(v){
+    addRow('vol');
+    var n=rn.vol;
+    document.getElementById('vn'+n).value=v.Count||0;
+    document.getElementById('vp'+n).value=v.Place||'';
+    document.getElementById('vd'+n).value=v.Duty||'Traffic Duty';
+  });
+
+  (HD.itms||[]).filter(function(r){return r.District===dist;}).forEach(function(it){
+    addRow('itms');
+    var n=rn.itms;
+    document.getElementById('id'+n).value=it.District||dist;
+    document.getElementById('il'+n).value=it.Location||'';
+  });
+
+  (HD.fatal||[]).filter(function(r){return r.District===dist;}).forEach(function(f){
+    addRow('fat');
+    var n=rn.fat;
+    document.getElementById('ff'+n).value=f.FIR||'';
+    document.getElementById('fps'+n).value=f.PS||'';
+    document.getElementById('fb'+n).value=f.Facts||'';
+  });
+
+  document.getElementById('sub-msg').style.display='none';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
 function goPDF(){
   go('pdf');
   document.getElementById('pdf-dt').value=document.getElementById('hq-dt').value;
   if(HD.summary&&HD.summary.length>0){buildPDF(HD);document.getElementById('pdf-body').style.display='block';document.getElementById('pdf-print').style.display='inline-flex';}
 }
 
-async function loadPDF(){
-  const date=document.getElementById('pdf-dt').value;
+function loadPDF(){
+  var date=document.getElementById('pdf-dt').value;
   if(!date){alert('Please select a date.');return;}
-  const msg=document.getElementById('pdf-msg');
+  var msg=document.getElementById('pdf-msg');
   msg.style.display='block';
-  msg.innerHTML='<span class="sp" style="border-top-color:var(--blue);border-color:rgba(26,58,107,.2)"></span> Loading data from Google Sheet...';
+  msg.innerHTML='<span class="sp" style="border-top-color:var(--blue);border-color:rgba(26,58,107,.2)"></span> Loading data...';
   document.getElementById('pdf-print').style.display='none';
   document.getElementById('pdf-body').style.display='none';
-  try{
-    const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'fetch',date})});
-    const d=await r.json();
-    if(d.ok){
-      HD=d; buildPDF(d);
-      msg.innerHTML='✅ PDF ready! Click Print to save.';
-      document.getElementById('pdf-print').style.display='inline-flex';
-      document.getElementById('pdf-body').style.display='block';
-    } else { msg.innerHTML='❌ Error: '+d.msg; }
-  }catch(e){ msg.innerHTML='❌ Failed: '+e.message; }
+  fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'fetch',date:date})})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.ok){HD=d;buildPDF(d);msg.innerHTML='PDF ready! Click Print to save.';document.getElementById('pdf-print').style.display='inline-flex';document.getElementById('pdf-body').style.display='block';}
+      else{msg.innerHTML='Error: '+d.msg;}
+    })
+    .catch(function(e){msg.innerHTML='Failed: '+e.message;});
 }
 
-// ══ FIX 1 + FIX 2: buildPDF — correct field names + district-grouped Section 2 ══
 function buildPDF(d){
-  const date=document.getElementById('pdf-dt').value||T;
-  const fmtDate=new Date(date).toLocaleDateString('en-IN',{day:'2-digit',month:'long',year:'numeric'});
+  var date=document.getElementById('pdf-dt').value||T;
+  var months=['January','February','March','April','May','June','July','August','September','October','November','December'];
+  var dp=date.split('-');
+  var fmtDate=parseInt(dp[2])+' '+months[parseInt(dp[1])-1]+' '+dp[0];
   document.getElementById('p-title-date').textContent=fmtDate;
   document.getElementById('p-ref').textContent='DSI/'+date.replace(/-/g,'')+'/CONSOLIDATED';
   document.getElementById('p-gen').textContent=new Date().toLocaleString('en-IN');
+  var rows=d.summary||[];
 
-  const rows=d.summary||[];
-
-  // ── FIX 1: Use correct field names Veh_In, Veh_In_Avg, Veh_Out, Veh_Out_Avg ──
-  let tvi=0,tvia=0,tvo=0,tvoa=0;
-  rows.forEach(s=>{
-    tvi  += +s.Veh_In     || 0;
-    tvia += +s.Veh_In_Avg || 0;
-    tvo  += +s.Veh_Out    || 0;
-    tvoa += +s.Veh_Out_Avg|| 0;
+  var geoTotals={};
+  Object.keys(GEO_DIST_MAP).forEach(function(gd){
+    var t=0;
+    GEO_DIST_MAP[gd].forEach(function(rd){
+      rows.forEach(function(s){ if(s.District===rd) t+=(+s.Total_Challans||0); });
+    });
+    geoTotals[gd]=t;
   });
-  document.getElementById('p-total-vi').textContent  = tvi.toLocaleString('en-IN');
-  document.getElementById('p-total-vo').textContent  = tvo.toLocaleString('en-IN');
-  document.getElementById('p-total-via').textContent = tvia.toLocaleString('en-IN');
-  document.getElementById('p-total-voa').textContent = tvoa.toLocaleString('en-IN');
+  var maxCh=0;
+  Object.keys(geoTotals).forEach(function(gd){ if(geoTotals[gd]>maxCh) maxCh=geoTotals[gd]; });
+  Object.keys(geoTotals).forEach(function(gd){
+    var el=document.getElementById('map-'+gd);
+    if(el) el.setAttribute('fill',challanColor(geoTotals[gd],maxCh));
+  });
 
-  // ITMS-wise vehicle table
-  const itmsRows=rows.filter(s=>s.ITMS_Point&&s.ITMS_Point!='');
+  var tvi=0,tvia=0,tvo=0,tvoa=0;
+  rows.forEach(function(s){tvi+=+s.Veh_In||0;tvia+=+s.Veh_In_Avg||0;tvo+=+s.Veh_Out||0;tvoa+=+s.Veh_Out_Avg||0;});
+  document.getElementById('p-total-vi').textContent=tvi.toLocaleString('en-IN');
+  document.getElementById('p-total-vo').textContent=tvo.toLocaleString('en-IN');
+  document.getElementById('p-total-via').textContent=tvia.toLocaleString('en-IN');
+  document.getElementById('p-total-voa').textContent=tvoa.toLocaleString('en-IN');
+  var itmsRows=rows.filter(function(s){return s.ITMS_Point&&s.ITMS_Point!='';});
   document.getElementById('p-veh').innerHTML=itmsRows.length?
-    itmsRows.map(s=>`<tr>
-      <td><strong>${s.ITMS_Point}</strong></td>
-      <td style="text-align:center">${s.Veh_In||0}</td>
-      <td style="text-align:center">${s.Veh_In_Avg||0}</td>
-      <td style="text-align:center">${s.Veh_Out||0}</td>
-      <td style="text-align:center">${s.Veh_Out_Avg||0}</td>
-    </tr>`).join('')+
-    `<tr style="font-weight:700;background:#f4f7fb">
-      <td>Total</td>
-      <td style="text-align:center">${tvi}</td>
-      <td style="text-align:center">${tvia}</td>
-      <td style="text-align:center">${tvo}</td>
-      <td style="text-align:center">${tvoa}</td>
-    </tr>`
+    itmsRows.map(function(s){return '<tr><td><strong>'+s.ITMS_Point+'</strong></td><td style="text-align:center">'+(s.Veh_In||0)+'</td><td style="text-align:center">'+(s.Veh_In_Avg||0)+'</td><td style="text-align:center">'+(s.Veh_Out||0)+'</td><td style="text-align:center">'+(s.Veh_Out_Avg||0)+'</td></tr>';}).join('')+
+    '<tr style="font-weight:700;background:#f4f7fb"><td>Total</td><td style="text-align:center">'+tvi+'</td><td style="text-align:center">'+tvia+'</td><td style="text-align:center">'+tvo+'</td><td style="text-align:center">'+tvoa+'</td></tr>'
     :'<tr><td colspan="5" style="text-align:center;color:var(--muted)">NIL</td></tr>';
-
-  // Non-working ITMS
-  const il=d.itms||[];
+  var il=d.itms||[];
   document.getElementById('p-itms').innerHTML=il.length?
-    il.map((it,i)=>`<tr><td>${i+1}</td><td>${it.District}</td><td>${it.Location}</td></tr>`).join('')+
-    `<tr style="font-weight:700;background:#f4f7fb"><td colspan="2">Total</td><td>${il.length}</td></tr>`
+    il.map(function(it,i){return '<tr><td>'+(i+1)+'</td><td>'+it.District+'</td><td>'+it.Location+'</td></tr>';}).join('')+
+    '<tr style="font-weight:700;background:#f4f7fb"><td colspan="2">Total</td><td>'+il.length+'</td></tr>'
     :'<tr><td colspan="3" style="text-align:center;color:var(--muted)">NIL</td></tr>';
-
-  // ── FIX 2: Section 2 — District-grouped, Patrol then Motorcycles together ──
-  const pt=d.patrol||[];
-  const mt=d.moto||[];
-
-  // Group by district in ALL_DIST order
-  // Build a map: district -> {patrol:[], moto:[]}
-  const distMap = {};
-  ALL_DIST.forEach(x=>{ distMap[x]={patrol:[],moto:[]}; });
-  // Also handle TTPS/GRPS/OPGRP districts
-  pt.forEach(v=>{
-    const dist=v.District||'';
-    if(!distMap[dist]) distMap[dist]={patrol:[],moto:[]};
-    distMap[dist].patrol.push(v);
+  var pt=d.patrol||[];var mt=d.moto||[];
+  var districtsWithVeh=ALL_DIST.filter(function(x){
+    return pt.some(function(r){return r.District===x;})||mt.some(function(r){return r.District===x;});
   });
-  mt.forEach(m=>{
-    const dist=m.District||'';
-    if(!distMap[dist]) distMap[dist]={patrol:[],moto:[]};
-    distMap[dist].moto.push(m);
+  var s2html='';var gkm=0,gch=0;
+  districtsWithVeh.forEach(function(dist){
+    var dp=pt.filter(function(r){return r.District===dist;});
+    var dm=mt.filter(function(r){return r.District===dist;});
+    var dkm=0,dch=0;
+    dp.forEach(function(v){
+      var km=+v.KMs||0,ch=+v.Challans||0;
+      dkm+=km;dch+=ch;
+      s2html+='<tr><td>'+dist+'</td><td>'+(v.Vehicle||'')+' <span style="color:var(--muted);font-size:9px">(Patrol)</span></td><td>'+(v.Beat||'')+'</td><td style="text-align:center">'+km+'</td><td style="text-align:center">'+ch+'</td></tr>';
+    });
+    dm.forEach(function(m){
+      var km=+m.KMs||0,ch=+m.Challans||0;
+      dkm+=km;dch+=ch;
+      s2html+='<tr><td>'+dist+'</td><td>'+(m.Reg_No||'')+' <span style="color:var(--muted);font-size:9px">(Motorcycle)</span></td><td>'+(m.PS_Beat||'')+'</td><td style="text-align:center">'+km+'</td><td style="text-align:center">'+ch+'</td></tr>';
+    });
+    gkm+=dkm;gch+=dch;
+    s2html+='<tr style="background:#f4f7fb;font-weight:700"><td colspan="3">Sub-total '+dist+'</td><td style="text-align:center">'+dkm+'</td><td style="text-align:center">'+dch+'</td></tr>';
   });
-
-  let s2html='';
-  let grandKm=0, grandCh=0;
-  // Ordered districts list (use ALL_DIST + any extra from data)
-  const orderedDists=[...ALL_DIST];
-  Object.keys(distMap).forEach(x=>{if(!orderedDists.includes(x))orderedDists.push(x);});
-
-  orderedDists.forEach(dist=>{
-    const grp=distMap[dist];
-    if(!grp||(!grp.patrol.length&&!grp.moto.length)) return;
-
-    let distKm=0, distCh=0;
-
-    // District header row (dark blue)
-    s2html+=`<tr class="dist-group-hdr"><td colspan="6">📍 ${dist}</td></tr>`;
-
-    // Patrol Vehicles sub-section
-    if(grp.patrol.length){
-      s2html+=`<tr class="type-sub-hdr"><td colspan="6">🚗 Patrolling Vehicles</td></tr>`;
-      grp.patrol.forEach(v=>{
-        const km=+v.KMs||0; const ch=+v.Challans||0;
-        distKm+=km; distCh+=ch; grandKm+=km; grandCh+=ch;
-        const veh=v.Vehicle||v.Reg_No||'';
-        const beat=v.Beat||v.PS_Beat||'';
-        s2html+=`<tr><td></td><td>Vehicle</td><td>${veh}</td><td>${beat}</td><td style="text-align:center">${km}</td><td style="text-align:center">${ch}</td></tr>`;
-      });
-    }
-
-    // Motorcycles sub-section
-    if(grp.moto.length){
-      s2html+=`<tr class="type-sub-hdr"><td colspan="6">🏍️ Motorcycles</td></tr>`;
-      grp.moto.forEach(m=>{
-        const km=+m.KMs||0; const ch=+m.Challans||0;
-        distKm+=km; distCh+=ch; grandKm+=km; grandCh+=ch;
-        const reg=m.Reg_No||m.Vehicle||'';
-        const beat=m.PS_Beat||m.Beat||'';
-        s2html+=`<tr><td></td><td>Motorcycle</td><td>${reg}</td><td>${beat}</td><td style="text-align:center">${km}</td><td style="text-align:center">${ch}</td></tr>`;
-      });
-    }
-
-    // District sub-total
-    s2html+=`<tr style="background:#f4f7fb;font-weight:700">
-      <td colspan="4" style="text-align:right;font-size:10px;color:var(--muted)">Sub-total — ${dist}</td>
-      <td style="text-align:center">${distKm}</td>
-      <td style="text-align:center">${distCh}</td>
-    </tr>`;
-  });
-
-  if(grandKm>0||grandCh>0){
-    s2html+=`<tr style="background:#e8f0fb;font-weight:700;font-family:'Rajdhani',sans-serif">
-      <td colspan="4">GRAND TOTAL</td>
-      <td style="text-align:center">${grandKm}</td>
-      <td style="text-align:center">${grandCh}</td>
-    </tr>`;
-  }
-
-  document.getElementById('p-veh2').innerHTML=s2html||'<tr><td colspan="6" style="text-align:center;color:var(--muted)">NIL</td></tr>';
-
-  // Volunteers
-  const vl=d.vol||[]; let tvol3=0;
+  if(districtsWithVeh.length) s2html+='<tr style="background:#e8f0fb;font-weight:700"><td colspan="3">GRAND TOTAL</td><td style="text-align:center">'+gkm+'</td><td style="text-align:center">'+gch+'</td></tr>';
+  document.getElementById('p-veh2').innerHTML=s2html||'<tr><td colspan="5" style="text-align:center;color:var(--muted)">NIL</td></tr>';
+  var vl=d.vol||[];var tvol3=0;
   document.getElementById('p-vol').innerHTML=vl.length?
-    vl.map(v=>{tvol3+=+v.Count||0;return`<tr><td>${v.District}</td><td style="text-align:center">${v.Count}</td><td>${v.Place}</td><td>${v.Duty}</td></tr>`;}).join('')+
-    `<tr style="font-weight:700;background:#f4f7fb"><td>Total</td><td style="text-align:center">${tvol3}</td><td colspan="2"></td></tr>`
+    vl.map(function(v){tvol3+=+v.Count||0;return '<tr><td>'+v.District+'</td><td style="text-align:center">'+v.Count+'</td><td>'+v.Place+'</td><td>'+v.Duty+'</td></tr>';}).join('')+
+    '<tr style="font-weight:700;background:#f4f7fb"><td>Total</td><td style="text-align:center">'+tvol3+'</td><td colspan="2"></td></tr>'
     :'<tr><td colspan="4" style="text-align:center;color:var(--muted)">NIL</td></tr>';
-
-  // Accidents
-  const ha=d.hqaccidents&&d.hqaccidents.length?d.hqaccidents[0]:null;
+  var ha=d.hqaccidents&&d.hqaccidents.length?d.hqaccidents[0]:null;
   document.getElementById('p-cc').textContent=ha?ha.CCTNS||0:'—';
   document.getElementById('p-ed').textContent=ha?ha.eDAR||0:'—';
   document.getElementById('p-ms').textContent=ha?ha.Missing||'NIL':'NIL';
-
-  // Fatal
-  const fat=d.fatal||[];
+  var fat=d.fatal||[];
   document.getElementById('p-fat').innerHTML=fat.length?
-    fat.map((f,i)=>`<tr><td>${i+1}</td><td contenteditable="true">${f.FIR}</td><td contenteditable="true">${f.PS}</td><td contenteditable="true">${f.Facts}</td></tr>`).join('')
-    :'<tr><td>01</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td>02</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td>03</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr><tr><td>04</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>';
+    fat.map(function(f,i){return '<tr><td>'+(i+1)+'</td><td contenteditable="true">'+f.FIR+'</td><td contenteditable="true">'+f.PS+'</td><td contenteditable="true">'+f.Facts+'</td></tr>';}).join('')
+    :'<tr><td>1</td><td contenteditable="true"></td><td contenteditable="true"></td><td contenteditable="true"></td></tr>';
 }
 
 function resetForm(){
-  ['f-off'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
-  document.getElementById('f-dist').value=''; document.getElementById('f-rank').value='';
-  document.getElementById('f-date').value=T; document.getElementById('f-decl').checked=false;
-  ['itms-tb','vol-tb','fat-tb'].forEach(id=>{const e=document.getElementById(id);if(e)e.innerHTML='';});
+  document.getElementById('f-off').value='';
+  document.getElementById('f-dist').value='';
+  document.getElementById('f-rank').value='';
+  document.getElementById('f-date').value=T;
+  document.getElementById('f-decl').checked=false;
+  ['itms-tb','vol-tb','fat-tb'].forEach(function(id){var e=document.getElementById(id);if(e)e.innerHTML='';});
   document.getElementById('veh-sec').style.display='none';
   document.getElementById('veh-na').style.display='none';
   document.getElementById('patrol-sec').style.display='none';
