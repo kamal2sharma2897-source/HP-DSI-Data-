@@ -110,7 +110,7 @@ tr:hover td{background:#f4f7fb;}
     <div class="row3">
       <div class="fg"><label>Date *</label><input type="date" id="f-date"></div>
       <div class="fg"><label>District *</label>
-        <select id="f-dist" onchange="onDistrictChange()">
+        <select id="f-dist" onchange="onDistrictChange(); loadCurrentITMS(this.value); loadCurrentVol(this.value)">
           <option value="">— Select District —</option>
           <option>Baddi (BBN)</option><option>Bilaspur</option><option>Chamba</option>
           <option>PD Dehra</option><option>Hamirpur</option><option>Kangra</option>
@@ -515,6 +515,50 @@ function onDistrictChange(){
   var dist=document.getElementById('f-dist').value;
   loadVehicles(dist);
   loadPatrolMoto(dist);
+}
+
+// Auto-fills the Non-Working ITMS section with whatever is already "on record" for
+// this district, so an officer doesn't have to retype the same issue every day.
+// Only wired to the dropdown's own change event (not called from editDistrict,
+// which loads that specific date's historical entries instead).
+function loadCurrentITMS(dist){
+  document.getElementById('itms-tb').innerHTML='';
+  rn.itms=0;
+  if(!dist) return;
+  fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'currentItms',district:dist})})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.ok && d.itms && d.itms.length){
+        d.itms.forEach(function(it){
+          addRow('itms');
+          var n=rn.itms;
+          document.getElementById('id'+n).value=it.District||dist;
+          document.getElementById('il'+n).value=it.Location||'';
+        });
+      }
+    })
+    .catch(function(e){ /* silent — officer can still add manually if this fails */ });
+}
+
+// Same carry-forward behavior as ITMS, for Traffic Volunteer deployments.
+function loadCurrentVol(dist){
+  document.getElementById('vol-tb').innerHTML='';
+  rn.vol=0;
+  if(!dist) return;
+  fetch(API,{method:'POST',headers:{'Content-Type':'text/plain'},body:JSON.stringify({action:'currentVol',district:dist})})
+    .then(function(r){return r.json();})
+    .then(function(d){
+      if(d.ok && d.vol && d.vol.length){
+        d.vol.forEach(function(v){
+          addRow('vol');
+          var n=rn.vol;
+          document.getElementById('vn'+n).value=v.Count||0;
+          document.getElementById('vp'+n).value=v.Place||'';
+          document.getElementById('vd'+n).value=v.Duty||'Traffic Duty';
+        });
+      }
+    })
+    .catch(function(e){ /* silent — officer can still add manually if this fails */ });
 }
 
 function loadVehicles(dist){
